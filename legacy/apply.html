@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<script>/* Everyone must accept the Terms of Service before using the site. */
+window.PFY_TOS = '2026-11-20.1';
+try { if (localStorage.getItem('pfy-tos') !== window.PFY_TOS) document.documentElement.classList.add('tos-unaccepted'); }
+catch (e) { document.documentElement.classList.add('tos-unaccepted'); }</script>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Applications · Programs For You</title>
+<meta name="description" content="Apply to join Programs For You as an intern or employee in Development, Social Media, Advertising, or Hospitality.">
+<meta name="author" content="Brady Krupa and Arjun Bhanderi">
+<meta name="copyright" content="© 2026 Brady Krupa and Arjun Bhanderi. All rights reserved.">
+<meta property="og:title" content="Applications · Programs For You">
+<meta property="og:description" content="Apply to join Programs For You as an intern or employee in Development, Social Media, Advertising, or Hospitality.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Programs For You">
+<meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0c0c0e" media="(prefers-color-scheme: dark)">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="/assets/css/style.css">
+<script src="/assets/js/tos.js" defer></script>
+<script type="module" src="/assets/js/site.js"></script>
+<script type="module" src="/assets/js/apply.js"></script>
+</head>
+<body>
+<div class="tos-gate" role="dialog" aria-modal="true" aria-labelledby="tos-title">
+  <div class="tos-card">
+    <img src="/assets/img/logo.svg" alt="" width="48" height="48">
+    <h2 id="tos-title">Welcome to Programs For You</h2>
+    <p>Before you continue, please read and accept our <a href="/terms.html" data-tos-read>Terms of Service</a> and <a href="/privacy.html" data-tos-read>Privacy Policy</a>. They’re a binding agreement between you and Programs For You. Serious violations, like copying our code, cost at least $5,000 each and can lead to legal action.</p>
+    <label class="tos-check"><input type="checkbox" data-tos-check> <span>I am 18 or older, and I have read and agree to the Terms of Service and Privacy Policy.</span></label>
+    <div class="tos-actions">
+      <button class="btn btn-primary" type="button" data-tos-accept disabled>I Agree</button>
+      <button class="btn btn-ghost" type="button" data-tos-decline>I Don’t Agree</button>
+    </div>
+    <p class="tos-msg" data-tos-msg role="status"></p>
+  </div>
+</div>
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-header">
+  <div class="container header-inner">
+    <a class="brand" href="/" aria-label="Programs For You home"><img src="/assets/img/logo.svg" alt="" width="30" height="30"><span>Programs For You</span></a>
+    <nav class="nav" id="site-nav" aria-label="Main">
+      <a href="/school-schedule.html">School Schedule</a>
+      <a href="/email-assistant.html">Email Assistant</a>
+      <a href="/screen-assistant.html">Screen Assistant</a>
+      <a href="/install.html">Install</a>
+      <a href="/download.html">Downloads</a>
+      <a href="/founders.html">Founders</a><a href="/team.html">Team</a>
+      <a href="/contact.html">Contact</a>
+    </nav>
+    <div class="header-actions">
+      <div class="account pending" data-account><a class="btn btn-primary btn-sm" href="/download.html">Get the apps</a></div>
+      <button class="menu-toggle" type="button" aria-controls="site-nav" aria-expanded="false" aria-label="Menu"><svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
+    </div>
+  </div>
+</header>
+<main id="main">
+
+<section class="page-head"><div class="container"><p class="eyebrow">Applications</p><h1>Join the team</h1>
+<p class="lead">Want to help build free apps that make people’s days easier? Apply below. Brady and Arjun read every application.</p></div></section>
+<section class="section-tight"><div class="container contact-grid">
+  <div>
+    <form class="card ticket-form" name="job-application" method="POST" data-netlify="true" netlify-honeypot="company" data-apply-form novalidate>
+      <input type="hidden" name="form-name" value="job-application">
+      <p class="hp" aria-hidden="true"><label>Leave this empty <input name="company" tabindex="-1" autocomplete="off"></label></p>
+      <div class="field-row">
+        <div class="field"><label for="a-name">Name</label>
+          <input class="input" id="a-name" name="name" autocomplete="name" required></div>
+        <div class="field"><label for="a-email">Email</label>
+          <input class="input" id="a-email" name="email" type="email" autocomplete="email" inputmode="email" placeholder="you@example.com" required></div>
+      </div>
+      <div class="field-row three">
+        <div class="field"><label for="a-grade">Grade</label>
+          <select class="input" id="a-grade" name="grade" required><option value="">Choose…</option><option>9th</option><option>10th</option><option>11th</option><option>12th</option><option>Other</option></select></div>
+        <div class="field"><label for="a-role">Role</label>
+          <select class="input" id="a-role" name="role" required><option value="">Choose…</option><option>Intern</option><option>Employee</option></select></div>
+        <div class="field"><label for="a-dept">Department</label>
+          <select class="input" id="a-dept" name="department" required><option value="">Choose…</option><option>Development</option><option>Social Media</option><option>Advertising</option><option>Hospitality</option><option>Not sure yet</option></select></div>
+      </div>
+      <div class="field"><label for="a-why">Why do you want to join?</label>
+        <textarea class="input textarea" id="a-why" name="why" rows="5" maxlength="2000" placeholder="A few sentences about you and what you’d like to do." required></textarea></div>
+      <div class="field"><label for="a-skills">Skills or experience <span class="faint">(optional)</span></label>
+        <textarea class="input textarea" id="a-skills" name="skills" rows="3" maxlength="1500" placeholder="Coding, design, video, writing, clubs… anything that helps."></textarea></div>
+      <div class="form-msg" data-apply-msg role="status"></div>
+      <button class="btn btn-primary" type="submit">Send application</button>
+      <p class="fine">We only use this to look at your application, and only Brady and Arjun can see it. <a href="/privacy.html">Privacy</a></p>
+    </form>
+    <div class="card ticket-done" data-apply-done hidden>
+      <div class="done-check" aria-hidden="true">✓</div>
+      <h2>Application sent!</h2>
+      <p>Thanks for applying. We’ll email you at <b data-apply-email></b> after we read it.</p>
+    </div>
+  </div>
+  <aside class="contact-side">
+    <div class="card">
+      <h3>Open roles</h3>
+      <p class="muted small">Interns and employees in every department:</p>
+      <ul class="role-list">
+        <li><b>Development</b><span>Help build and test our apps.</span></li>
+        <li><b>Social Media</b><span>Make posts and videos about our apps.</span></li>
+        <li><b>Advertising</b><span>Spread the word at school and online.</span></li>
+        <li><b>Hospitality</b><span>Help people who use our apps and welcome new team members.</span></li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>What happens next</h3>
+      <ol class="mini-steps"><li>Send your application.</li><li>Brady and Arjun read every one.</li><li>If it’s a fit, we email you to set up a quick chat.</li></ol>
+    </div>
+    <div class="card">
+      <h3>Questions?</h3>
+      <p class="muted small">See who’s on the <a href="/team.html">team</a>, or call <a href="tel:+14752661457">(475) 266-1457</a>.</p>
+    </div>
+  </aside>
+</div></section>
+
+</main>
+<footer class="site-footer">
+  <div class="container footer-inner">
+    <div class="footer-brand">
+      <img src="/assets/img/logo.svg" alt="" width="30" height="30">
+      <div><b>Programs For You</b><p>Simple apps that make your day easier.</p></div>
+    </div>
+    <nav class="footer-links" aria-label="Footer">
+      <div><h4>Apps</h4><a href="/school-schedule.html">School Schedule</a><a href="/email-assistant.html">Email Assistant</a><a href="/screen-assistant.html">Screen Assistant</a><a href="/ti-84-evo-games.html">TI-84 Evo Games</a><a href="/download.html">Downloads</a></div>
+      <div><h4>Help</h4><a href="/install.html">How to install</a><a href="/#faq">FAQ</a><a href="/contact.html">Contact us</a><a href="tel:+14752661457">Call (475) 266-1457</a><a href="/founders.html">Founders</a><a href="/team.html">Team</a><a href="/apply.html">Join the team</a></div>
+      <div><h4>Legal</h4><a href="/terms.html">Terms of Service</a><a href="/privacy.html">Privacy Policy</a><a href="/founders-agreement.html">Founders’ Agreement</a></div>
+    </nav>
+  </div>
+  <div class="container footer-base">
+    <p class="owners">Programs For You is owned 50/50 by Brady Krupa and Arjun Bhanderi, who control everything about it. See the <a href="/founders-agreement.html">Founders’ Agreement</a>.</p>
+    <p>© 2026 Brady Krupa and Arjun Bhanderi. All rights reserved. Programs For You, Email Assistant and Screen Assistant are owned by Brady Krupa and Arjun Bhanderi. School Schedule is © 2026 Owen Wang &amp; Brady Krupa and free software under the GNU AGPL v3 (<a href="/downloads/SchoolSchedule-source.zip">source code</a>). Not affiliated with Apple Inc. Mac and macOS are trademarks of Apple Inc.</p>
+  </div>
+</footer>
+</body>
+</html>

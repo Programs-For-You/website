@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<script>/* Everyone must accept the Terms of Service before using the site. */
+window.PFY_TOS = '2026-11-20.1';
+try { if (localStorage.getItem('pfy-tos') !== window.PFY_TOS) document.documentElement.classList.add('tos-unaccepted'); }
+catch (e) { document.documentElement.classList.add('tos-unaccepted'); }</script>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Admin · Programs For You</title>
+<meta name="description" content="Owners only.">
+<meta name="author" content="Brady Krupa and Arjun Bhanderi">
+<meta name="copyright" content="© 2026 Brady Krupa and Arjun Bhanderi. All rights reserved.">
+<meta property="og:title" content="Admin · Programs For You">
+<meta property="og:description" content="Owners only.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Programs For You">
+<meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0c0c0e" media="(prefers-color-scheme: dark)">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="/assets/css/style.css">
+<script src="/assets/js/tos.js" defer></script>
+<script type="module" src="/assets/js/site.js"></script>
+<script type="module" src="/assets/js/admin.js"></script>
+</head>
+<body>
+<div class="tos-gate" role="dialog" aria-modal="true" aria-labelledby="tos-title">
+  <div class="tos-card">
+    <img src="/assets/img/logo.svg" alt="" width="48" height="48">
+    <h2 id="tos-title">Welcome to Programs For You</h2>
+    <p>Before you continue, please read and accept our <a href="/terms.html" data-tos-read>Terms of Service</a> and <a href="/privacy.html" data-tos-read>Privacy Policy</a>. They’re a binding agreement between you and Programs For You. Serious violations, like copying our code, cost at least $5,000 each and can lead to legal action.</p>
+    <label class="tos-check"><input type="checkbox" data-tos-check> <span>I am 18 or older, and I have read and agree to the Terms of Service and Privacy Policy.</span></label>
+    <div class="tos-actions">
+      <button class="btn btn-primary" type="button" data-tos-accept disabled>I Agree</button>
+      <button class="btn btn-ghost" type="button" data-tos-decline>I Don’t Agree</button>
+    </div>
+    <p class="tos-msg" data-tos-msg role="status"></p>
+  </div>
+</div>
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-header">
+  <div class="container header-inner">
+    <a class="brand" href="/" aria-label="Programs For You home"><img src="/assets/img/logo.svg" alt="" width="30" height="30"><span>Programs For You</span></a>
+    <nav class="nav" id="site-nav" aria-label="Main">
+      <a href="/school-schedule.html">School Schedule</a>
+      <a href="/email-assistant.html">Email Assistant</a>
+      <a href="/screen-assistant.html">Screen Assistant</a>
+      <a href="/install.html">Install</a>
+      <a href="/download.html">Downloads</a>
+      <a href="/founders.html">Founders</a><a href="/team.html">Team</a>
+      <a href="/contact.html">Contact</a>
+    </nav>
+    <div class="header-actions">
+      <div class="account pending" data-account><a class="btn btn-primary btn-sm" href="/download.html">Get the apps</a></div>
+      <button class="menu-toggle" type="button" aria-controls="site-nav" aria-expanded="false" aria-label="Menu"><svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
+    </div>
+  </div>
+</header>
+<main id="main">
+
+<section class="page-head"><div class="container"><p class="eyebrow">Owners only</p><h1>Admin</h1>
+<p class="lead">Your email list, job applications (with Approve and Decline), support tickets, and Windows agreements, all in one place.</p></div></section>
+<section class="section-tight"><div class="container">
+  <div class="form-msg" data-admin-msg role="status"></div>
+
+  <div class="adm-signin" data-admin-signin hidden>
+    <form class="card" data-admin-form autocomplete="off">
+      <h2>Open with your Netlify key</h2>
+      <p class="muted">This page reads your forms straight from Netlify, so it needs a Netlify <b>access token</b> (a long password made just for this). It stays in this browser and is only sent to Netlify.</p>
+      <div class="field"><label for="adm-token">Netlify access token</label>
+        <input class="input" id="adm-token" name="token" type="password" placeholder="Paste it here" spellcheck="false" required></div>
+      <label class="check"><input type="checkbox" name="remember"> Remember on this computer</label>
+      <button class="btn btn-primary" type="submit">Open admin</button>
+    </form>
+    <div class="card">
+      <h3>How to get your token (one time)</h3>
+      <ol class="mini-steps">
+        <li>Go to <a href="https://app.netlify.com/user/applications#personal-access-tokens" target="_blank" rel="noopener">app.netlify.com → User settings → Applications</a>.</li>
+        <li>Under <b>Personal access tokens</b>, click <b>New access token</b>.</li>
+        <li>Name it <b>Programs For You admin</b>, pick how long it lasts, and click <b>Generate token</b>.</li>
+        <li>Copy it and paste it on the left. Don’t share it with anyone: it can change your Netlify account.</li>
+      </ol>
+    </div>
+  </div>
+
+  <div data-admin-board hidden>
+    <div class="adm-top">
+      <div class="adm-tabs" role="tablist">
+        <button role="tab" data-tab="applications">Applications <span class="count"></span></button>
+        <button role="tab" data-tab="list">Email list <span class="count"></span></button>
+        <button role="tab" data-tab="tickets">Tickets <span class="count"></span></button>
+        <button role="tab" data-tab="terms">Windows agreements <span class="count"></span></button>
+      </div>
+      <div class="adm-tools"><span class="faint xsmall" data-admin-status></span>
+        <button class="btn btn-ghost btn-sm" data-admin-refresh>Refresh</button>
+        <button class="link-btn" data-admin-signout>Sign out</button></div>
+    </div>
+    <div class="adm-view" data-admin-view></div>
+  </div>
+
+  <form name="application-decision" method="POST" data-netlify="true" netlify-honeypot="company" hidden>
+    <input type="hidden" name="form-name" value="application-decision">
+    <input name="application"><input name="name"><input name="email"><input name="decision"><input name="decided_at"><input name="company">
+  </form>
+</div></section>
+
+</main>
+<footer class="site-footer">
+  <div class="container footer-inner">
+    <div class="footer-brand">
+      <img src="/assets/img/logo.svg" alt="" width="30" height="30">
+      <div><b>Programs For You</b><p>Simple apps that make your day easier.</p></div>
+    </div>
+    <nav class="footer-links" aria-label="Footer">
+      <div><h4>Apps</h4><a href="/school-schedule.html">School Schedule</a><a href="/email-assistant.html">Email Assistant</a><a href="/screen-assistant.html">Screen Assistant</a><a href="/ti-84-evo-games.html">TI-84 Evo Games</a><a href="/download.html">Downloads</a></div>
+      <div><h4>Help</h4><a href="/install.html">How to install</a><a href="/#faq">FAQ</a><a href="/contact.html">Contact us</a><a href="tel:+14752661457">Call (475) 266-1457</a><a href="/founders.html">Founders</a><a href="/team.html">Team</a><a href="/apply.html">Join the team</a></div>
+      <div><h4>Legal</h4><a href="/terms.html">Terms of Service</a><a href="/privacy.html">Privacy Policy</a><a href="/founders-agreement.html">Founders’ Agreement</a></div>
+    </nav>
+  </div>
+  <div class="container footer-base">
+    <p class="owners">Programs For You is owned 50/50 by Brady Krupa and Arjun Bhanderi, who control everything about it. See the <a href="/founders-agreement.html">Founders’ Agreement</a>.</p>
+    <p>© 2026 Brady Krupa and Arjun Bhanderi. All rights reserved. Programs For You, Email Assistant and Screen Assistant are owned by Brady Krupa and Arjun Bhanderi. School Schedule is © 2026 Owen Wang &amp; Brady Krupa and free software under the GNU AGPL v3 (<a href="/downloads/SchoolSchedule-source.zip">source code</a>). Not affiliated with Apple Inc. Mac and macOS are trademarks of Apple Inc.</p>
+  </div>
+</footer>
+</body>
+</html>

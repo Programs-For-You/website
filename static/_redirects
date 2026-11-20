@@ -1,0 +1,32 @@
+# Old .html addresses go to the clean address (one URL per page keeps search results tidy).
+/index.html  /  301!
+/school-schedule.html  /school-schedule  301!
+/email-assistant.html  /email-assistant  301!
+/screen-assistant.html  /screen-assistant  301!
+/ti-84-evo-games.html  /ti-84-evo-games  301!
+/download.html  /download  301!
+/install.html  /install  301!
+/founders.html  /founders  301!
+/team.html  /team  301!
+/apply.html  /apply  301!
+/contact.html  /contact  301!
+/terms.html  /terms  301!
+/privacy.html  /privacy  301!
+/founders-agreement.html  /founders-agreement  301!
+/signin.html  /signin  301!
+/admin.html  /admin  301!
+
+# Made by tools/build_pages.py from assets/js/config.js. Old download links go to the newest version.
+/creators.html  /founders  301
+/creators  /founders  301
+/downloads/SLITHER.py  /ti-84-evo-games.html  302
+/downloads/STARDASH.py  /ti-84-evo-games.html  302
+/downloads/SchoolSchedule.zip  /downloads/SchoolSchedule-1.3.8.zip  302
+/downloads/SchoolSchedule-*  /downloads/SchoolSchedule-1.3.8.zip  302
+/downloads/schoolschedule-*  /downloads/SchoolSchedule-1.3.8.zip  302
+/downloads/EmailAssistant.zip  /downloads/EmailAssistant-1.2.3.zip  302
+/downloads/EmailAssistant-*  /downloads/EmailAssistant-1.2.3.zip  302
+/downloads/emailassistant-*  /downloads/EmailAssistant-1.2.3.zip  302
+/downloads/ScreenAssistant.zip  /downloads/ScreenAssistant-1.1.2.zip  302
+/downloads/ScreenAssistant-*  /downloads/ScreenAssistant-1.1.2.zip  302
+/downloads/screenassistant-*  /downloads/ScreenAssistant-1.1.2.zip  302

@@ -1,0 +1,88 @@
+<script>
+  import Seo from '#lib/components/Seo.svelte';
+  import Eyebrow from '#lib/components/Eyebrow.svelte';
+  import Lead from '#lib/components/Lead.svelte';
+  import Container from '#lib/components/Container.svelte';
+  import Prose from '#lib/components/prose/Prose.svelte';
+  import SummaryBox from '#lib/components/prose/SummaryBox.svelte';
+  import { SITE } from '#lib/config.js';
+</script>
+
+<Seo title="Privacy Policy · Programs For You" description="How Programs For You handles your information on the website and in our Mac apps." />
+
+<section class="pt-16 pb-7"><Container><Eyebrow>Legal</Eyebrow><h1>Privacy Policy</h1><Lead class="m-0">Effective November 20, 2026</Lead></Container></section>
+<section class="pt-2 pb-18"><Container>
+<Prose>
+  <SummaryBox><p><b>The short version:</b> we collect your email address so you can download the apps and so we can tell you about new apps and updates. There are no passwords. Your schedule, homework, emails, and screen stay on your Mac. We don’t sell your information, and we don’t use ads or tracking cookies.</p></SummaryBox>
+
+  <h2>Who we are</h2>
+  <p>Programs For You (programsforyou.com) is an independent developer that makes free Mac apps. It’s owned by Brady Krupa and Arjun Bhanderi. If you have questions about this policy, email <a href={`mailto:${SITE.contactEmail}`}>{SITE.contactEmail}</a>.</p>
+
+  <h2>What we collect on the website</h2>
+  <ul>
+    <li><strong>Your email address.</strong> When you type your email to download or to join our email list, we save it along with which page you used and that you said you’re 18 or older. Your browser also remembers that you confirmed your age, so you’re only asked once. These sign-ups are stored by our host, Netlify.</li>
+    <li><strong>Google sign-in (optional).</strong> If you choose Continue with Google, Google Firebase Authentication gives us your name, email address, and profile picture, and records when you signed in. We never get your Google password. We add that email to our list too.</li>
+    <li><strong>Support tickets.</strong> When you send a ticket on our Contact page, we save your name, your email address, what it’s about, and your summary, so we can help you and write back. Tickets are stored by our host, Netlify, and only we can see them.</li>
+    <li><strong>Website logs.</strong> Like most websites, our hosting provider may keep standard logs, such as your IP address, browser type, and pages visited, for security and reliability.</li>
+  </ul>
+  <p><strong>Update checks.</strong> About once a day, each app checks programsforyou.com for a newer version. That’s a normal web request: it doesn’t include your email, name, or anything from the app, though our host may log your IP address like any website visit.</p>
+  <p>We don’t use advertising, analytics trackers, or tracking cookies. The site remembers your email in your browser so you don’t have to type it again, and saves a small sign-in token if you use Google sign-in.</p>
+
+  <h2>Our Mac apps</h2>
+  <h3>School Schedule</h3>
+  <p>Your classes, bell times, homework, events, and settings are saved on your Mac only. They aren’t sent to us. School Schedule doesn’t need you to sign in. If you choose to link your Schoology calendar, your private calendar link is saved on your Mac and used only to download your calendar directly from Schoology. It isn’t sent to us.</p>
+  <h3>Email Assistant</h3>
+  <ul>
+    <li>The app connects straight from your Mac to your email provider (Gmail, iCloud, or Yahoo). Your emails don’t pass through our servers, and we never see them.</li>
+    <li>Your app password is stored in your Mac’s Keychain.</li>
+    <li>By default, emails are read and replies are written by Apple Intelligence on your Mac.</li>
+    <li>If you choose to add your own Claude API key, the emails being summarized are sent to Anthropic and handled under Anthropic’s privacy policy. This is off unless you turn it on.</li>
+    <li>The app never sends an email unless you press Send.</li>
+    <li>It connects only to personal email accounts. It doesn’t connect to school or work accounts.</li>
+    <li>On screen: when you click Read email, it takes one picture of the window you’re using, reads the words on your Mac, and doesn’t save the picture. If you added your own Claude API key, that picture is sent to Anthropic. Replies made with On screen are copied for you to paste; the app doesn’t send them.</li>
+  </ul>
+  <h3>TI-84 Evo games</h3>
+  <p>Our calculator games run only on your calculator. They don’t collect or send any information.</p>
+  <h3>Screen Assistant</h3>
+  <ul>
+    <li>It only looks at your screen when you open it (or click Look again). It never records video and doesn’t save pictures of your screen.</li>
+    <li>By default, the words on your screen are read and answered by Apple Intelligence on your Mac. Nothing is sent to us.</li>
+    <li>If you choose to add your own Claude API key, a picture of your screen and your questions are sent to Anthropic and handled under Anthropic’s privacy policy. This is off unless you turn it on.</li>
+    <li>Your to-dos and settings are saved on your Mac only.</li>
+  </ul>
+  <h3>School Schedule for Windows</h3>
+  <p>The Windows version is Owen Wang’s School Schedule Manager. Before you download it or its code, you agree to <a href="https://github.com/un-undefined/school-schedule-manager/blob/main/TermsOfService.md">Owen Wang’s Terms of Service</a>. We save a record that you agreed: your email, which terms, and when. Your browser also remembers it so you don’t have to agree again.</p>
+
+  <h3>Job applications</h3>
+  <p>If you apply to join the team, we collect what you type in the form: your name, email, grade, the role and department you want, and your answers. Only Brady and Arjun can see it, we use it only to look at your application, and we’ll delete it if you ask.</p>
+
+  <h2>How we use your information</h2>
+  <ul>
+    <li>To let you download the apps.</li>
+    <li>To email you about new apps, updates, and important changes. Every email lets you unsubscribe, or you can email us to be removed.</li>
+    <li>To answer you when you contact us.</li>
+    <li>To keep the website secure and working.</li>
+  </ul>
+
+  <h2>Who we share it with</h2>
+  <p>We don’t sell or rent your information. We share it only with the service providers that run the website (Netlify for hosting and storing email sign-ups, and Google Firebase if you use Google sign-in), or if the law requires it.</p>
+
+  <h2>Age requirement</h2>
+  <p>You must be 18 or older to use Programs For You, sign in, or give us your email. If we learn that someone under 18 signed up, we’ll delete their email. Parents or guardians can contact us at any time.</p>
+
+  <h2>Your choices</h2>
+  <ul>
+    <li><strong>Unsubscribe or delete your email</strong> anytime: use the unsubscribe link in any email, or email us and we’ll remove it.</li>
+    <li><strong>Delete app data</strong> by deleting the app from your Mac. For Email Assistant, you can also remove your email account in the app’s Settings.</li>
+  </ul>
+
+  <h2>Security</h2>
+  <p>We take reasonable steps to protect your information, like using secure connections (HTTPS) and trusted providers. No system is perfect, though, so we can’t promise total security.</p>
+
+  <h2>Changes</h2>
+  <p>If we change this policy, we’ll update the date at the top. For big changes, we’ll post a notice on the website.</p>
+
+  <h2>Contact</h2>
+  <p>Questions? Email <a href={`mailto:${SITE.contactEmail}`}>{SITE.contactEmail}</a> or call <a href="tel:+14752661457">(475) 266-1457</a>.</p>
+</Prose>
+</Container></section>

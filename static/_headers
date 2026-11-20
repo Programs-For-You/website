@@ -1,0 +1,36 @@
+/*
+  X-Content-Type-Options: nosniff
+  Referrer-Policy: strict-origin-when-cross-origin
+
+/assets/*
+  Cache-Control: public, max-age=0, must-revalidate
+
+/downloads/*
+  Content-Disposition: attachment
+
+# The apps' Check for Updates button: always get the newest list.
+/updates.json
+  Cache-Control: no-cache
+  Access-Control-Allow-Origin: *
+
+# Owners-only page: keep it out of search engines and always load the newest copy.
+/admin
+  X-Robots-Tag: noindex, nofollow
+  Cache-Control: no-cache
+
+/admin.html
+  X-Robots-Tag: noindex, nofollow
+  Cache-Control: no-cache
+
+/llms.txt
+  Content-Type: text/plain; charset=utf-8
+
+/llms-full.txt
+  Content-Type: text/plain; charset=utf-8
+
+/robots.txt
+  Content-Type: text/plain; charset=utf-8
+  Cache-Control: public, max-age=3600
+
+/sitemap.xml
+  Cache-Control: public, max-age=3600

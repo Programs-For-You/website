@@ -1,0 +1,245 @@
+/* © 2026 Brady Krupa and Arjun Bhanderi. All rights reserved. */
+/* Programs For You: design system. Warm paper, deep teal ink, one lime accent, Aspekta + Roboto Mono,
+   notched buttons, rounded sheets, and scroll-driven motion. Dark theme. */
+@import '@fontsource/roboto-mono/400.css';
+@import 'tailwindcss';
+@import 'lenis/dist/lenis.css';
+
+@font-face {
+  font-family: 'Aspekta';
+  src: url('/fonts/AspektaVF.woff2') format('woff2');
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* ---------- Design tokens ---------- */
+:root {
+  --bg: #0b1110;
+  --bg-soft: #101918;
+  --surface: #151f1e;
+  --surface-2: #1d2b29;
+  --border: rgb(244 244 238 / .12);
+  --border-strong: rgb(244 244 238 / .28);
+  --text: #f1f1ec;
+  --on-ink: #0b1110;          /* text that sits on a cream (--text) fill */
+  --muted: #a3bab6;
+  --faint: rgb(241 241 236 / .5);
+  --accent: #a7e26e;          /* lime: the one bright accent (links, labels, strong outlines) */
+  --accent-hover: #cef79e;
+  --accent-ink: #0b1110;
+  --accent-soft: rgb(167 226 110 / .14);
+  --lime: #a7e26e;
+  --lime-soft: #cef79e;
+  --ok: #a7e26e;
+  --ok-soft: rgb(167 226 110 / .14);
+  --warn: #f2c46d;
+  --warn-soft: rgb(242 196 109 / .12);
+  --danger: #ff8f85;
+  --danger-soft: rgb(255 143 133 / .12);
+  --shadow: 0 1px 2px rgb(0 0 0 / .4), 0 12px 32px -12px rgb(0 0 0 / .5);
+  --shadow-lg: 0 2px 6px rgb(0 0 0 / .4), 0 30px 70px -24px rgb(0 0 0 / .75);
+  --header-bg: rgb(21 31 30 / .8);
+  --desk: linear-gradient(160deg, #16352a 0%, #2b4f3f 52%, #4a3a28 100%);
+  --menubar-bg: rgb(11 17 16 / .55);
+  --menubar-ink: #f1f1ec;
+  --panel-bg: rgb(21 31 30 / .95);
+  --panel-ink: #f1f1ec;
+  --panel-muted: #9fb3af;
+  --panel-line: rgb(255 255 255 / .09);
+  --ease: cubic-bezier(.16, 1, .3, 1);
+  --ease-io: cubic-bezier(.76, 0, .24, 1);
+  --ease-btn: cubic-bezier(.25, 1, .5, 1);
+  --gutter: 24px;
+  color-scheme: dark;
+}
+@media (min-width: 1025px) { :root { --gutter: 48px; } }
+
+/* ---------- Tailwind theme ----------
+   Colours: bg-bg  bg-bg-soft  bg-surface  bg-surface-2  border-border  border-border-strong  text-ink  text-muted  text-faint
+            bg-accent text-accent bg-accent-soft  bg-lime  bg-lime-soft  (ok / warn / danger the same)
+   Type:    text-display (hero, 50-112px)  text-heading (26-76px)  text-subheading (19-42px)  text-title (22px)
+            text-lead (20-24px)  text-body (16-19px)  text-mono (12-14px, use with .font-mono uppercase)
+   Radii:   rounded-card-sm 8px  rounded-card 12px  rounded-card-lg 20px  rounded-sheet 40px
+   Other:   shadow-soft shadow-lift  ease-out-expo (--ease)  ease-in-out-quart (--ease-io)  p-gutter px-gutter */
+@theme inline {
+  --color-bg: var(--bg);
+  --color-bg-soft: var(--bg-soft);
+  --color-surface: var(--surface);
+  --color-surface-2: var(--surface-2);
+  --color-border: var(--border);
+  --color-border-strong: var(--border-strong);
+  --color-ink: var(--text);
+  --color-on-ink: var(--on-ink);
+  --color-muted: var(--muted);
+  --color-faint: var(--faint);
+  --color-accent: var(--accent);
+  --color-accent-hover: var(--accent-hover);
+  --color-accent-ink: var(--accent-ink);
+  --color-accent-soft: var(--accent-soft);
+  --color-lime: var(--lime);
+  --color-lime-soft: var(--lime-soft);
+  --color-ok: var(--ok);
+  --color-ok-soft: var(--ok-soft);
+  --color-warn: var(--warn);
+  --color-warn-soft: var(--warn-soft);
+  --color-danger: var(--danger);
+  --color-danger-soft: var(--danger-soft);
+  --radius-card-sm: 8px;
+  --radius-card: 12px;
+  --radius-card-lg: 20px;
+  --radius-sheet: 40px;
+  --shadow-soft: var(--shadow);
+  --shadow-lift: var(--shadow-lg);
+  --font-sans: 'Aspekta', -apple-system, BlinkMacSystemFont, 'avenir next', avenir, 'segoe ui', 'helvetica neue', helvetica, Cantarell, Ubuntu, roboto, noto, arial, sans-serif;
+  --font-mono: 'Roboto Mono', Menlo, Consolas, Monaco, 'Liberation Mono', 'Lucida Console', monospace;
+  --ease-out-expo: cubic-bezier(.16, 1, .3, 1);
+  --ease-in-out-quart: cubic-bezier(.76, 0, .24, 1);
+  --ease-btn: cubic-bezier(.25, 1, .5, 1);
+  --spacing-gutter: var(--gutter);
+
+  --text-display: max(3.125rem, min(calc(3.125rem + .062 * (100vw - 27.5rem)), 7rem));
+  --text-display--line-height: 1;
+  --text-display--letter-spacing: -.03em;
+  --text-heading: max(1.625rem, min(calc(1.625rem + .05 * (100vw - 27.5rem)), 4.75rem));
+  --text-heading--line-height: 1.1;
+  --text-heading--letter-spacing: -.02em;
+  --text-subheading: max(1.1875rem, min(calc(1.1875rem + .023 * (100vw - 27.5rem)), 2.625rem));
+  --text-subheading--line-height: 1.1;
+  --text-subheading--letter-spacing: -.02em;
+  --text-title: 1.375rem;
+  --text-title--line-height: 1.2;
+  --text-title--letter-spacing: -.02em;
+  --text-lead: max(1.25rem, min(calc(1.25rem + .004 * (100vw - 27.5rem)), 1.5rem));
+  --text-lead--line-height: 1.25;
+  --text-lead--letter-spacing: -.02em;
+  --text-body: max(1rem, min(calc(1rem + .003 * (100vw - 27.5rem)), 1.1875rem));
+  --text-body--line-height: 1.35;
+  --text-body--letter-spacing: -.015em;
+  --text-mono: max(.75rem, min(calc(.75rem + .002 * (100vw - 27.5rem)), .875rem));
+  --text-mono--line-height: 1;
+  --text-mono--letter-spacing: 0;
+
+  --animate-nudge: nudge .35s ease;
+  @keyframes nudge {
+    0%, 100% { transform: translateX(0); }
+    25% { transform: translateX(-5px); }
+    75% { transform: translateX(5px); }
+  }
+}
+
+/* html.tos-unaccepted (set before first paint by app.html) and html.os-tabbed (set by the Install page) */
+@custom-variant tos-unaccepted (html.tos-unaccepted &);
+@custom-variant os-tabbed (html.os-tabbed &);
+@custom-variant hover-fine {
+  @media (hover: hover) and (pointer: fine) {
+    &:hover { @slot; }
+  }
+}
+@custom-variant desktop {
+  @media (min-width: 1025px) { @slot; }
+}
+
+/* ---------- Base ---------- */
+@layer base {
+  html, body { max-width: 100%; overflow-x: clip; -webkit-text-size-adjust: 100%; }
+  html { -webkit-tap-highlight-color: transparent; overflow-y: scroll; }
+  body {
+    margin: 0;
+    min-height: 100vh;
+    background: var(--bg);
+    color: var(--text);
+    font: 400 var(--text-body) / 1.35 var(--font-sans);
+    letter-spacing: -.015em;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+  html.tos-unaccepted:not([data-no-gate]) body { overflow: hidden; }
+  [hidden] { display: none !important; }
+  img, svg { display: block; max-width: 100%; }
+  a { color: inherit; text-decoration: underline; text-underline-offset: .18em; text-decoration-thickness: 1px; }
+  a:hover { text-decoration-thickness: 1px; }
+  h1, h2, h3, h4 { font-weight: 400; line-height: 1.1; letter-spacing: -.02em; margin: 0 0 .5em; text-wrap: balance; }
+  h1 { font-size: var(--text-heading); }
+  h2 { font-size: var(--text-subheading); }
+  h3 { font-size: var(--text-title); line-height: 1.2; }
+  h4 { font-size: 1.125rem; }
+  b, strong { font-weight: 600; }
+  p { margin: 0 0 1em; text-wrap: pretty; }
+  button { font-family: inherit; cursor: pointer; }
+  :focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; border-radius: 6px; }
+  ::selection { background: var(--lime); color: var(--on-ink); }
+  kbd { font: 400 .8em var(--font-mono); padding: 2px 7px; border: 1px solid var(--border-strong); border-radius: 6px; background: var(--surface); }
+  /* Tailwind's reset removes bullets and numbers. Pages that want them add list-disc / list-decimal. */
+}
+
+/* ---------- Page chrome: the rounded "sheet" that slides over the footer ---------- */
+.page-sheet {
+  position: relative;
+  z-index: 2;
+  background: var(--bg);
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+  margin-bottom: -20px;
+  overflow: clip;
+}
+@media (min-width: 1025px) {
+  .page-sheet { border-bottom-left-radius: 40px; border-bottom-right-radius: 40px; margin-bottom: -40px; }
+}
+
+/* ---------- Motion ---------- */
+/* Page-to-page cross-fade (full loads, and client navigations via onNavigate in +layout.svelte). */
+@view-transition { navigation: auto; }
+:root { view-transition-name: root; }
+@keyframes pfy-fade-out { from { opacity: 1; } to { opacity: 0; } }
+@keyframes pfy-fade-in { from { opacity: 0; } to { opacity: 1; } }
+::view-transition-old(root) { animation: .8s var(--ease-io) both pfy-fade-out; }
+::view-transition-new(root) { animation: .8s var(--ease-io) both pfy-fade-in; }
+
+/* Scroll reveal: hidden only when JavaScript and motion are available (class set in app.html), shown by GSAP. */
+@media (prefers-reduced-motion: no-preference) and (min-width: 1025px) {
+  html.js-motion [data-reveal]:not(.is-revealed) { opacity: 0; transform: translateY(20px); }
+}
+@media (prefers-reduced-motion: reduce) {
+  html *, html *::before, html *::after { transition: none !important; scroll-behavior: auto !important; }
+}
+
+/* Underline that draws in on hover (footer links, card titles). */
+@utility link-draw {
+  background-image: linear-gradient(currentColor, currentColor);
+  background-position: 0 100%;
+  background-repeat: no-repeat;
+  background-size: 0% 1px;
+  text-decoration: none;
+  transition: background-size .3s var(--ease);
+  &:hover, &:focus-visible { background-size: 100% 1px; text-decoration: none; }
+}
+
+/* The check bullet used by feature lists. Use class="checklist" on a <ul>. */
+@utility checklist {
+  list-style: none; padding: 0; margin: 0; display: grid; gap: 10px;
+  & > li { display: flex; gap: 12px; color: var(--muted); }
+  & > li::before {
+    content: ''; flex: none; width: 18px; height: 18px; margin-top: 2px; background: var(--text); border-radius: 50%;
+    -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M5 12.5l4.5 4.5L19 7.5'/%3E%3C/svg%3E") center / contain no-repeat;
+            mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M5 12.5l4.5 4.5L19 7.5'/%3E%3C/svg%3E") center / contain no-repeat;
+  }
+}
+
+@media print {
+  .no-print { display: none !important; }
+  html, body { background: #fff !important; color: #000 !important; }
+}
+
+/* Headlines split into lines by the `lines` action stay hidden until split (no flash). */
+@media (prefers-reduced-motion: no-preference) {
+  html.js-motion [data-lines]:not(.is-split) { opacity: 0; }
+}
+.line-mask { clip-path: inset(-.1em); overflow: visible !important; }
+[data-lines] { text-wrap: wrap; }
+
+/* Fluid vertical rhythm for page bands: 60 to 110px above, 80 to 136px below. */
+@utility section-y {
+  padding-top: max(60px, min(calc(60px + .05 * (100vw - 440px)), 110px));
+  padding-bottom: max(80px, min(calc(80px + .056 * (100vw - 440px)), 136px));
+}
