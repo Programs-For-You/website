@@ -1,7 +1,5 @@
 <script>
   import { page } from '$app/state';
-  import { signOutUser, PREVIEW } from '#lib/auth.js';
-  import { account } from '#lib/user.svelte.js';
   import Button from './Button.svelte';
 
   // Grouped nav: dropdowns inside the frosted pill on desktop, a full-screen dark menu on phones.
@@ -17,8 +15,7 @@
       ['/install', 'How to install', 'Step by step for Mac and Windows']
     ] },
     { label: 'About', links: [
-      ['/founders', 'Founders', 'Who owns and runs it'],
-      ['/team', 'Team', 'The people behind the apps'],
+      ['/team', 'Team', 'Our founders and board'],
       ['/apply', 'Join the team', 'Open roles']
     ] }
   ];
@@ -26,21 +23,14 @@
 
   let open = $state(false); // phone menu
   let openGroup = $state(null); // which desktop dropdown is open
-  let menuOpen = $state(false); // account menu
   let scrolled = $state(false);
 
   const here = $derived(page.url.pathname.replace(/\.html$/, '').replace(/\/$/, '') || '/');
-  const user = $derived(PREVIEW ? null : account.user);
   const lightLogo = $derived(DARK_HERO.includes(here) && !scrolled);
-  const initials = (name) => (name || '?').trim().split(/\s+/).map((s) => s[0]).slice(0, 2).join('').toUpperCase();
   const groupActive = (g) => g.links.some(([href]) => href === here);
 
-  $effect(() => { here; open = false; openGroup = null; menuOpen = false; });
-  const closeAll = () => { menuOpen = false; openGroup = null; };
-  async function signOut() {
-    menuOpen = false;
-    try { await signOutUser(); } catch (err) { console.error(err); }
-  }
+  $effect(() => { here; open = false; openGroup = null; });
+  const closeAll = () => { openGroup = null; };
 
   const item = 'inline-flex h-[39px] cursor-pointer items-center gap-1.5 rounded-lg border-0 bg-transparent px-[17px] font-mono text-mono leading-none whitespace-nowrap text-ink uppercase no-underline transition-colors duration-[600ms] ease-out-expo hover-fine:bg-bg aria-expanded:bg-bg aria-[current=true]:bg-bg';
   const menuLink = 'block rounded-card-sm px-3 py-2.5 text-ink no-underline transition-colors duration-300 hover:bg-bg aria-[current=page]:bg-bg';
@@ -65,7 +55,7 @@
           {#each GROUPS as g}
             <div class="relative">
               <button type="button" class={item} aria-haspopup="true" aria-expanded={openGroup === g.label} aria-current={groupActive(g)}
-                onclick={(e) => { e.stopPropagation(); menuOpen = false; openGroup = openGroup === g.label ? null : g.label; }}>
+                onclick={(e) => { e.stopPropagation(); openGroup = openGroup === g.label ? null : g.label; }}>
                 {g.label}
                 <svg class="size-3 transition-transform duration-300 {openGroup === g.label ? 'rotate-180' : ''}" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
               </button>
@@ -82,29 +72,6 @@
             </div>
           {/each}
         </div>
-
-        {#if user}
-          <div class="relative">
-            <button class="flex h-[39px] cursor-pointer items-center gap-2 rounded-lg border-0 bg-transparent pr-3 pl-1 font-mono text-mono uppercase text-ink hover-fine:bg-bg" type="button" aria-haspopup="true" aria-expanded={menuOpen}
-              onclick={(e) => { e.stopPropagation(); openGroup = null; menuOpen = !menuOpen; }}>
-              <span class="grid size-[30px] flex-none place-items-center overflow-hidden rounded-lg bg-lime text-[.72rem] font-semibold text-ink">
-                {#if user.photo}<img class="size-full object-cover" src={user.photo} alt="" referrerpolicy="no-referrer">{:else}{initials(user.name)}{/if}
-              </span>
-              <span class="max-w-[100px] overflow-hidden text-ellipsis">{user.name.split(' ')[0]}</span>
-            </button>
-            {#if menuOpen}
-              <div class="absolute top-[calc(100%+16px)] right-0 w-[260px] rounded-card-lg border border-border bg-surface p-2 shadow-lift" onclick={(e) => e.stopPropagation()} role="presentation">
-                <div class="mb-1 border-b border-ink/10 px-3 pt-2 pb-3">
-                  <b class="block overflow-hidden text-ellipsis whitespace-nowrap font-semibold">{user.name}</b>
-                  <span class="block overflow-hidden text-ellipsis whitespace-nowrap font-mono text-[.72rem] text-faint">{user.email}</span>
-                </div>
-                <a class={menuLink} href="/download">My downloads</a>
-                <a class={menuLink} href="/install">How to install</a>
-                <button class="{menuLink} w-full cursor-pointer border-0 bg-transparent text-left" type="button" onclick={signOut}>Sign out</button>
-              </div>
-            {/if}
-          </div>
-        {/if}
 
         <Button href="/contact" size="sm" class="h-[39px] rounded-lg">Contact</Button>
       </nav>
@@ -133,7 +100,6 @@
     {/each}
     <div class="mt-10 flex flex-wrap items-center gap-3">
       <Button href="/contact" variant="notch">Contact</Button>
-      {#if user}<button class="cursor-pointer border-0 bg-transparent font-mono text-mono text-muted uppercase underline" type="button" onclick={signOut}>Sign out</button>{/if}
     </div>
   </div>
 </div>

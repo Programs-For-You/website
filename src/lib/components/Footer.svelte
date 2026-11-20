@@ -45,7 +45,7 @@
         </div>
         <div class={col}>
           <p class="{label} mb-0">Help</p>
-          <div class="flex flex-col gap-2"><a class={link} href="/install">How to install</a><a class={link} href="/#faq">FAQ</a><a class={link} href="/contact">Contact us</a><a class={link} href="tel:+14752661457">(475) 266-1457</a><a class={link} href="/founders">Founders</a><a class={link} href="/team">Team</a><a class={link} href="/apply">Join the team</a></div>
+          <div class="flex flex-col gap-2"><a class={link} href="/install">How to install</a><a class={link} href="/#faq">FAQ</a><a class={link} href="/contact">Contact us</a><a class={link} href="/team">Team</a><a class={link} href="/apply">Join the team</a></div>
         </div>
         <button type="button" onclick={top} aria-label="Back to top" class="group absolute top-0 right-0 size-12 cursor-pointer overflow-hidden rounded-2xl border border-white/20 bg-transparent">
           <svg class="absolute inset-0 m-auto size-3 transition-transform duration-[400ms] ease-in-out-quart group-hover-fine:-translate-y-8" viewBox="0 0 12 12" fill="#fff" aria-hidden="true"><path d="M5.25 2.869V12h1.5V2.869l4.2 4.2L12 6 6 0 0 6l1.05 1.069 4.2-4.2Z"/></svg>
@@ -58,10 +58,9 @@
 
     <div class="flex flex-col gap-5 font-mono text-[max(.75rem,min(calc(.75rem+.001*(100vw-27.5rem)),.8125rem))] leading-[1.4] uppercase min-[1281px]:grid min-[1281px]:grid-cols-[minmax(0,1fr)_minmax(0,634px)]">
       <div class="max-w-[90ch] text-white/70 text-pretty">
-        <p class="mb-3 text-white/90">Programs For You is owned 50/50 by Brady Krupa and Arjun Bhanderi, who control everything about it. See the <a class="link-draw" href="/founders-agreement">Founders’ Agreement</a>.</p>
-        <p class="mb-0">© 2026 Brady Krupa and Arjun Bhanderi. All rights reserved. Programs For You, Email Assistant and Screen Assistant are owned by Brady Krupa and Arjun Bhanderi. School Schedule is © 2026 Owen Wang &amp; Brady Krupa and free software under the GNU AGPL v3 (<a class="link-draw" href="/downloads/SchoolSchedule-source.zip">source code</a>). Not affiliated with Apple Inc. Mac and macOS are trademarks of Apple Inc.</p>
+        <p class="mb-0">© 2026 Brady Krupa and Arjun Bhanderi. All rights reserved. Programs For You, Email Assistant and Screen Assistant are owned by Brady Krupa and Arjun Bhanderi. School Schedule is © 2026 Owen Wang &amp; Brady Krupa and free software under the GNU AGPL v3 (<a class="link-draw" href="/downloads/SchoolSchedule-source.zip">source code</a>).</p>
       </div>
-      <div class="flex flex-wrap gap-x-10 gap-y-3 desktop:justify-end min-[1281px]:pr-[88px]"><a class="link-draw" href="/terms">Terms of Service</a><a class="link-draw" href="/privacy">Privacy Policy</a><a class="link-draw" href="/founders-agreement">Founders’ Agreement</a></div>
+      <div class="flex flex-wrap gap-x-10 gap-y-3 desktop:justify-end min-[1281px]:pr-[88px]"><a class="link-draw" href="/terms">Terms of Service</a><a class="link-draw" href="/privacy">Privacy Policy</a></div>
     </div>
   </Container>
 </footer>

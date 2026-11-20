@@ -18,8 +18,8 @@ export const organization = () => ({
   foundingDate: '2026',
   foundingLocation: { '@type': 'Place', address: { '@type': 'PostalAddress', addressLocality: 'Wilton', addressRegion: 'CT', addressCountry: 'US' } },
   founder: [
-    { '@type': 'Person', name: 'Brady Krupa', jobTitle: 'CEO & Founder', url: abs('/founders') },
-    { '@type': 'Person', name: 'Arjun Bhanderi', jobTitle: 'Co-Founder, CFO & Developer', url: abs('/founders') }
+    { '@type': 'Person', name: 'Brady Krupa', jobTitle: 'CEO & Founder', url: abs('/team') },
+    { '@type': 'Person', name: 'Arjun Bhanderi', jobTitle: 'Co-Founder, CFO & Developer', url: abs('/team') }
   ],
   contactPoint: [{ '@type': 'ContactPoint', contactType: 'customer support', email: SITE.contactEmail, telephone: '+1-475-266-1457', availableLanguage: 'English', url: abs('/contact') }]
 });

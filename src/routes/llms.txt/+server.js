@@ -13,7 +13,7 @@ export function GET() {
   });
   const text = `# ${SITE.name}
 
-> ${SITE.name} makes free, simple apps that save students time: School Schedule, Email Assistant and Screen Assistant for Mac (School Schedule also for Windows), plus free Python games for the TI-84 Evo graphing calculator. Everything is free; you only type your email to download. It was started by high school students in Wilton, Connecticut, and the company is owned 50/50 by Brady Krupa and Arjun Bhanderi.
+> ${SITE.name} makes free, simple apps that save students time: School Schedule, Email Assistant and Screen Assistant for Mac (School Schedule also for Windows), plus free Python games for the TI-84 Evo graphing calculator. Everything is free; you only type your email to download. It was started by high school students in Wilton, Connecticut, and the company was founded by Brady Krupa and Arjun Bhanderi.
 
 Key facts:
 - Price: free. No password or account; downloads open after typing an email address.
@@ -31,14 +31,12 @@ ${appLines.join('\n')}
 - [Contact](${u('/contact')}): send a support ticket.
 
 ## Company
-- [Founders](${u('/founders')}): Brady Krupa (CEO & Founder), Arjun Bhanderi (Co-Founder, CFO & Developer) and the Board of Trustees.
-- [Team](${u('/team')}): department heads, co-heads, and the Marketing branch (Social Media, Advertising, Hospitality).
+- [Team](${u('/team')}): founders Brady Krupa (CEO & Founder) and Arjun Bhanderi (Co-Founder, CFO & Developer), and the board members.
 - [Join the team](${u('/apply')}): apply as an intern or employee.
 
 ## Legal
 - [Terms of Service](${u('/terms')})
 - [Privacy Policy](${u('/privacy')})
-- [Founders’ Agreement](${u('/founders-agreement')})
 
 ## Optional
 - [Full version of this file](${u('/llms-full.txt')}): app details, FAQ and install steps in one document.

@@ -5,8 +5,6 @@ User-agent: *
 Allow: /
 Disallow: /admin
 Disallow: /admin.html
-Disallow: /signin
-Disallow: /signin.html
 Disallow: /downloads/
 
 # AI search and assistants

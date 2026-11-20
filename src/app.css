@@ -128,8 +128,7 @@
   }
 }
 
-/* html.tos-unaccepted (set before first paint by app.html) and html.os-tabbed (set by the Install page) */
-@custom-variant tos-unaccepted (html.tos-unaccepted &);
+/* html.os-tabbed (set by the Install page) */
 @custom-variant os-tabbed (html.os-tabbed &);
 @custom-variant hover-fine {
   @media (hover: hover) and (pointer: fine) {
@@ -154,7 +153,6 @@
     -webkit-font-smoothing: antialiased;
     text-rendering: optimizeLegibility;
   }
-  html.tos-unaccepted:not([data-no-gate]) body { overflow: hidden; }
   [hidden] { display: none !important; }
   img, svg { display: block; max-width: 100%; }
   a { color: inherit; text-decoration: underline; text-underline-offset: .18em; text-decoration-thickness: 1px; }

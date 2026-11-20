@@ -20,13 +20,12 @@
 
   <h2>What we collect on the website</h2>
   <ul>
-    <li><strong>Your email address.</strong> When you type your email to download or to join our email list, we save it along with which page you used and that you said you’re 18 or older. Your browser also remembers that you confirmed your age, so you’re only asked once. These sign-ups are stored by our host, Netlify.</li>
-    <li><strong>Google sign-in (optional).</strong> If you choose Continue with Google, Google Firebase Authentication gives us your name, email address, and profile picture, and records when you signed in. We never get your Google password. We add that email to our list too.</li>
+    <li><strong>Your email address.</strong> When you type your email to download or to join our email list, we save it along with which page you used and that you agreed to our Terms. Your browser remembers that you agreed, so you’re only asked once. These sign-ups are stored by our host, Netlify.</li>
     <li><strong>Support tickets.</strong> When you send a ticket on our Contact page, we save your name, your email address, what it’s about, and your summary, so we can help you and write back. Tickets are stored by our host, Netlify, and only we can see them.</li>
     <li><strong>Website logs.</strong> Like most websites, our hosting provider may keep standard logs, such as your IP address, browser type, and pages visited, for security and reliability.</li>
   </ul>
   <p><strong>Update checks.</strong> About once a day, each app checks programsforyou.com for a newer version. That’s a normal web request: it doesn’t include your email, name, or anything from the app, though our host may log your IP address like any website visit.</p>
-  <p>We don’t use advertising, analytics trackers, or tracking cookies. The site remembers your email in your browser so you don’t have to type it again, and saves a small sign-in token if you use Google sign-in.</p>
+  <p>We don’t use advertising, analytics trackers, or tracking cookies. The site remembers your email in your browser so you don’t have to type it again.</p>
 
   <h2>Our Mac apps</h2>
   <h3>School Schedule</h3>
@@ -65,10 +64,7 @@
   </ul>
 
   <h2>Who we share it with</h2>
-  <p>We don’t sell or rent your information. We share it only with the service providers that run the website (Netlify for hosting and storing email sign-ups, and Google Firebase if you use Google sign-in), or if the law requires it.</p>
-
-  <h2>Age requirement</h2>
-  <p>You must be 18 or older to use Programs For You, sign in, or give us your email. If we learn that someone under 18 signed up, we’ll delete their email. Parents or guardians can contact us at any time.</p>
+  <p>We don’t sell or rent your information. We share it only with the service providers that run the website (Netlify for hosting and storing email sign-ups and team information), or if the law requires it.</p>
 
   <h2>Your choices</h2>
   <ul>

@@ -7,27 +7,19 @@
   import Card from '#lib/components/Card.svelte';
   import Callout from '#lib/components/Callout.svelte';
   import EmailForm from '#lib/components/EmailForm.svelte';
-  import FormMessage from '#lib/components/FormMessage.svelte';
   import AppCard from '#lib/components/download/AppCard.svelte';
   import GameCard from '#lib/components/download/GameCard.svelte';
-  import GoogleButton from '#lib/components/signin/GoogleButton.svelte';
-  import { onUser, signInWithGoogle, signOutUser, friendlyError, PREVIEW } from '#lib/auth.js';
   import { APPS, GAMES } from '#lib/config.js';
-  import { savedEmail, saveEmail, forgetEmail, joinList, confirmAge, ageConfirmed } from '#lib/emaillist.js';
+  import { savedEmail, forgetEmail } from '#lib/emaillist.js';
 
   // The Downloads page: type your email (no password) and the download buttons open up.
-  // Every email goes to the email list. Google sign-in also works, once Firebase is connected.
+  // Every email goes to the email list.
 
   let view = $state('loading'); // 'loading' | 'gate' | 'in'
   let userEmail = $state('');
-  let viaGoogle = $state(false);
   let isWindows = $state(false);
   let isComputer = $state(true); // only phones and tablets see the "use your computer" note
   let emailForm;
-  let googleAge = $state(false);
-  let googleAgeHidden = $state(false);
-  let googleBusy = $state(false);
-  let googleMsg = $state('');
 
   function unlock(email) {
     userEmail = email;
@@ -40,51 +32,18 @@
     const isMac = /Macintosh|Mac OS X/i.test(ua) && !/iPhone|iPad|iPod/i.test(ua) && (navigator.maxTouchPoints || 0) < 2;
     isWindows = /Windows/i.test(ua);
     isComputer = isMac || isWindows || /Linux|CrOS/i.test(ua) && !/Android/i.test(ua);
-    if (ageConfirmed()) { googleAge = true; googleAgeHidden = true; }
 
     // Already gave us their email on this browser? Go straight to the apps.
-    let decided = false;
-    return onUser((user) => {
-      if (user && !PREVIEW) {
-        viaGoogle = true;
-        if (savedEmail() !== user.email) { joinList(user.email, 'google'); saveEmail(user.email); }
-        decided = true;
-        return unlock(user.email);
-      }
-      viaGoogle = false;
-      if (decided && !user) return; // signed out of Google: handled below
-      decided = true;
-      const email = savedEmail();
-      if (email) unlock(email); else showGate();
-    });
+    const email = savedEmail();
+    if (email) unlock(email); else showGate();
   });
 
   async function otherEmail() {
     forgetEmail();
-    if (viaGoogle) { try { await signOutUser(); } catch (err) { console.error(err); } }
     emailForm?.reset();
     showGate();
     await tick();
     emailForm?.focus();
-  }
-
-  async function signOut() {
-    try { await signOutUser(); } catch (err) { console.error(err); }
-    forgetEmail();
-    showGate();
-  }
-
-  async function google() {
-    if (!googleAge) {
-      googleMsg = 'Please check the box to confirm you’re 18 or older before signing in with Google.';
-      document.getElementById('google-age')?.focus();
-      return;
-    }
-    confirmAge();
-    googleBusy = true;
-    try { await signInWithGoogle(); } catch (err) {
-      if (err?.code !== 'auth/cancelled-popup-request') googleMsg = friendlyError(err);
-    } finally { googleBusy = false; }
   }
 
   const linkBtn = 'cursor-pointer border-0 bg-transparent p-0 text-accent hover:underline hover:underline-offset-[3px]';
@@ -105,13 +64,7 @@
     <div class="mx-auto mb-[18px] grid size-14 place-items-center rounded-2xl bg-accent-soft text-accent"><svg class="size-[26px]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12M7 10l5 5 5-5"/><path d="M5 21h14"/></svg></div>
     <h2 class="text-[1.5rem]">Get the apps free</h2>
     <p class="text-muted">Just type your email. No password and no account.</p>
-    <EmailForm bind:this={emailForm} source="download" submitLabel="Get the apps" onjoined={({ email }) => unlock(email)} />
-    <div hidden={PREVIEW}>
-      <div class="my-5 flex items-center gap-3 text-[.82rem] text-faint before:h-px before:flex-1 before:bg-border before:content-[''] after:h-px after:flex-1 after:bg-border after:content-['']">or</div>
-      <FormMessage text={googleMsg} class="text-left" />
-      <label class="my-1 mb-[18px] flex cursor-pointer items-start justify-center gap-2.5 text-[.86rem] text-muted [&_input]:mt-[3px] [&_input]:size-4 [&_input]:shrink-0 [&_input]:accent-accent" hidden={googleAgeHidden}><input id="google-age" type="checkbox" bind:checked={googleAge}><span>I’m 18 or older.</span></label>
-      <GoogleButton onclick={google} disabled={googleBusy} />
-    </div>
+    <EmailForm bind:this={emailForm} source="download" terms submitLabel="Get the apps" onjoined={({ email }) => unlock(email)} />
     <p class="mt-[18px] mb-4 text-[.9rem] text-muted">Want to look first? See <a href="/school-schedule">School Schedule</a> and <a href="/email-assistant">Email Assistant</a>.</p>
   </Card>
 
@@ -149,7 +102,6 @@
     <div class="mt-7 flex flex-wrap items-center gap-x-4 gap-y-2 border-t border-border pt-5 text-[.92rem] text-muted">
       <span>On the email list as <b>{userEmail}</b></span>
       <button class={linkBtn} type="button" onclick={otherEmail}>Use a different email</button>
-      <button class={linkBtn} type="button" hidden={!viaGoogle} onclick={signOut}>Sign out of Google</button>
     </div>
   </div>
 

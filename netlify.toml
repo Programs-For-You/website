@@ -1,3 +1,8 @@
 [build]
   command = "npm run build"
   publish = "build"
+
+[[redirects]]
+  from = "/founders"
+  to = "/team"
+  status = 301

@@ -4,22 +4,23 @@
   import FormMessage from './FormMessage.svelte';
   import { cn } from '#lib/cn.js';
   import { input, check, fine } from '#lib/ui.js';
-  import { joinList, saveEmail, confirmAge, ageConfirmed } from '#lib/emaillist.js';
+  import { joinList, saveEmail, agreeTerms, termsAgreed } from '#lib/emaillist.js';
 
   /**
    * The email-list sign-up. Posts to Netlify Forms ("email-list").
    * source: where it was placed (shows in the Netlify list).   centered: centers the checkbox and fine print.
    * onjoined({ email, say }): runs after a save. Default clears the box and says thanks.
+   * terms: true adds the "I agree to the Terms" checkbox (used only on the Downloads page).
    * fineprint: false hides the "Unsubscribe anytime" line.     children: extra content under the form.
    * bind:this and call reset() or focus() from outside (the Downloads page does).
    */
-  let { source = 'home', centered = false, onjoined, fineprint = true, submitLabel = 'Sign me up', class: cls = '', children } = $props();
+  let { source = 'home', centered = false, terms = false, onjoined, fineprint = true, submitLabel = 'Sign me up', class: cls = '', children } = $props();
 
   const EMAIL_OK = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
   let email = $state('');
-  let age = $state(false);
+  let agreed = $state(false);
   let company = $state('');
-  let ageHidden = $state(false);
+  let termsHidden = $state(false);
   let busy = $state(false);
   let msg = $state({ text: '', kind: 'error' });
   let emailInput = $state();
@@ -27,7 +28,7 @@
   const say = (text, kind = 'error') => { msg = { text, kind }; };
 
   onMount(() => {
-    if (ageConfirmed()) { age = true; ageHidden = true; }
+    if (terms && termsAgreed()) { agreed = true; termsHidden = true; }
   });
 
   export function reset() { email = ''; msg = { text: '', kind: 'error' }; }
@@ -39,13 +40,13 @@
     const clean = email.trim();
     if (company) return; // a bot filled the hidden box
     if (!EMAIL_OK.test(clean)) return say('That email address doesn’t look right.');
-    if (!age) return say('Please check the box to confirm you’re 18 or older.');
+    if (terms && !agreed) return say('Please check the box to agree to the Terms of Service and Privacy Policy.');
     busy = true;
-    const ok = await joinList(clean, source, '18 or older');
+    const ok = await joinList(clean, source, terms ? 'agreed' : '');
     busy = false;
     if (!ok) return say('Your email couldn’t be saved. Please try again.');
     saveEmail(clean);
-    confirmAge();
+    if (terms) agreeTerms();
     if (onjoined) onjoined({ email: clean, say });
     else { email = ''; say(`You’re on the list! We’ll email ${clean} when something new comes out.`, 'ok'); }
   }
@@ -60,7 +61,7 @@
     <input class={cn(input, 'min-w-0 flex-1')} bind:this={emailInput} bind:value={email} name="email" type="email" autocomplete="email" inputmode="email" placeholder="you@example.com" aria-label="Your email" required>
     <Button variant="primary" type="submit" disabled={busy} class="h-[46px] flex-none max-[480px]:w-full">{busy ? 'One sec…' : submitLabel}</Button>
   </div>
-  <label class={cn(check, 'mb-3', centered && 'justify-center text-center', ageHidden && 'hidden')}><input type="checkbox" name="age" value="18 or older" bind:checked={age} required><span>I’m 18 or older.</span></label>
+  {#if terms}<label class={cn(check, 'mb-3', centered && 'justify-center text-center', termsHidden && 'hidden')}><input type="checkbox" name="terms" value="agreed" bind:checked={agreed} required><span>I agree to the <a href="/terms" target="_blank">Terms of Service</a> and <a href="/privacy" target="_blank">Privacy Policy</a>.</span></label>{/if}
   <FormMessage text={msg.text} kind={msg.kind} class="mb-3" />
   {#if fineprint}<p class={cn(fine, centered ? 'text-center' : 'text-left')}>We’ll email you about new apps and updates. Unsubscribe anytime. <a href="/privacy">Privacy</a></p>{/if}
   {@render children?.()}

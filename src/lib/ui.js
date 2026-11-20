@@ -14,7 +14,7 @@ export const field = 'mb-3.5 grid gap-1.5';
 export const fieldLabel = 'text-[.88rem] font-semibold';
 export const fieldHint = 'text-[.8rem] text-faint';
 
-/** A checkbox row ("I'm 18 or older"). */
+/** A checkbox row ("I agree to the Terms"). */
 export const check = 'my-1 mb-[18px] flex cursor-pointer items-start gap-2.5 text-[.86rem] text-muted [&_input]:mt-[3px] [&_input]:size-4 [&_input]:shrink-0 [&_input]:accent-accent';
 
 /** Small print under a form. */

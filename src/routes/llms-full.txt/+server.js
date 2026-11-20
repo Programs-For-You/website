@@ -18,7 +18,7 @@ export function GET() {
   const faq = HOME_FAQ.map((f) => `**${f.q}**\n${f.a}`).join('\n\n');
   const text = `# ${SITE.name}: full reference
 
-${SITE.name} (${SITE.url}) makes free, simple apps that save students time. It was started by high school freshmen in Wilton, Connecticut and is owned 50/50 by Brady Krupa and Arjun Bhanderi. Contact: ${SITE.contactEmail}, +1 (475) 266-1457.
+${SITE.name} (${SITE.url}) makes free, simple apps that save students time. It was started by high school freshmen in Wilton, Connecticut and was founded by Brady Krupa and Arjun Bhanderi. Contact: ${SITE.contactEmail}, +1 (475) 266-1457.
 
 ## Apps
 ${apps}
@@ -41,9 +41,9 @@ ${faq}
 - Arjun Bhanderi: Co-Founder, CFO & Developer
 - Marketing branch: Adam Johnson is Head of Marketing; Social Media (Riya Pendse, Carter Dobson), Advertising (Serafim Spetsaris, Brooks Carrington) and Hospitality (Adam Johnson, Spencer Skott) sit under it
 - Development: Ethan Krishna (Head), Owen Wang (Co-Head)
-- Board of Trustees: Brady Krupa, Arjun Bhanderi, Adam Johnson, Riya Pendse, Ethan Krishna, Sid Agrawal
+- Founders and board: Brady Krupa, Arjun Bhanderi, Adam Johnson, Riya Pendse, Ethan Krishna, Sid Agrawal
 
-Legal: ${u('/terms')} · ${u('/privacy')} · ${u('/founders-agreement')}
+Legal: ${u('/terms')} · ${u('/privacy')}
 `;
   return new Response(text, { headers: { 'Content-Type': 'text/plain; charset=utf-8' } });
 }
