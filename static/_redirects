@@ -19,12 +19,13 @@
 /creators  /founders  301
 /downloads/SLITHER.py  /ti-84-evo-games.html  302
 /downloads/STARDASH.py  /ti-84-evo-games.html  302
-# School Schedule is coming soon: old download links go to its page.
-/downloads/SchoolSchedule*  /school-schedule  302!
-/downloads/schoolschedule*  /school-schedule  302!
-/downloads/EmailAssistant.zip  /downloads/EmailAssistant-1.2.3.zip  302
-/downloads/EmailAssistant-*  /downloads/EmailAssistant-1.2.3.zip  302
-/downloads/emailassistant-*  /downloads/EmailAssistant-1.2.3.zip  302
-/downloads/ScreenAssistant.zip  /downloads/ScreenAssistant-1.1.2.zip  302
-/downloads/ScreenAssistant-*  /downloads/ScreenAssistant-1.1.2.zip  302
-/downloads/screenassistant-*  /downloads/ScreenAssistant-1.1.2.zip  302
+# The separate apps are part of Programs For You now: old download links get that app.
+# (Not forced, so the switch-over updates, like SchoolSchedule-1.4.0.zip, are still served.)
+/downloads/SchoolSchedule*  /downloads/ProgramsForYou-1.0.0.zip  302
+/downloads/schoolschedule*  /downloads/ProgramsForYou-1.0.0.zip  302
+/downloads/EmailAssistant.zip  /downloads/ProgramsForYou-1.0.0.zip  302
+/downloads/EmailAssistant-*  /downloads/ProgramsForYou-1.0.0.zip  302
+/downloads/emailassistant-*  /downloads/ProgramsForYou-1.0.0.zip  302
+/downloads/ScreenAssistant.zip  /downloads/ProgramsForYou-1.0.0.zip  302
+/downloads/ScreenAssistant-*  /downloads/ProgramsForYou-1.0.0.zip  302
+/downloads/screenassistant-*  /downloads/ProgramsForYou-1.0.0.zip  302

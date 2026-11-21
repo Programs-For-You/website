@@ -38,10 +38,12 @@ export const APPS = [
     icon: '/assets/img/email-assistant.svg',
     page: '/email-assistant',
     status: 'available',
-    version: '1.2.3',
-    file: '/downloads/EmailAssistant-1.2.3.zip',
-    size: '1.3 MB',
+    // Email Assistant is part of Programs For You now: this downloads that one app.
+    version: '1.0.0',
+    file: '/downloads/ProgramsForYou-1.0.0.zip',
+    size: '3.6 MB',
     history: [
+      { version: '1.0.0', fixed: '', added: 'Now part of Programs For You: one app with School Calendar, Email Assistant, and Screen Assistant inside. Updates only when you click Check for Updates.' },
       { version: '1.2.3', fixed: 'It now opens with a welcome card instead of Settings when you haven’t added an email yet.', added: 'On screen: open any email, even school email, and it reads that email and writes replies for you to copy and paste. Settings now say clearly that the daily summary works with personal email only.' },
     ],
     requires: 'macOS 26 Tahoe or newer · Mac with Apple silicon (M1 or later)',
@@ -54,10 +56,12 @@ export const APPS = [
     icon: '/assets/img/screen-assistant.svg',
     page: '/screen-assistant',
     status: 'available',
-    version: '1.1.2',
-    file: '/downloads/ScreenAssistant-1.1.2.zip',
-    size: '1.1 MB',
+    // Screen Assistant is part of Programs For You now: this downloads that one app.
+    version: '1.0.0',
+    file: '/downloads/ProgramsForYou-1.0.0.zip',
+    size: '3.6 MB',
     history: [
+      { version: '1.0.0', fixed: '', added: 'Now part of Programs For You: one app with School Calendar, Email Assistant, and Screen Assistant inside. Updates only when you click Check for Updates.' },
       { version: '1.1.2', fixed: 'Automatic updates are more reliable: they also check right after your Mac wakes up.', added: 'If the app is running from your Downloads folder, it offers to move itself to Applications so it can keep updating.' },
     ],
     requires: 'macOS 26 Tahoe or newer · Mac with Apple silicon (M1 or later)',
