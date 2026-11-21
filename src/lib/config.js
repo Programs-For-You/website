@@ -1,4 +1,4 @@
-// © 2026 Brady Krupa and Arjun Bhanderi. All rights reserved.
+// © 2026 Programs For You. All rights reserved.
 // ─────────────────────────────────────────────────────────────
 //  Site settings. Change something here and every page updates.
 // ─────────────────────────────────────────────────────────────
@@ -25,38 +25,11 @@ export const APPS = [
   {
     id: 'school-schedule',
     name: 'School Schedule',
-    blurb: 'A live class timer, an overlay bar, and type your homework after class to get a plan for tonight.',
+    blurb: 'A live class timer at the top of your screen, plus your homework and a plan for tonight. Coming soon.',
     icon: '/assets/img/school-schedule.svg',
     page: '/school-schedule',
-    status: 'available',   // 'coming-soon' or 'available'
-    version: '1.3.8',
-    file: '/downloads/SchoolSchedule-1.3.8.zip',
-    size: '2.6 MB',
-    history: [
-      { version: '1.3.8', fixed: 'Automatic updates work again. Version 1.3.7 couldn’t install itself on most Macs, so this update brings everyone to the newest version.', added: 'Everything from 1.3.7, including your Schoology calendar: link it in Settings → Schoology and your homework shows up by itself.' },
-      { version: '1.3.7', fixed: '', added: 'Link your Schoology calendar in Settings → Schoology and your homework shows up by itself in the Homework and Plan tabs. Check things off as you finish them.' },
-      { version: '1.3.6', fixed: 'After an update, the app now always tells you what changed, even if its notifications are turned off.', added: 'A short What’s New card after each update that shows what was fixed and what was added. You can open it anytime from Settings.' },
-      { version: '1.3.5', fixed: 'Mini classes in the lunch block now use the same times as Owen’s original app, so you’re never shown in your next mini before it starts. The countdown no longer ends classes early, and automatic updates are more reliable.', added: '' },
-    ],
-    requires: 'macOS 14 Sonoma or newer',
-    // School Schedule is based on Owen Wang's School Schedule Manager and shares its license (GNU AGPL v3),
-    // so its source code is offered right next to the download.
-    source: '/downloads/SchoolSchedule-source.zip',
-    license: 'GNU AGPL v3',
-    // Windows: Owen Wang's original School Schedule Manager (GNU AGPL v3, source on his GitHub).
-    windows: {
-      status: 'available',
-      version: '1.1.0',
-      file: '/downloads/SchoolSchedule-Windows-1.1.0-Setup.exe',
-      size: '34.7 MB',
-      requires: 'Windows 10 or 11',
-      source: 'https://github.com/un-undefined/school-schedule-manager/tree/v1.1.0',
-      // People must agree to Owen Wang's Terms of Service before downloading his Windows app or its code.
-      // If Owen changes his terms, change termsVersion (his "Last Updated" date) so everyone agrees again.
-      terms: 'https://github.com/un-undefined/school-schedule-manager/blob/main/TermsOfService.md',
-      termsBy: 'Owen Wang',
-      termsVersion: '2026-11-19',
-    },
+    status: 'coming-soon',   // 'coming-soon' or 'available'. We're making a new version; it comes back here when it's ready.
+    windows: { status: 'coming-soon' },
   },
   {
     id: 'email-assistant',

@@ -35,7 +35,7 @@
 /sitemap.xml
   Cache-Control: public, max-age=3600
 
-# LOCKDOWN: remove with the redirect in _redirects.
+# The "under development" page (only used if the site is locked down again).
 /maintenance.html
   X-Robots-Tag: noindex, nofollow
   Cache-Control: no-store

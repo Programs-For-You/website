@@ -35,7 +35,7 @@
     <div class="flex flex-1 flex-col gap-[50px] pb-[70px] min-[1281px]:grid min-[1281px]:grid-cols-[minmax(0,1fr)_minmax(0,634px)] min-[1281px]:items-start min-[1281px]:pb-[100px]">
       <div>
         <h2 class="mb-0 max-w-[16ch] text-[max(1.75rem,min(calc(1.75rem+.014*(100vw-27.5rem)),2.625rem))] leading-[1.2] tracking-[-.02em] text-white">Ready to make your day easier?</h2>
-        <p class="mt-5 mb-0 max-w-[34ch] text-[max(.875rem,min(calc(.875rem+.005*(100vw-27.5rem)),1.1875rem))] leading-[1.3] text-white/80">Type your email and grab the apps. No password needed.</p>
+        <p class="mt-5 mb-0 max-w-[34ch] text-[max(.875rem,min(calc(.875rem+.005*(100vw-27.5rem)),1.1875rem))] leading-[1.3] text-white/80">Grab the apps. No email or password needed.</p>
         <div class="mt-10"><Button href="/download" variant="notch">Get the apps</Button></div>
       </div>
       <nav class="relative flex flex-col gap-[50px] border-l border-white/20 pl-5 desktop:grid desktop:grid-cols-2 desktop:gap-10 desktop:border-l-0 desktop:pl-0 min-[1281px]:pr-[88px]" aria-label="Footer">
@@ -58,7 +58,7 @@
 
     <div class="flex flex-col gap-5 font-mono text-[max(.75rem,min(calc(.75rem+.001*(100vw-27.5rem)),.8125rem))] leading-[1.4] uppercase min-[1281px]:grid min-[1281px]:grid-cols-[minmax(0,1fr)_minmax(0,634px)]">
       <div class="max-w-[90ch] text-white/70 text-pretty">
-        <p class="mb-0">© 2026 Brady Krupa and Arjun Bhanderi. All rights reserved. Programs For You, Email Assistant and Screen Assistant are owned by Brady Krupa and Arjun Bhanderi. School Schedule is © 2026 Owen Wang &amp; Brady Krupa and free software under the GNU AGPL v3 (<a class="link-draw" href="/downloads/SchoolSchedule-source.zip">source code</a>).</p>
+        <p class="mb-0">© 2026 Programs For You. All rights reserved.</p>
       </div>
       <div class="flex flex-wrap gap-x-10 gap-y-3 desktop:justify-end min-[1281px]:pr-[88px]"><a class="link-draw" href="/terms">Terms of Service</a><a class="link-draw" href="/privacy">Privacy Policy</a></div>
     </div>

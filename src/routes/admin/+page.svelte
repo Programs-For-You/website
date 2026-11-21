@@ -115,12 +115,12 @@
     const d = a.data;
     return mailto(d.email, 'Welcome to the Programs For You team!',
       `Hi ${first(d.name)},\n\nThanks for applying to Programs For You. We’d love to have you join the team as ${/^[aeiou]/i.test(d.role || '') ? 'an' : 'a'} ${d.role || 'team member'}`
-      + `${d.department && d.department !== 'Not sure yet' ? ` in ${d.department}` : ''}!\n\nWe’ll be in touch soon about next steps.\n\nBrady and Arjun\nProgramsForYou.com`);
+      + `${d.department && d.department !== 'Not sure yet' ? ` in ${d.department}` : ''}!\n\nWe’ll be in touch soon about next steps.\n\nThe Programs For You team\nProgramsForYou.com`);
   }
 
   function decline(a) {
     return mailto(a.data.email, 'Your Programs For You application',
-      `Hi ${first(a.data.name)},\n\nThanks so much for applying to Programs For You. We can’t offer you a spot right now, but we really appreciate your interest, and you’re welcome to apply again later.\n\nBrady and Arjun\nProgramsForYou.com`);
+      `Hi ${first(a.data.name)},\n\nThanks so much for applying to Programs For You. We can’t offer you a spot right now, but we really appreciate your interest, and you’re welcome to apply again later.\n\nThe Programs For You team\nProgramsForYou.com`);
   }
 
   const counts = $derived({
@@ -295,7 +295,7 @@
             <p class="text-muted">No tickets yet.</p>
           {/if}
         {:else}
-          <p class="text-muted">People who agreed to Owen Wang’s Terms of Service before downloading the Windows version.</p>
+          <p class="text-muted">Old records from the Windows download, which is no longer offered. You can delete them in Netlify → Forms.</p>
           <DataTable heads={['Email', 'App', 'Terms version', 'When']} rows={data.terms}>
             {#snippet cells(s)}
               <td>{s.data.email || '(not given)'}</td><td>{s.data.app || ''}</td><td>{s.data.version || ''}</td><td>{when(s.created_at)}</td>

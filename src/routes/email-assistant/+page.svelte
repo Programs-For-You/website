@@ -27,7 +27,7 @@
     { title: 'Sort and clean up', icon: '<path d="M3 5h18M6.5 12h11M10 19h4"/>', body: 'Groups your inbox into School, People, and Promos, and helps clear out junk. It always asks before moving anything.' },
     { title: 'AI built into your Mac', icon: '<rect x="6" y="6" width="12" height="12" rx="2"/><path d="M9.5 2.5V6M14.5 2.5V6M9.5 18v3.5M14.5 18v3.5M2.5 9.5H6M2.5 14.5H6M18 9.5h3.5M18 14.5h3.5"/>', body: 'Uses the Apple Intelligence built into your Mac, so your emails stay on your computer.' },
     { title: 'Optional: your own AI key', icon: '<circle cx="8" cy="15" r="4.5"/><path d="M11.2 11.8L20 3M16.5 6.5l2.5 2.5M14 9l2 2"/>', body: 'Want smarter replies? Add your own Claude API key in Settings.' },
-    { title: 'Your personal email', icon: '<rect x="3" y="5" width="18" height="14" rx="2.5"/><path d="M3.5 7l8.5 6 8.5-6"/>', body: 'Gmail, iCloud Mail, and Yahoo (Outlook soon). Personal accounts only: school and work accounts like @wiltonps.org can’t be connected.' },
+    { title: 'Your personal email', icon: '<rect x="3" y="5" width="18" height="14" rx="2.5"/><path d="M3.5 7l8.5 6 8.5-6"/>', body: 'Gmail, iCloud Mail, and Yahoo (Outlook soon). Personal accounts only: school and work accounts can’t be connected.' },
     { title: 'On screen, for any email', icon: '<rect x="3" y="4" width="18" height="12" rx="2"/><path d="M8.5 20h7M12 16v4"/>', body: 'Open any email, even school email in your browser, and click <b>On screen</b>. It reads that email and writes replies you copy and paste.' }
   ];
 </script>
@@ -62,13 +62,13 @@
     <li><span><b>macOS 26 Tahoe or newer.</b> To check, open the Apple menu → <b>About This Mac</b>.</span></li>
     <li><span><b>A Mac with Apple silicon (M1 or later).</b> In About This Mac, look for <b>Chip: Apple M…</b></span></li>
     <li><span><b>Apple Intelligence turned on</b> in <Path>System Settings → Apple Intelligence &amp; Siri</Path>. If you can’t turn it on, you can still use the app with your own AI key (step 9).</span></li>
-    <li><span><b>A personal email account</b> for the daily summary: Gmail, iCloud Mail, or Yahoo. School email (like @wiltonps.org) works only with On screen (step 7).</span></li>
+    <li><span><b>A personal email account</b> for the daily summary: Gmail, iCloud Mail, or Yahoo. School email works only with On screen (step 7).</span></li>
   </ul>
 
   <Steps class="mt-9">
     <Step n={1} title="Install it"><p>Download the app and open it the first time by following the <a href="/install">install guide</a>.</p></Step>
     <Step n={2} title="Connect your personal email">
-      <p><b>Personal accounts only.</b> School and work accounts, like @wiltonps.org, can’t be connected. To answer those, use <a href="#on-screen">On screen</a>.</p>
+      <p><b>Personal accounts only.</b> School and work accounts can’t be connected. To answer those, use <a href="#on-screen">On screen</a>.</p>
       <p>Open the app, click <b>Add personal email</b>, and pick your email. Gmail, iCloud, and Yahoo use an <b>app password</b>: a special password just for this app, so your real password stays private. (Outlook support is coming soon.)</p>
       <div class="mt-3.5 grid gap-2 [&_details]:rounded-xl [&_details]:border [&_details]:border-border [&_details]:bg-surface [&_details]:px-4 [&_summary]:cursor-pointer [&_summary]:py-3 [&_summary]:font-semibold [&_summary]:text-ink [&_details>div]:pb-3 [&_details>div]:text-[.95rem] [&_details_ol]:mb-2 [&_details_ol]:list-decimal [&_details_ol]:pl-[1.2em]">
         <details><summary>Gmail: make an app password</summary><div><ol>

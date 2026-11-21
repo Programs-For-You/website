@@ -8,19 +8,19 @@
   import { SITE } from '#lib/config.js';
 </script>
 
-<Seo title="Terms of Service · Programs For You" description="The Terms of Service for the Programs For You website and Mac apps. You must accept them to use the site." />
+<Seo title="Terms of Service · Programs For You" description="The Terms of Service for the Programs For You website and Mac apps. You must be 13 or older and accept them to use the site." />
 
 <section class="pt-16 pb-7"><Container><Eyebrow>Legal</Eyebrow><h1>Terms of Service</h1><Lead class="m-0">Effective November 20, 2026</Lead></Container></section>
 <section class="pt-2 pb-18"><Container>
 <Prose>
-  <SummaryBox><p><b>The short version:</b> Programs For You owns everything it makes. The apps are free for your personal use. Don’t copy our code, apps, or website. We can change or stop anything at any time. Serious violations, like copying our code, cost at least <b>$5,000</b> each and can lead to legal action. By checking the agree box or downloading our apps, you accept these Terms as a binding agreement.</p></SummaryBox>
+  <SummaryBox><p><b>The short version:</b> Programs For You owns everything it makes. The apps are free for your personal use. Don’t copy our code, apps, or website. We can change or stop anything at any time. Serious violations, like copying our code, cost at least <b>$5,000</b> each and can lead to legal action. You must be 13 or older. By checking the agree box or downloading our apps, you accept these Terms as a binding agreement.</p></SummaryBox>
 
   <h2>1. Agreeing to these Terms</h2>
   <p>These Terms of Service (“Terms”) are a legally binding agreement between you and Programs For You (“we,” “us,” or “Programs For You”). They cover programsforyou.com, our Mac apps, and anything else we offer (together, the “Services”).</p>
-  <p>You must accept these Terms to use the Services. When you check the agree box on the Downloads page, or when you download, install, or use any of the Services, you agree to these Terms and to our <a href="/privacy">Privacy Policy</a>. Checking the box counts as your electronic signature. Please give us accurate information, like your real email address. If you don’t agree, don’t use the Services.</p>
+  <p>You must accept these Terms to use the Services. When you check the agree box on the Downloads page, or when you download, install, or use any of the Services, you agree to these Terms and to our <a href="/privacy">Privacy Policy</a>. Checking the box counts as your electronic signature. If you don’t agree, don’t use the Services.</p>
 
   <h2>2. Who owns Programs For You</h2>
-  <p>Programs For You, and everything it makes (its websites, apps, code, designs, names, logos, and future products), is owned and controlled by Programs For You. (School Schedule is shared under its open-source license, explained in section 4.) No one else gets any ownership, equity, vote, or profits by using the Services, joining the team, or sending us ideas or feedback.</p>
+  <p>Programs For You, and everything it makes (its websites, apps, code, designs, names, logos, and future products), is owned and controlled by Programs For You. No one else gets any ownership, equity, vote, or profits by using the Services, joining the team, or sending us ideas or feedback.</p>
 
   <h2>3. Our website and our code are ours only</h2>
   <p>The website, Email Assistant, Screen Assistant, our TI-84 Evo games (Grid Pop, Block Bop, and Blackjack), and all of their code, designs, names, logos, pictures, and text are © 2026 Programs For You. All rights reserved.</p>
@@ -34,12 +34,11 @@
     <li>pretend our work is yours, or remove our copyright notices.</li>
   </ul>
 
-  <h2>4. School Schedule is different</h2>
-  <p>School Schedule is based on Owen Wang’s School Schedule Manager for Windows. The original is © 2026 Owen Wang, and the Mac version is © 2026 Brady Krupa, ported to macOS using Claude AI. School Schedule is free software under the <a href="https://www.gnu.org/licenses/agpl-3.0.html">GNU Affero General Public License v3</a>: you may use, study, share, and change it under that license, and you can <a href="/downloads/SchoolSchedule-source.zip">download its source code</a>. Section 3’s limits don’t apply to School Schedule’s code.</p>
+  <h2>4. You must be 13 or older</h2>
+  <p>You must be at least 13 years old to use the Services. When you check the agree box on the Downloads page, you confirm that you’re 13 or older. If you’re under 18, please read these Terms with a parent or guardian and use the Services only with their permission.</p>
 
   <h2>5. Using the apps</h2>
   <ul>
-    <li><strong>School Schedule</strong> shows times based on what’s built in or what you type in. Always check your school’s official schedule for anything important.</li>
     <li><strong>Email Assistant</strong> suggests replies, but you decide what to send. You’re responsible for the emails you send.</li>
     <li><strong>Screen Assistant</strong> gives AI answers that can be wrong, so double-check anything important. Follow your school’s rules about using AI on assignments and tests.</li>
     <li>Don’t use the Services to send spam, harass anyone, cheat, or break the law, and don’t try to hack, overload, or break them.</li>
@@ -53,7 +52,7 @@
     <li>change, update, add, or remove any feature, app, page, or content;</li>
     <li>pause, limit, or permanently shut down the website, any app, or any part of the Services;</li>
     <li>decide to charge for new apps or features in the future (we’ll always tell you the price before you pay anything);</li>
-    <li>refuse, limit, suspend, or end your access, or remove your email from our list; and</li>
+    <li>refuse, limit, suspend, or end your access; and</li>
     <li>change these Terms.</li>
   </ul>
   <p>We don’t owe you anything if we do any of these things.</p>
@@ -86,7 +85,7 @@
   <p><strong>Legal action.</strong> We may sue you, including for copyright infringement under U.S. law, report illegal activity to the police or other authorities, and end your access to the Services. These rights add to, and don’t replace, anything else the law allows us to do.</p>
 
   <h2>13. Ending your access</h2>
-  <p>We may suspend or end your access at any time if we think you broke these Terms, or for any other reason. You can stop using the Services anytime by deleting the apps. Sections 2, 3, 4, 9, 10, 11, 12, 14, and 15 still apply after your access ends.</p>
+  <p>We may suspend or end your access at any time if we think you broke these Terms, or for any other reason. You can stop using the Services anytime by deleting the apps. Sections 2, 3, 9, 10, 11, 12, 14, and 15 still apply after your access ends.</p>
 
   <h2>14. Law and disputes</h2>
   <p>These Terms are governed by the laws of the State of Connecticut, USA, without regard to its conflict-of-law rules. Any dispute about the Services or these Terms will be handled in the state or federal courts located in Connecticut, and you agree to those courts’ jurisdiction.</p>

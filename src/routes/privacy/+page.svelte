@@ -13,23 +13,26 @@
 <section class="pt-16 pb-7"><Container><Eyebrow>Legal</Eyebrow><h1>Privacy Policy</h1><Lead class="m-0">Effective November 20, 2026</Lead></Container></section>
 <section class="pt-2 pb-18"><Container>
 <Prose>
-  <SummaryBox><p><b>The short version:</b> we collect your email address so you can download the apps and so we can tell you about new apps and updates. There are no passwords. Your schedule, homework, emails, and screen stay on your Mac. We don’t sell your information, and we don’t use ads or tracking cookies.</p></SummaryBox>
+  <SummaryBox><p><b>The short version:</b> you don’t need an email, password, or account to download our apps. If you contact us or apply to join the team, we use what you send only for that. Your emails and screen stay on your Mac. We don’t sell your information, and we don’t use ads or tracking cookies. Our Services are for people 13 and older.</p></SummaryBox>
 
   <h2>Who we are</h2>
-  <p>Programs For You (programsforyou.com) is an independent developer that makes free Mac apps. It’s owned by Brady Krupa and Arjun Bhanderi. If you have questions about this policy, email <a href={`mailto:${SITE.contactEmail}`}>{SITE.contactEmail}</a>.</p>
+  <p>Programs For You (programsforyou.com) is an independent developer that makes free Mac apps. If you have questions about this policy, email <a href={`mailto:${SITE.contactEmail}`}>{SITE.contactEmail}</a>.</p>
 
   <h2>What we collect on the website</h2>
   <ul>
-    <li><strong>Your email address.</strong> When you type your email to download or to join our email list, we save it along with which page you used and that you agreed to our Terms. Your browser remembers that you agreed, so you’re only asked once. These sign-ups are stored by our host, Netlify.</li>
+    <li><strong>Downloads.</strong> You don’t give us any information to download our apps. When you check the agree box, your browser remembers it so you’re only asked once. That stays in your browser and isn’t sent to us.</li>
     <li><strong>Support tickets.</strong> When you send a ticket on our Contact page, we save your name, your email address, what it’s about, and your summary, so we can help you and write back. Tickets are stored by our host, Netlify, and only we can see them.</li>
     <li><strong>Website logs.</strong> Like most websites, our hosting provider may keep standard logs, such as your IP address, browser type, and pages visited, for security and reliability.</li>
   </ul>
   <p><strong>Update checks.</strong> About once a day, each app checks programsforyou.com for a newer version. That’s a normal web request: it doesn’t include your email, name, or anything from the app, though our host may log your IP address like any website visit.</p>
-  <p>We don’t use advertising, analytics trackers, or tracking cookies. The site remembers your email in your browser so you don’t have to type it again.</p>
+  <p>We don’t use advertising, analytics trackers, or tracking cookies. If you send a support ticket, your browser remembers the email you typed so you don’t have to type it again. That stays in your browser.</p>
+
+  <h2>Children under 13</h2>
+  <p>Our Services are for people 13 and older. We don’t knowingly collect personal information from children under 13. If you think a child under 13 has sent us information, email us and we’ll delete it.</p>
 
   <h2>Our Mac apps</h2>
   <h3>School Schedule</h3>
-  <p>Your classes, bell times, homework, events, and settings are saved on your Mac only. They aren’t sent to us. School Schedule doesn’t need you to sign in. If you choose to link your Schoology calendar, your private calendar link is saved on your Mac and used only to download your calendar directly from Schoology. It isn’t sent to us.</p>
+  <p>School Schedule is coming soon. If you already have it: your classes, bell times, homework, events, and settings are saved on your Mac only. They aren’t sent to us. School Schedule doesn’t need you to sign in. If you choose to link your Schoology calendar, your private calendar link is saved on your Mac and used only to download your calendar directly from Schoology. It isn’t sent to us.</p>
   <h3>Email Assistant</h3>
   <ul>
     <li>The app connects straight from your Mac to your email provider (Gmail, iCloud, or Yahoo). Your emails don’t pass through our servers, and we never see them.</li>
@@ -49,26 +52,21 @@
     <li>If you choose to add your own Claude API key, a picture of your screen and your questions are sent to Anthropic and handled under Anthropic’s privacy policy. This is off unless you turn it on.</li>
     <li>Your to-dos and settings are saved on your Mac only.</li>
   </ul>
-  <h3>School Schedule for Windows</h3>
-  <p>The Windows version is Owen Wang’s School Schedule Manager. Before you download it or its code, you agree to <a href="https://github.com/un-undefined/school-schedule-manager/blob/main/TermsOfService.md">Owen Wang’s Terms of Service</a>. We save a record that you agreed: your email, which terms, and when. Your browser also remembers it so you don’t have to agree again.</p>
-
   <h3>Job applications</h3>
-  <p>If you apply to join the team, we collect what you type in the form: your name, email, grade, the role and department you want, and your answers. Only Brady and Arjun can see it, we use it only to look at your application, and we’ll delete it if you ask.</p>
+  <p>If you apply to join the team, we collect what you type in the form: your name, email, grade, the role and department you want, and your answers. Only the owners of Programs For You can see it, we use it only to look at your application, and we’ll delete it if you ask.</p>
 
   <h2>How we use your information</h2>
   <ul>
-    <li>To let you download the apps.</li>
-    <li>To email you about new apps, updates, and important changes. Every email lets you unsubscribe, or you can email us to be removed.</li>
     <li>To answer you when you contact us.</li>
     <li>To keep the website secure and working.</li>
   </ul>
 
   <h2>Who we share it with</h2>
-  <p>We don’t sell or rent your information. We share it only with the service providers that run the website (Netlify for hosting and storing email sign-ups and team information), or if the law requires it.</p>
+  <p>We don’t sell or rent your information. We share it only with the service providers that run the website (Netlify for hosting and for storing support tickets and job applications), or if the law requires it.</p>
 
   <h2>Your choices</h2>
   <ul>
-    <li><strong>Unsubscribe or delete your email</strong> anytime: use the unsubscribe link in any email, or email us and we’ll remove it.</li>
+    <li><strong>Delete what you sent us</strong> anytime: email us and we’ll delete your support tickets or application. We don’t keep an email list anymore. If you gave us your email before, email us and we’ll delete it.</li>
     <li><strong>Delete app data</strong> by deleting the app from your Mac. For Email Assistant, you can also remove your email account in the app’s Settings.</li>
   </ul>
 

@@ -1,6 +1,3 @@
-# LOCKDOWN: every page shows maintenance.html. Delete this line to reopen the site.
-/*  /maintenance.html  503!
-
 # Old .html addresses go to the clean address (one URL per page keeps search results tidy).
 /index.html  /  301!
 /school-schedule.html  /school-schedule  301!
@@ -24,9 +21,9 @@
 /creators  /team  301
 /downloads/SLITHER.py  /ti-84-evo-games.html  302
 /downloads/STARDASH.py  /ti-84-evo-games.html  302
-/downloads/SchoolSchedule.zip  /downloads/SchoolSchedule-1.3.8.zip  302
-/downloads/SchoolSchedule-*  /downloads/SchoolSchedule-1.3.8.zip  302
-/downloads/schoolschedule-*  /downloads/SchoolSchedule-1.3.8.zip  302
+# School Schedule is coming soon: old download links go to its page.
+/downloads/SchoolSchedule*  /school-schedule  302!
+/downloads/schoolschedule*  /school-schedule  302!
 /downloads/EmailAssistant.zip  /downloads/EmailAssistant-1.2.3.zip  302
 /downloads/EmailAssistant-*  /downloads/EmailAssistant-1.2.3.zip  302
 /downloads/emailassistant-*  /downloads/EmailAssistant-1.2.3.zip  302

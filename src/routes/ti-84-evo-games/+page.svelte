@@ -84,7 +84,7 @@
   </ul>
 
   <Steps class="mt-9">
-    <Step n={1} title="Download the game"><p>Go to <a href="/download#games">Downloads</a>, type your email, and click <b>Download</b> next to the game. You’ll get a file like <b>GRIDPOP.py</b>. Don’t rename it: calculator program names can only be 1 to 8 letters.</p></Step>
+    <Step n={1} title="Download the game"><p>Go to <a href="/download#games">Downloads</a>, check the box to agree to the Terms, and click <b>Download</b> next to the game. You’ll get a file like <b>GRIDPOP.py</b>. Don’t rename it: calculator program names can only be 1 to 8 letters.</p></Step>
     <Step n={2} title="Open TI Connect Evo"><p>Go to <a href="https://education.ti.com/en/products/calculators/graphing-calculators/ti-84-evo/ti-connect-evo" rel="noopener">TI Connect Evo</a> on Texas Instruments’ website and open it in your browser.</p></Step>
     <Step n={3} title="Connect your calculator"><p>Plug your TI-84 Evo into the computer with the USB-C cable and turn it on. If your browser asks to let the page connect to your calculator, pick your calculator and click <b>Connect</b>.</p></Step>
     <Step n={4} title="Send the game"><p>In TI Connect Evo, choose <b>Send files</b>, pick the <b>.py</b> file you downloaded, and send it to your calculator. Do the same for each game you want.</p></Step>
@@ -102,7 +102,7 @@
     <FaqItem q="Still stuck?"><p>Call <a href="tel:+14752661457">(475) 266-1457</a> or email <a href={`mailto:${SITE.contactEmail}`}>{SITE.contactEmail}</a>.</p></FaqItem>
   </div>
 
-  <Callout class="mt-11"><Icon name="info" /><p>Programs For You isn’t affiliated with Texas Instruments. TI-84 Evo is a trademark of Texas Instruments. Our games are © 2026 Brady Krupa and Arjun Bhanderi. All rights reserved.</p></Callout>
+  <Callout class="mt-11"><Icon name="info" /><p>Programs For You isn’t affiliated with Texas Instruments. TI-84 Evo is a trademark of Texas Instruments. Our games are © 2026 Programs For You. All rights reserved.</p></Callout>
 </Section>
 
-<DownloadCta title="Get the games" text="Free for your TI-84 Evo. Pick a game on the Downloads page, enter your email, and download." buttons={[{ href: '/download#games', label: 'Get them free' }, ...games.map((x) => ({ href: '/download#games', label: x.name }))]} note="Requires a TI-84 Evo" />
+<DownloadCta title="Get the games" text="Free for your TI-84 Evo. Pick a game on the Downloads page and download it. No email needed." buttons={[{ href: '/download#games', label: 'Get them free' }, ...games.map((x) => ({ href: '/download#games', label: x.name }))]} note="Requires a TI-84 Evo" />

@@ -1,14 +1,5 @@
 {
   "apps": {
-    "school-schedule": {
-      "version": "1.3.8",
-      "url": "https://programsforyou.com/downloads/SchoolSchedule-1.3.8.zip",
-      "sha256": "05206b32d89dce9c5acb7ca2650437d68029a07c72c41fa6b9806b86ef68c31a",
-      "size": 2629948,
-      "fixed": "Automatic updates work again. Version 1.3.7 couldn’t install itself on most Macs, so this update brings everyone to the newest version.",
-      "added": "Everything from 1.3.7, including your Schoology calendar: link it in Settings → Schoology and your homework shows up by itself.",
-      "notes": "Fixed: Automatic updates work again. Version 1.3.7 couldn’t install itself on most Macs, so this update brings everyone to the newest version.\nAdded: Everything from 1.3.7, including your Schoology calendar: link it in Settings → Schoology and your homework shows up by itself."
-    },
     "email-assistant": {
       "version": "1.2.3",
       "url": "https://programsforyou.com/downloads/EmailAssistant-1.2.3.zip",

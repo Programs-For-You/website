@@ -1,5 +1,5 @@
 # BLACKJAK - Blackjack for the TI-84 Evo (Python)
-# (c) 2026 Brady Krupa and Arjun Bhanderi. All rights reserved. programsforyou.com
+# (c) 2026 Programs For You. All rights reserved. programsforyou.com
 # Get closer to 21 than the dealer without going over. Left/right change your bet, [2nd] deals.
 # In a hand: [2nd] hit, [enter] stand, [down] double. [clear] quits.
 import ti_draw

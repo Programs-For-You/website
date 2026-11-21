@@ -14,12 +14,10 @@ export const organization = () => ({
   url: SITE.url + '/',
   logo: { '@type': 'ImageObject', url: SITE.url + '/assets/img/logo.svg' },
   image: SITE.url + '/og.png',
-  description: 'Programs For You makes free, simple apps that save students time: School Schedule, Email Assistant and Screen Assistant for Mac, plus games for the TI-84 Evo calculator. Founded by high school students in Wilton, Connecticut.',
+  description: 'Programs For You makes free, simple apps that save students time: Email Assistant and Screen Assistant for Mac, plus games for the TI-84 Evo calculator. School Schedule is coming soon.',
   foundingDate: '2026',
-  foundingLocation: { '@type': 'Place', address: { '@type': 'PostalAddress', addressLocality: 'Wilton', addressRegion: 'CT', addressCountry: 'US' } },
   founder: [
-    { '@type': 'Person', name: 'Brady Krupa', jobTitle: 'CEO & Founder', url: abs('/team') },
-    { '@type': 'Person', name: 'Arjun Bhanderi', jobTitle: 'Co-Founder, CFO & Developer', url: abs('/team') }
+    { '@type': 'Person', name: 'Brady Krupa', jobTitle: 'CEO & Founder', url: abs('/team') }
   ],
   contactPoint: [{ '@type': 'ContactPoint', contactType: 'customer support', email: SITE.contactEmail, telephone: '+1-475-266-1457', availableLanguage: 'English', url: abs('/contact') }]
 });

@@ -74,7 +74,7 @@
 
 <Seo title="Applications · Programs For You" description="Apply to join Programs For You as an intern or employee in Development, Social Media, Advertising, or Hospitality." />
 
-<PageHead eyebrow="Applications" title="Join the team" lead="Want to help build free apps that make people’s days easier? Apply below. Brady and Arjun read every application." />
+<PageHead eyebrow="Applications" title="Join the team" lead="Want to help build free apps that make people’s days easier? Apply below. We read every application." />
 <section class="pt-2 pb-18">
   <Container class="grid grid-cols-[1.6fr_1fr] items-start gap-6 max-[860px]:grid-cols-1">
     <div>
@@ -101,7 +101,7 @@
           <textarea class={cn(input, textarea)} id="a-skills" name="skills" rows="3" maxlength="1500" placeholder="Coding, design, video, writing, clubs… anything that helps."></textarea></div>
         <FormMessage text={msg} />
         <Button type="submit" disabled={sending}>{sending ? 'Sending…' : 'Send application'}</Button>
-        <p class={fine}>We only use this to look at your application, and only Brady and Arjun can see it. <a href="/privacy">Privacy</a></p>
+        <p class={fine}>We only use this to look at your application, and only the owners of Programs For You can see it. <a href="/privacy">Privacy</a></p>
       </form>
       <div class={cn(cardCls, 'px-7 py-10 text-center')} bind:this={done} hidden={!sent}>
         <DoneCheck />
@@ -121,7 +121,7 @@
       </SideCard>
       <SideCard title="What happens next">
         <ol class="grid list-decimal gap-1.5 pl-5 text-[.93rem] text-muted">
-          <li>Send your application.</li><li>Brady and Arjun read every one.</li><li>If it’s a fit, we email you to set up a quick chat.</li>
+          <li>Send your application.</li><li>We read every one.</li><li>If it’s a fit, we email you to set up a quick chat.</li>
         </ol>
       </SideCard>
       <SideCard title="Questions?">
