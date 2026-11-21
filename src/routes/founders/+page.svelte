@@ -27,7 +27,7 @@
   </article>
 {/snippet}
 
-<PageHead eyebrow="About us" title="Our founders" lead="Programs For You makes simple, free apps that save people time. Meet the people who started it and lead everything we build." />
+<PageHead center eyebrow="About us" title="Our founders" lead="Programs For You makes simple, free apps that save people time. Meet the people who started it and lead everything we build." />
 
 <Section tight>
   <div class="grid grid-cols-[1fr_1.25fr_1fr] items-stretch gap-[22px] max-[1000px]:grid-cols-1 max-[1000px]:mx-auto max-[1000px]:max-w-[560px]">

@@ -74,7 +74,7 @@
 
 <Seo title="Applications · Programs For You" description="Apply to join Programs For You as an intern or employee in Development, Social Media, Advertising, or Hospitality." />
 
-<PageHead eyebrow="Applications" title="Join the team" lead="Want to help build free apps that make people’s days easier? Apply below. We read every application." />
+<PageHead center eyebrow="Applications" title="Join the team" lead="Want to help build free apps that make people’s days easier? Apply below. We read every application." />
 <section class="pt-2 pb-18">
   <Container class="grid grid-cols-[1.6fr_1fr] items-start gap-6 max-[860px]:grid-cols-1">
     <div>

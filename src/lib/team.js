@@ -23,7 +23,7 @@ export const WHY_WE_STARTED =
 export const BOARD = [
   { ...BK, title: 'CEO & Founder' },
   { ...SA, title: 'Board Member' },
-  { ...EK, title: 'Head of Development' },
+  { ...EK, title: 'Board Member' },
   { soon: true, title: 'Trustee' },
   { soon: true, title: 'Trustee' },
   { soon: true, title: 'Trustee' }
@@ -34,7 +34,7 @@ export const BOARD = [
 export const DEPARTMENTS = [
   {
     dept: 'Development', icon: 'code', note: 'Builds the apps.',
-    head: { ...EK, title: 'Head of Development', note: 'Leads the building of our apps.' },
+    head: { soon: true, g1: '#0d9488', g2: '#0284c7', title: 'Head of Development' },
     coHeads: [{ soon: true, title: 'Co-Head of Development' }]
   },
   {

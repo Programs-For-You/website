@@ -12,8 +12,6 @@
 /contact.html  /contact  301!
 /terms.html  /terms  301!
 /privacy.html  /privacy  301!
-/founders-agreement  /founders  301!
-/founders-agreement.html  /founders  301!
 /admin.html  /admin  301!
 
 # Made by tools/build_pages.py from assets/js/config.js. Old download links go to the newest version.

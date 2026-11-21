@@ -27,8 +27,8 @@
 
 <Seo title="Team · Programs For You" description="Meet the Programs For You team: our department heads and co-heads, and how to join." type="AboutPage" />
 
-<PageHead eyebrow="About us" title="Meet the team" lead="We’re a small team of students. We build free, simple apps that save time for anyone who wants their day to run smoother, and help people be more organized and a little less stressed.">
-  <div class="flex flex-wrap gap-2.5" data-reveal>
+<PageHead center eyebrow="About us" title="Meet the team" lead="We’re a small team of students. We build free, simple apps that save time for anyone who wants their day to run smoother, and help people be more organized and a little less stressed.">
+  <div class="flex flex-wrap justify-center gap-2.5" data-reveal>
     {#each stats as [n, label]}
       <div class="flex items-baseline gap-2 rounded-full border border-border bg-surface px-[18px] py-2.5"><b class="text-[1.1rem]">{n}</b><span class="text-[.92rem] text-muted">{label}</span></div>
     {/each}
@@ -40,17 +40,17 @@
   <div class="mx-auto grid max-w-[900px] grid-cols-2 gap-4 max-[760px]:grid-cols-1">
     {#each DEPARTMENTS as d}
       {@const h = d.head}
-      <article class="flex items-start gap-[18px] rounded-card border border-l-4 border-border bg-surface p-[22px] transition-transform duration-150 hover-fine:-translate-y-0.5" style="--g1:{h.g1 || '#0d9488'};--g2:{h.g2 || '#0284c7'};border-left-color:var(--g1)" data-reveal>
+      <article class="flex flex-col items-center gap-3.5 rounded-card border border-t-4 border-border bg-surface px-[22px] pt-6 pb-[22px] text-center transition-transform duration-150 hover-fine:-translate-y-0.5" style="--g1:{h.g1 || '#0d9488'};--g2:{h.g2 || '#0284c7'};border-top-color:var(--g1)" data-reveal>
         <Avatar initials={h.initials} g1={h.g1} g2={h.g2} size="md" open={h.soon} />
-        <div class="min-w-0 flex-1">
+        <div class="w-full min-w-0">
           <span class="inline-flex items-center gap-1.5 font-mono text-[.72rem] font-semibold tracking-[.06em] text-(--g1) uppercase brightness-125"><svg class="size-[15px]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">{@html icons[d.icon]}</svg> {d.dept}</span>
           <h3 class="mt-1.5 mb-0.5 text-[1.15rem] {h.soon ? 'text-muted' : ''}">{h.soon ? 'Coming soon' : h.name}</h3>
           <p class="m-0 text-muted">{h.title}</p>
           {#if h.note || d.note}<p class="m-0 mt-1.5 text-[.93rem] text-muted">{h.note || d.note}</p>{/if}
           {#if d.coHeads?.length}
-            <div class="mt-3.5 grid gap-2.5 border-t border-dashed border-border pt-3">
+            <div class="mt-3.5 grid justify-items-center gap-2.5 border-t border-dashed border-border pt-3">
               {#each d.coHeads as c}
-                <div class="flex items-center gap-2.5">
+                <div class="flex items-center gap-2.5 text-left">
                   <Avatar initials={c.initials} g1={c.g1} g2={c.g2} size="sm" open={c.soon} />
                   <div><b class="block text-[.95rem] {c.soon ? 'font-semibold text-faint' : ''}">{c.soon ? 'Coming soon' : c.name}</b><span class="block text-[.82rem] text-muted">{c.title}</span></div>
                 </div>
@@ -74,8 +74,8 @@
     </ul>
   {/if}
 
-  <div class="mx-auto mt-[72px] flex max-w-[900px] flex-wrap items-center justify-between gap-x-7 gap-y-[18px] rounded-card-lg border border-border bg-surface px-7 py-[26px]" data-reveal>
-    <div class="flex-[1_1_380px]">
+  <div class="mx-auto mt-[72px] flex max-w-[900px] flex-col items-center gap-[18px] rounded-card-lg border border-border bg-surface px-7 py-[30px] text-center" data-reveal>
+    <div class="flex max-w-[600px] flex-col items-center">
       <Eyebrow>Join us</Eyebrow>
       <h2 class="mt-3 mb-1.5 text-[1.6rem]">We’re hiring</h2>
       <p class="m-0 text-muted">We’re looking for interns and employees to help build, share, and support our apps. No experience needed, just bring your ideas.</p>

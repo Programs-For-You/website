@@ -36,7 +36,7 @@ ${faq}
 ## People
 - Brady Krupa: CEO & Founder
 - Sid Agrawal: Board Member
-- Ethan Krishna: Board Member, Head of Development
+- Ethan Krishna: Board Member
 
 Legal: ${u('/terms')} · ${u('/privacy')}
 `;
