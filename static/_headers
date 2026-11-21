@@ -13,15 +13,6 @@
   Cache-Control: no-cache
   Access-Control-Allow-Origin: *
 
-# Owners-only page: keep it out of search engines and always load the newest copy.
-/admin
-  X-Robots-Tag: noindex, nofollow
-  Cache-Control: no-cache
-
-/admin.html
-  X-Robots-Tag: noindex, nofollow
-  Cache-Control: no-cache
-
 /llms.txt
   Content-Type: text/plain; charset=utf-8
 

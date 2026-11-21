@@ -2,8 +2,8 @@
 // Keep in step with the <FaqItem> list in src/routes/+page.svelte.
 export const HOME_FAQ = [
   { q: "Is there a Windows version?", a: "Not yet. Windows versions are coming soon." },
-  { q: "I need help. Who do I contact?", a: "Call (475) 266-1457 or email bradykrupa@programsforyou.com. The install guide also answers the most common questions." },
-  { q: "How do I get updates?", a: "Automatically. Our apps update themselves in the background and install new versions when you step away from your computer, so you never have to download them again. Before an update installs, the app checks that it really comes from us, and you can turn automatic updates off in each app’s Settings. More help." },
+  { q: "I need help. Who do I contact?", a: "Email bradykrupa@programsforyou.com. The install guide also answers the most common questions." },
+  { q: "How do I get updates?", a: "Only when you ask. Open the app and click Check for Updates. If there’s a newer version, the app downloads it from us and installs it, and your settings stay. Nothing updates in the background without you." },
   { q: "Is it really free?", a: "Yes. The apps are free to download and use, and you don’t need an email or an account." },
   { q: "Why does my Mac say it can’t check the app?", a: "Our apps aren’t registered with Apple’s paid developer program yet, so macOS asks you to approve them once. The install guide shows exactly what to click." },
   { q: "What computers do they work on?", a: "Email Assistant and Screen Assistant need macOS 26 Tahoe or newer on a Mac with Apple silicon (M1 or later). School Schedule and the Windows versions are coming soon." },

@@ -47,7 +47,7 @@
     </Callout>
 
     <Steps class="mt-10">
-      <Step n={1} title="Agree and download"><p>Go to <a href="/download">Downloads</a>, check the box to agree to the Terms (you need to be 13 or older), and click <b>Download</b> next to the app you want. No email needed.</p></Step>
+      <Step n={1} title="Agree and download"><p>Go to the app’s page (<a href="/email-assistant">Email Assistant</a> or <a href="/screen-assistant">Screen Assistant</a>) and click <b>Mac Download</b>. By downloading, you agree to the <a href="/terms">Terms</a> (you need to be 13 or older). No email needed.</p></Step>
       <Step n={2} title="Open the download"><p>Open your <b>Downloads</b> folder (in Finder, or click the download arrow in your browser). Double-click the <b>.zip</b> file and it turns into the app.</p></Step>
       <Step n={3} title="Move it to Applications"><p>Drag the app into the <b>Applications</b> folder in Finder’s sidebar. Keeping it there means it works properly and updates cleanly.</p></Step>
       <Step n={4} title="Open it, then click Done" id="open-anyway">
@@ -72,8 +72,7 @@
         <p><code>xattr -dr com.apple.quarantine "/Applications/Screen Assistant.app"</code></p></FaqItem>
       <FaqItem q="My Mac asks for my password to use the “keychain.”"><p>That’s Email Assistant opening the app password it saved in your Mac’s Keychain. Type your Mac password and click <b>Always Allow</b>. You may see this once after each update.</p></FaqItem>
       <FaqItem q="Screen Assistant says it can’t see my screen."><p>Open <Path>System Settings → Privacy &amp; Security → Screen &amp; System Audio Recording</Path> and turn on <b>Screen Assistant</b>, then quit it and open it again. If it’s already on but still doesn’t work, select Screen Assistant in that list, click <b>−</b> to remove it, then open Screen Assistant and allow it again.</p></FaqItem>
-      <FaqItem q="How do I update an app?"><p>You don’t have to do anything. Our apps update themselves: they check for new versions now and then, download them quietly, and install them the next time you step away from your computer for a couple of minutes (or when you quit the app). It only takes a second, and all your settings stay. You can turn this off in the app’s Settings under <b>Install updates automatically</b>, and then it asks you first. Before any update installs, the app checks that it really comes from us.</p>
-        <p>Automatic updates work in Email Assistant 1.2.1, Screen Assistant 1.1.1, and newer. If you have an older version, download the app once more from <a href="/download">Downloads</a>, drag it into Applications, and choose <b>Replace</b>. After that, you’ll never need to download it again. Keep the app in your Applications folder so it can update itself.</p></FaqItem>
+      <FaqItem q="How do I update an app?"><p>Open the app and click <b>Check for Updates</b>. If there’s a newer version, the app downloads it and installs it, and all your settings stay. Nothing updates in the background without you. If you have an older version that doesn’t have this button, download the app again from its app page, drag it into Applications, and choose <b>Replace</b>. Keep the app in your Applications folder.</p></FaqItem>
       <FaqItem q="How do I uninstall an app?"><p>Click the app’s button at the top of your screen and choose <b>Quit</b>. Then drag the app from Applications to the Trash.</p></FaqItem>
       <FaqItem q="Does it work on Windows, iPhone, iPad, or Chromebook?"><p>Not yet. Windows versions are coming soon. iPhone, iPad, and Chromebook aren’t supported right now.</p></FaqItem>
     </div>
@@ -81,6 +80,6 @@
 
   <Callout tone="info" class="mt-8">
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 11v5"/><path d="M12 7.6v.1"/></svg>
-    <p><b>Still need help?</b> Call <a href="tel:+14752661457">(475) 266-1457</a>, or email <a href={contactHref}>{SITE.contactEmail}</a>. We’re happy to walk you through it.</p>
+    <p><b>Still need help?</b> Email <a href={contactHref}>{SITE.contactEmail}</a>. We’re happy to walk you through it.</p>
   </Callout>
 </Section>

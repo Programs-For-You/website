@@ -19,21 +19,19 @@ Key facts:
 - Price: free. No email, password or account; downloads open after agreeing to the Terms (13 or older).
 - Privacy: schedule and homework stay on the user's computer. Email Assistant and Screen Assistant use the AI built into the Mac, so the company does not see the user's email or screen.
 - Not affiliated with Apple Inc. Mac apps are not yet notarized, so macOS asks the user to approve them once (see the install guide).
-- Support: ${SITE.contactEmail}, phone +1 (475) 266-1457, or a support ticket at ${u('/contact')}.
+- Support: ${SITE.contactEmail}, or a support ticket at ${u('/contact')}.
 
 ## Apps
 ${appLines.join('\n')}
 - [TI-84 Evo Games](${u('/ti-84-evo-games')}): ${GAMES.map((g) => g.name).join(', ')}. Free Python games for the TI-84 Evo calculator.
 
 ## Get started
-- [Downloads](${u('/download')}): download every app (no email needed).
 - [How to install](${u('/install')}): step-by-step for Mac, with pictures.
 - [Contact](${u('/contact')}): send a support ticket.
 
 ## Company
 - [Founders](${u('/founders')}): Brady Krupa (CEO & Founder) and Arjun Bhanderi (Co-Founder & CFO), why we started, and the Board of Trustees.
-- [Team](${u('/team')}): department heads and co-heads.
-- [Join the team](${u('/apply')}): apply as an intern or employee.
+- [Join the team](${u('/apply')}): apply to volunteer.
 
 ## Legal
 - [Terms of Service](${u('/terms')})

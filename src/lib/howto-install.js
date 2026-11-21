@@ -2,7 +2,7 @@
 export const MAC_STEPS = [
   {
     "name": "Agree and download",
-    "text": "Go to Downloads , check the box to agree to the Terms (you need to be 13 or older), and click Download next to the app you want. No email needed."
+    "text": "Go to the app’s page (Email Assistant or Screen Assistant) and click Mac Download. By downloading, you agree to the Terms (you need to be 13 or older). No email needed."
   },
   {
     "name": "Open the download",

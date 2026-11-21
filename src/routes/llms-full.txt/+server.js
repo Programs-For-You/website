@@ -18,7 +18,7 @@ export function GET() {
   const faq = HOME_FAQ.map((f) => `**${f.q}**\n${f.a}`).join('\n\n');
   const text = `# ${SITE.name}: full reference
 
-${SITE.name} (${SITE.url}) makes free, simple apps that save students time. It was founded by Brady Krupa and Arjun Bhanderi. Contact: ${SITE.contactEmail}, +1 (475) 266-1457.
+${SITE.name} (${SITE.url}) makes free, simple apps that save students time. It was founded by Brady Krupa and Arjun Bhanderi. Contact: ${SITE.contactEmail}.
 
 ## Apps
 ${apps}

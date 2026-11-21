@@ -24,7 +24,7 @@
   const scale = $derived(macWidth ? Math.min(1, macWidth / 980) : 1);
 
   const how = [
-    { title: '1. Check one box', paths: '<rect x="4" y="4" width="16" height="16" rx="3"/><path d="M8.5 12.5l2.5 2.5 4.5-5"/>', body: 'No email, no password, and no account. Agree to the Terms and the downloads open right up.' },
+    { title: '1. Pick an app', paths: '<rect x="4" y="4" width="16" height="16" rx="3"/><path d="M8.5 12.5l2.5 2.5 4.5-5"/>', body: 'No email, no password, and no account. Open an app’s page and click its download button.' },
     { title: '2. Download and open', paths: '<path d="M12 3v12M7 10l5 5 5-5"/><path d="M5 21h14"/>', body: 'Download the app and follow the <a href="/install">install guide</a>. The first time, your Mac asks you to allow it.' },
     { title: '3. Click the button up top', paths: '<rect x="3" y="4" width="18" height="16" rx="2.5"/><path d="M3 8.5h18"/><path d="M15 6.25h3"/>', body: 'The app lives in the bar at the top of your screen. Click its button anytime.' }
   ];
@@ -59,7 +59,7 @@
 <HeroXL title="Simple apps that make your day easier." text="Your school schedule, your email, and a helper that can see your screen, all one click away. Free, simple, and private.">
   {#snippet note()}Free · No email needed · For Mac{/snippet}
   {#snippet actions()}
-    <Button variant="notch" href="/download">Get the apps</Button>
+    <Button variant="notch" href="/email-assistant">Get the apps</Button>
     <Button variant="outline" href="#how" class="border-white/40 text-white hover-fine:bg-white/10">How it works</Button>
   {/snippet}
 </HeroXL>
@@ -138,8 +138,8 @@
   <SectionHead eyebrow="FAQ" title="Questions people ask" />
   <div class="grid gap-2.5">
     <FaqItem q="Is there a Windows version?"><p>Not yet. Windows versions are coming soon.</p></FaqItem>
-    <FaqItem q="I need help. Who do I contact?"><p>Call <a href="tel:+14752661457">(475) 266-1457</a> or email <a href={`mailto:${SITE.contactEmail}`}>{SITE.contactEmail}</a>. The <a href="/install">install guide</a> also answers the most common questions.</p></FaqItem>
-    <FaqItem q="How do I get updates?"><p>Automatically. Our apps update themselves in the background and install new versions when you step away from your computer, so you never have to download them again. Before an update installs, the app checks that it really comes from us, and you can turn automatic updates off in each app’s Settings. <a href="/install">More help</a>.</p></FaqItem>
+    <FaqItem q="I need help. Who do I contact?"><p>Email <a href={`mailto:${SITE.contactEmail}`}>{SITE.contactEmail}</a>. The <a href="/install">install guide</a> also answers the most common questions.</p></FaqItem>
+    <FaqItem q="How do I get updates?"><p>Only when you ask. Open the app and click <b>Check for Updates</b>. If there’s a newer version, the app downloads it from us and installs it, and your settings stay. Nothing updates in the background without you. <a href="/install">More help</a>.</p></FaqItem>
     <FaqItem q="Is it really free?"><p>Yes. The apps are free to download and use, and you don’t need an email or an account.</p></FaqItem>
     <FaqItem q="Why does my Mac say it can’t check the app?"><p>Our apps aren’t registered with Apple’s paid developer program yet, so macOS asks you to approve them once. The <a href="/install">install guide</a> shows exactly what to click.</p></FaqItem>
     <FaqItem q="What computers do they work on?"><p>Email Assistant and Screen Assistant need macOS 26 Tahoe or newer on a Mac with Apple silicon (M1 or later). School Schedule and the Windows versions are coming soon.</p></FaqItem>
@@ -154,6 +154,6 @@
   <h2>Ready to make your day easier?</h2>
   <Lead center class="mb-0">Grab the apps. No email or password needed.</Lead>
   <div class="mt-[26px] flex flex-wrap items-center justify-center gap-3">
-    <Button variant="primary" href="/download"><svg class="size-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12M7 10l5 5 5-5"/><path d="M5 21h14"/></svg> Get the apps</Button>
+    <Button variant="primary" href="/email-assistant"><svg class="size-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12M7 10l5 5 5-5"/><path d="M5 21h14"/></svg> Get the apps</Button>
   </div>
 </Section>

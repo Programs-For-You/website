@@ -13,11 +13,11 @@
 <section class="pt-16 pb-7"><Container><Eyebrow>Legal</Eyebrow><h1>Terms of Service</h1><Lead class="m-0">Effective November 20, 2026</Lead></Container></section>
 <section class="pt-2 pb-18"><Container>
 <Prose>
-  <SummaryBox><p><b>The short version:</b> Programs For You owns everything it makes. The apps are free for your personal use. Don’t copy our code, apps, or website. We can change or stop anything at any time. Serious violations, like copying our code, cost at least <b>$5,000</b> each and can lead to legal action. You must be 13 or older. By checking the agree box or downloading our apps, you accept these Terms as a binding agreement.</p></SummaryBox>
+  <SummaryBox><p><b>The short version:</b> Programs For You owns everything it makes. The apps are free for your personal use. Don’t copy our code, apps, or website. We can change or stop anything at any time. If you copy our code or break these rules, we can take legal action. You must be 13 or older. By downloading our apps, you accept these Terms as a binding agreement.</p></SummaryBox>
 
   <h2>1. Agreeing to these Terms</h2>
   <p>These Terms of Service (“Terms”) are a legally binding agreement between you and Programs For You (“we,” “us,” or “Programs For You”). They cover programsforyou.com, our Mac apps, and anything else we offer (together, the “Services”).</p>
-  <p>You must accept these Terms to use the Services. When you check the agree box on the Downloads page, or when you download, install, or use any of the Services, you agree to these Terms and to our <a href="/privacy">Privacy Policy</a>. Checking the box counts as your electronic signature. If you don’t agree, don’t use the Services.</p>
+  <p>You must accept these Terms to use the Services. When you download, install, or use any of the Services, you agree to these Terms and to our <a href="/privacy">Privacy Policy</a>. If you don’t agree, don’t use the Services.</p>
 
   <h2>2. Who owns Programs For You</h2>
   <p>Programs For You, and everything it makes (its websites, apps, code, designs, names, logos, and future products), is owned and controlled by Programs For You. No one else gets any ownership, equity, vote, or profits by using the Services, joining the team, or sending us ideas or feedback.</p>
@@ -25,6 +25,7 @@
   <h2>3. Our website and our code are ours only</h2>
   <p>The website, Email Assistant, Screen Assistant, our TI-84 Evo games (Grid Pop, Block Bop, and Blackjack), and all of their code, designs, names, logos, pictures, and text are © 2026 Programs For You. All rights reserved.</p>
   <p>We give you a free, personal, limited permission to use the website, to download and use Email Assistant and Screen Assistant on your own Mac, and to put our TI-84 Evo games on your own calculator. We can take this permission back at any time. It doesn’t give you any ownership.</p>
+  <p><strong>Free, but not open source.</strong> Our software is freeware: free to use, but we keep all rights to it. We don’t license it under any open-source license (such as MIT or GPL). Open-source tools made by other people that we build on stay under their own licenses, which are listed on our <a href="/licenses">Licenses</a> page. Those licenses cover only that code, not ours.</p>
   <p>Unless Programs For You gives you written permission, you may not:</p>
   <ul>
     <li>copy, download, scrape, or save our website’s code, design, or content, except what your browser normally does to show you the page;</li>
@@ -35,7 +36,7 @@
   </ul>
 
   <h2>4. You must be 13 or older</h2>
-  <p>You must be at least 13 years old to use the Services. When you check the agree box on the Downloads page, you confirm that you’re 13 or older. If you’re under 18, please read these Terms with a parent or guardian and use the Services only with their permission.</p>
+  <p>You must be at least 13 years old to use the Services. When you download our apps, you confirm that you’re 13 or older. If you’re under 18, you may use the Services only with a parent or guardian’s permission, and you should read these Terms with them.</p>
 
   <h2>5. Using the apps</h2>
   <ul>
@@ -44,6 +45,7 @@
     <li>Don’t use the Services to send spam, harass anyone, cheat, or break the law, and don’t try to hack, overload, or break them.</li>
     <li><strong>TI-84 Evo games</strong> are for fun. Only play them when your teacher allows it, and never during a test.</li>
     <li>Download our apps and games only from programsforyou.com or through the apps’ own update button.</li>
+    <li>Our apps are made for your own personal computer at home. Don’t install them on a school or work computer unless the people who manage it say it’s OK, and follow their rules about software and AI.</li>
   </ul>
 
   <h2>6. We can change or stop anything, at any time</h2>
@@ -72,20 +74,18 @@
   <h2>11. Limits on our responsibility</h2>
   <p>As far as the law allows, Programs For You and its team members aren’t responsible for any indirect, incidental, special, or consequential losses or damages from using the Services, like lost data, a missed class, or an email sent by mistake. If we are ever responsible for something, our total responsibility is limited to the amount you paid us in the past 12 months (for free apps, that’s $0).</p>
 
-  <h2>12. Breaking these Terms: fines and legal action</h2>
-  <p>If you break these Terms, we may take legal action against you.</p>
-  <p><strong>A $5,000 minimum for serious violations.</strong> Some violations cause harm that is real but hard to measure exactly, like lost work, lost users, damage to our name, and the time and cost of finding and fixing the problem. So you agree that if you do any of the following, you will pay us <strong>liquidated damages of at least $5,000 (five thousand U.S. dollars) for each violation</strong>. You and we agree this amount is a reasonable estimate of our harm, not a penalty:</p>
+  <h2>12. If you break these Terms</h2>
+  <p>If you break these Terms, for example by copying, sharing, selling, or taking apart our apps, code, website, or designs, by using our name or logo to pretend to be us, or by hacking or overloading the Services, we may:</p>
   <ul>
-    <li>copy, share, sell, publish, upload, or give away our apps, code, website, or designs, or anything in section 3’s list;</li>
-    <li>take apart, decompile, or reverse-engineer our apps or website, or make your own version of them;</li>
-    <li>use our name or logo, or pretend to be us or to work for us; or</li>
-    <li>hack, overload, or try to break into the Services, or use them to break the law or hurt someone.</li>
+    <li>end your access to the Services;</li>
+    <li>ask a court to order you to stop (an injunction) and to pay for the harm you caused, as far as the law allows;</li>
+    <li>take other legal action, including for copyright infringement under U.S. law; and</li>
+    <li>report illegal activity to the proper authorities.</li>
   </ul>
-  <p>If our actual losses are higher than $5,000, we can seek the full amount instead. We can also ask a court to order you to stop (an injunction) without having to post a bond, and, as far as the law allows, you agree to pay our reasonable lawyers’ fees and court costs if we have to take you to court and we win.</p>
-  <p><strong>Legal action.</strong> We may sue you, including for copyright infringement under U.S. law, report illegal activity to the police or other authorities, and end your access to the Services. These rights add to, and don’t replace, anything else the law allows us to do.</p>
+  <p>These rights add to, and don’t replace, anything else the law allows. If you’re under 18, we’ll first try to talk with you and your parent or guardian.</p>
 
   <h2>13. Ending your access</h2>
-  <p>We may suspend or end your access at any time if we think you broke these Terms, or for any other reason. You can stop using the Services anytime by deleting the apps. Sections 2, 3, 9, 10, 11, 12, 14, and 15 still apply after your access ends.</p>
+  <p>We may suspend or end your access at any time if we think you broke these Terms, or for any other reason. You can stop using the Services anytime by deleting the apps. Sections 2, 3, 9, 10, 11, 14, and 15 still apply after your access ends.</p>
 
   <h2>14. Law and disputes</h2>
   <p>These Terms are governed by the laws of the State of Connecticut, USA, without regard to its conflict-of-law rules. Any dispute about the Services or these Terms will be handled in the state or federal courts located in Connecticut, and you agree to those courts’ jurisdiction.</p>
@@ -94,10 +94,10 @@
   <ul>
     <li><strong>Whole agreement:</strong> these Terms and our <a href="/privacy">Privacy Policy</a> are the whole agreement between you and us about the Services.</li>
     <li><strong>If part doesn’t work:</strong> if a court decides any part of these Terms can’t be enforced, that part is limited only as much as needed, and the rest stays in full effect.</li>
-    <li><strong>Not affiliated with Texas Instruments:</strong> Programs For You is independent and isn’t affiliated with or endorsed by Texas Instruments. TI-84 Evo is a trademark of Texas Instruments.</li>
+    <li><strong>Trademarks:</strong> Programs For You is independent and isn’t affiliated with, sponsored by, or endorsed by Apple Inc., Google LLC, Yahoo, Schoology (PowerSchool), Anthropic PBC, Netlify, Inc., or Texas Instruments. Apple, Mac, macOS, and Apple Intelligence are trademarks of Apple Inc. Gmail and Google are trademarks of Google LLC. Yahoo is a trademark of Yahoo. Schoology and PowerSchool are trademarks of PowerSchool Group LLC. Claude and Anthropic are trademarks of Anthropic PBC. Netlify is a trademark of Netlify, Inc. TI-84 Evo and Texas Instruments are trademarks of Texas Instruments Incorporated. These and any other names we mention belong to their owners, and we use them only to say what our apps work with. “Programs For You” and our logo are ours. See also our <a href="/licenses">Licenses</a> page for the software we build on.</li>
   </ul>
 
   <h2>16. Contact</h2>
-  <p>Questions? Email <a href={`mailto:${SITE.contactEmail}`}>{SITE.contactEmail}</a> or call <a href="tel:+14752661457">(475) 266-1457</a>.</p>
+  <p>Questions? Email <a href={`mailto:${SITE.contactEmail}`}>{SITE.contactEmail}</a>.</p>
 </Prose>
 </Container></section>

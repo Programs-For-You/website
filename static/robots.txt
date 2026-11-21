@@ -3,8 +3,6 @@
 
 User-agent: *
 Allow: /
-Disallow: /admin
-Disallow: /admin.html
 Disallow: /downloads/
 
 # AI search and assistants

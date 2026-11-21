@@ -24,7 +24,7 @@ export const WHY_WE_STARTED =
 export const BOARD = [
   { ...BK, title: 'CEO & Founder' },
   { ...AB, title: 'Co-Founder & CFO' },
-  { ...SA, title: 'Board Member' },
+  { ...SA, title: 'Board Member & CTO' },
   { ...EK, title: 'Board Member' }
 ];
 

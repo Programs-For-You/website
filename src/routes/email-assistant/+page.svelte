@@ -14,6 +14,8 @@
   import Icon from '#lib/components/apphero/Icon.svelte';
   import WhatsNew from '#lib/components/apphero/WhatsNew.svelte';
   import DownloadCta from '#lib/components/apphero/DownloadCta.svelte';
+  import AgreeBox from '#lib/components/AgreeBox.svelte';
+  import { gate } from '#lib/agree.svelte.js';
   import { APPS } from '#lib/config.js';
 
   const app = APPS.find((a) => a.id === 'email-assistant');
@@ -37,8 +39,9 @@
 <AppHero icon="/assets/img/email-assistant.svg" title="Email Assistant" statusId="email-assistant" howHref="#how-to-use" req="Requires macOS 26 Tahoe or newer on a Mac with Apple silicon (M1 or later) · Windows version coming soon · Free">
   Once a day, a little card sums up your personal email and helps you reply with one click. For school email, <b>On screen</b> reads the email you have open and writes replies for you.
   {#snippet actions()}
-    <Button href="/download"><Icon name="download" class="size-[18px]" /> Mac Download</Button>
+    <Button href={app.file} download onclick={gate}><Icon name="download" class="size-[18px]" /> Mac Download</Button>
     <Button tag="span" variant="ghost" aria-disabled="true">Windows: coming soon</Button>
+    <AgreeBox />
   {/snippet}
   {#snippet visual()}
     <AskCard demo size="lg" />
@@ -105,7 +108,7 @@
       <p class="text-[.9rem]">The first time, your Mac asks to let Email Assistant see your screen. Click <b>Open Settings</b>, turn on <b>Email Assistant</b>, and click <b>Quit &amp; Reopen</b> if asked. It only looks when you click Read email, and the picture is never saved.</p>
     </Step>
     <Step n={8} title="Clean up your inbox"><p>Right-click the envelope and choose <b>Sort &amp; Clean Inbox</b>. You’ll see your email grouped into Promos, School, and People, with newsletters already checked. Click <b>Archive</b> or <b>Move to Trash</b>, and it asks you once more before doing anything.</p></Step>
-    <Step n={9} title="Optional: smarter AI"><p>In <Path>Settings → AI</Path>, turn on <b>Use my Claude API key</b> and paste a key from console.anthropic.com. The emails being summarized (and, for On screen, the picture of the window you asked about) are then sent to Anthropic, and Anthropic charges your API account a small amount for each, so only do this if you’re OK with that.</p></Step>
+    <Step n={9} title="Optional: smarter AI"><p>In <Path>Settings → AI</Path>, turn on <b>Use my Claude API key</b> and paste a key from console.anthropic.com. (Anthropic only lets adults, 18 and older, make an account and a key, so if you’re under 18, ask a parent or guardian, or skip this and use the AI built into your Mac.) The emails being summarized (and, for On screen, the picture of the window you asked about) are then sent to Anthropic, and Anthropic charges your API account a small amount for each, so only do this if you’re OK with that.</p></Step>
   </Steps>
 
   <Callout class="mt-11"><Icon name="lock" /><p><b>Your privacy:</b> your email password is stored in your Mac’s Keychain, and your emails are read on your Mac. On screen takes one picture of the window you’re using only when you click Read email, and never saves it. We never see your email. <a href="/privacy">Read the Privacy Policy</a>.</p></Callout>
@@ -113,4 +116,4 @@
 
 <WhatsNew id="email-assistant" />
 
-<DownloadCta title="Get Email Assistant" text="Free for Mac. Download it, then follow the install guide." buttons={[{ href: '/download', label: 'Mac Download' }]} note="Requires macOS 26 Tahoe or newer on a Mac with Apple silicon (M1 or later)" />
+<DownloadCta title="Get Email Assistant" text="Free for Mac. Download it, then follow the install guide." buttons={[{ href: app.file, label: 'Mac Download', download: true }]} note="Requires macOS 26 Tahoe or newer on a Mac with Apple silicon (M1 or later)." />

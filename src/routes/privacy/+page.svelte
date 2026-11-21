@@ -20,11 +20,12 @@
 
   <h2>What we collect on the website</h2>
   <ul>
-    <li><strong>Downloads.</strong> You don’t give us any information to download our apps. When you check the agree box, your browser remembers it so you’re only asked once. That stays in your browser and isn’t sent to us.</li>
-    <li><strong>Support tickets.</strong> When you send a ticket on our Contact page, we save your name, your email address, what it’s about, and your summary, so we can help you and write back. Tickets are stored by our host, Netlify, and only we can see them.</li>
+    <li><strong>Downloads.</strong> You don’t give us any information to download our apps.</li>
+    <li><strong>Support tickets.</strong> When you send a ticket on our Contact page, we save your name, your email address, what it’s about, and your summary, so we can help you and write back. Tickets are stored by our host, Netlify (which may run an automatic spam filter on them), and only we can see them.</li>
+    <li><strong>How long we keep it.</strong> We keep support tickets and applications only as long as we need them to help you or review your application, and delete them when you ask.</li>
     <li><strong>Website logs.</strong> Like most websites, our hosting provider may keep standard logs, such as your IP address, browser type, and pages visited, for security and reliability.</li>
   </ul>
-  <p><strong>Update checks.</strong> About once a day, each app checks programsforyou.com for a newer version. That’s a normal web request: it doesn’t include your email, name, or anything from the app, though our host may log your IP address like any website visit.</p>
+  <p><strong>Update checks.</strong> Only when you click Check for Updates, the app checks programsforyou.com for a newer version. That’s a normal web request: it doesn’t include your email, name, or anything from the app, though our host may log your IP address like any website visit.</p>
   <p>We don’t use advertising, analytics trackers, or tracking cookies. If you send a support ticket, your browser remembers the email you typed so you don’t have to type it again. That stays in your browser.</p>
 
   <h2>Children under 13</h2>
@@ -32,12 +33,12 @@
 
   <h2>Our Mac apps</h2>
   <h3>School Schedule</h3>
-  <p>School Schedule is coming soon. If you already have it: your classes, bell times, homework, events, and settings are saved on your Mac only. They aren’t sent to us. School Schedule doesn’t need you to sign in. If you choose to link your Schoology calendar, your private calendar link is saved on your Mac and used only to download your calendar directly from Schoology. It isn’t sent to us.</p>
+  <p>School Schedule is coming soon. When it’s available: your classes, bell times, homework, events, and settings are saved on your Mac only. They aren’t sent to us. School Schedule doesn’t need you to sign in. If you choose to link your Schoology calendar, your private calendar link is saved on your Mac and used only to download your calendar directly from Schoology. It isn’t sent to us.</p>
   <h3>Email Assistant</h3>
   <ul>
     <li>The app connects straight from your Mac to your email provider (Gmail, iCloud, or Yahoo). Your emails don’t pass through our servers, and we never see them.</li>
     <li>Your app password is stored in your Mac’s Keychain.</li>
-    <li>By default, emails are read and replies are written by Apple Intelligence on your Mac.</li>
+    <li>By default, emails are read and replies are written by the AI built into your Mac (Apple Intelligence), which runs on your Mac.</li>
     <li>If you choose to add your own Claude API key, the emails being summarized are sent to Anthropic and handled under Anthropic’s privacy policy. This is off unless you turn it on.</li>
     <li>The app never sends an email unless you press Send.</li>
     <li>It connects only to personal email accounts. It doesn’t connect to school or work accounts.</li>
@@ -53,7 +54,7 @@
     <li>Your to-dos and settings are saved on your Mac only.</li>
   </ul>
   <h3>Job applications</h3>
-  <p>If you apply to join the team, we collect what you type in the form: your name, email, grade, the role and department you want, and your answers. Only the owners of Programs For You can see it, we use it only to look at your application, and we’ll delete it if you ask.</p>
+  <p>If you apply to join the team, we collect what you type in the form: your name, email, grade, the department you want, your answers, and whether a parent or guardian knows you’re applying (if you’re under 18). Only the owners of Programs For You can see it, we use it only to look at your application, and we’ll delete it if you ask.</p>
 
   <h2>How we use your information</h2>
   <ul>
@@ -77,6 +78,6 @@
   <p>If we change this policy, we’ll update the date at the top. For big changes, we’ll post a notice on the website.</p>
 
   <h2>Contact</h2>
-  <p>Questions? Email <a href={`mailto:${SITE.contactEmail}`}>{SITE.contactEmail}</a> or call <a href="tel:+14752661457">(475) 266-1457</a>.</p>
+  <p>Questions? Email <a href={`mailto:${SITE.contactEmail}`}>{SITE.contactEmail}</a>.</p>
 </Prose>
 </Container></section>

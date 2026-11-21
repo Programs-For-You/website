@@ -11,7 +11,7 @@
   import { SITE } from '#lib/config.js';
   import { savedEmail } from '#lib/emaillist.js';
   import { cn } from '#lib/cn.js';
-  import { input, select, field, fieldLabel, fine } from '#lib/ui.js';
+  import { input, select, field, fieldLabel, fine, check } from '#lib/ui.js';
 
   // Job applications ("Join the team"). Each one goes to Netlify Forms ("job-application").
   const EMAIL_OK = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
@@ -48,6 +48,7 @@
     if (!f.grade.value) { f.grade.focus(); return say('Please choose your grade.'); }
     if (!f.role.value) { f.role.focus(); return say('Please choose the role you want.'); }
     if (!f.department.value) { f.department.focus(); return say('Please choose a department (or “Not sure yet”).'); }
+    if (!f['guardian-ok'].checked) { f['guardian-ok'].focus(); return say('Please check the box about your age and parent or guardian.'); }
     if (f.why.value.trim().length < 20) { f.why.focus(); return say('Please tell us a little more about why you want to join (a sentence or two).'); }
 
     sending = true;
@@ -72,7 +73,7 @@
   }
 </script>
 
-<Seo title="Applications · Programs For You" description="Apply to join Programs For You as an intern or employee in Development, Social Media, Advertising, or Hospitality." />
+<Seo title="Applications · Programs For You" description="Apply to volunteer with Programs For You in Development, Social Media, Advertising, or Hospitality." />
 
 <PageHead center eyebrow="Applications" title="Join the team" lead="Want to help build free apps that make people’s days easier? Apply below. We read every application." />
 <section class="pt-2 pb-18">
@@ -91,7 +92,7 @@
           <div class={field}><label class={fieldLabel} for="a-grade">Grade</label>
             <select class={cn(input, select)} id="a-grade" name="grade" required><option value="">Choose…</option><option>9th</option><option>10th</option><option>11th</option><option>12th</option><option>Other</option></select></div>
           <div class={field}><label class={fieldLabel} for="a-role">Role</label>
-            <select class={cn(input, select)} id="a-role" name="role" required><option value="">Choose…</option><option>Intern</option><option>Employee</option></select></div>
+            <select class={cn(input, select)} id="a-role" name="role" required><option value="">Choose…</option><option>Volunteer</option></select></div>
           <div class={field}><label class={fieldLabel} for="a-dept">Department</label>
             <select class={cn(input, select)} id="a-dept" name="department" required><option value="">Choose…</option><option>Development</option><option>Social Media</option><option>Advertising</option><option>Hospitality</option><option>Not sure yet</option></select></div>
         </div>
@@ -99,6 +100,7 @@
           <textarea class={cn(input, textarea)} id="a-why" name="why" rows="5" maxlength="2000" placeholder="A few sentences about you and what you’d like to do." required></textarea></div>
         <div class={field}><label class={fieldLabel} for="a-skills">Skills or experience <span class="text-faint">(optional)</span></label>
           <textarea class={cn(input, textarea)} id="a-skills" name="skills" rows="3" maxlength="1500" placeholder="Coding, design, video, writing, clubs… anything that helps."></textarea></div>
+        <label class={cn(check, 'mb-3')}><input type="checkbox" name="guardian-ok" value="yes" required><span>I’m 13 or older. If I’m under 18, a parent or guardian knows I’m applying and says it’s OK.</span></label>
         <FormMessage text={msg} />
         <Button type="submit" disabled={sending}>{sending ? 'Sending…' : 'Send application'}</Button>
         <p class={fine}>We only use this to look at your application, and only the owners of Programs For You can see it. <a href="/privacy">Privacy</a></p>
@@ -111,7 +113,7 @@
     </div>
     <aside class="grid gap-4">
       <SideCard title="Open roles">
-        <p class="text-[.9rem] text-muted">Interns and employees in every department:</p>
+        <p class="text-[.9rem] text-muted">Volunteer roles in every department. These are unpaid, student-run volunteer roles, not jobs:</p>
         <ul class="mt-2.5 grid gap-2.5">
           <li class="grid gap-0.5 text-[.9rem]"><b>Development</b><span class="text-[.85rem] text-muted">Help build and test our apps.</span></li>
           <li class="grid gap-0.5 text-[.9rem]"><b>Social Media</b><span class="text-[.85rem] text-muted">Make posts and videos about our apps.</span></li>
@@ -121,11 +123,11 @@
       </SideCard>
       <SideCard title="What happens next">
         <ol class="grid list-decimal gap-1.5 pl-5 text-[.93rem] text-muted">
-          <li>Send your application.</li><li>We read every one.</li><li>If it’s a fit, we email you to set up a quick chat.</li>
+          <li>Send your application.</li><li>We read every one.</li><li>If it’s a fit, we email you (and a parent or guardian, if you’re under 18) to set up a quick chat.</li>
         </ol>
       </SideCard>
       <SideCard title="Questions?">
-        <p class="m-0 text-[.9rem] text-muted">See who’s on the <a href="/team">team</a>, or call <a href="tel:+14752661457">(475) 266-1457</a>.</p>
+        <p class="m-0 text-[.9rem] text-muted">Email <a href={`mailto:${SITE.contactEmail}`}>{SITE.contactEmail}</a>.</p>
       </SideCard>
     </aside>
   </Container>

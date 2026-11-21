@@ -12,6 +12,8 @@
   import AppHero from '#lib/components/apphero/AppHero.svelte';
   import Icon from '#lib/components/apphero/Icon.svelte';
   import DownloadCta from '#lib/components/apphero/DownloadCta.svelte';
+  import AgreeBox from '#lib/components/AgreeBox.svelte';
+  import { gate } from '#lib/agree.svelte.js';
   import { GAMES, SITE } from '#lib/config.js';
 
   const g = (id) => GAMES.find((x) => x.id === id);
@@ -36,7 +38,7 @@
 <AppHero icon="/assets/img/ti-games.svg" title="TI-84 Evo Games" statusId="gridpop" req="Requires a TI-84 Evo · Free">
   Free games for your TI-84 Evo graphing calculator. Three originals we made ourselves, and they run right on your calculator in its Python app.
   {#snippet actions()}
-    <Button href="/download#games"><Icon name="download" class="size-[18px]" /> Get them free</Button>
+    <Button href="#games"><Icon name="download" class="size-[18px]" /> Get them free</Button>
     <Button variant="ghost" href="#how-to-install">How to install</Button>
   {/snippet}
   {#snippet visual()}
@@ -46,6 +48,7 @@
 
 <Section soft id="games">
   <SectionHead eyebrow="The games" title="Three games, made by us" />
+  <AgreeBox class="mx-auto mb-7 max-w-[560px]" />
   <div class="grid grid-cols-3 gap-[22px] max-[980px]:grid-cols-2 max-[640px]:grid-cols-1">
     {#each games as gm}
       <article class="flex flex-col gap-4 rounded-card-lg border border-border bg-surface p-[18px]">
@@ -62,7 +65,7 @@
             {/each}
           </ul>
           <p class="text-[.8rem] text-faint">File: {gm.file}</p>
-          <Button href="/download#games" variant="ghost" size="sm"><Icon name="download" class="size-[18px]" /> Download {gm.name}</Button>
+          <Button href={`/downloads/${gm.file}`} download onclick={gate} variant="ghost" size="sm"><Icon name="download" class="size-[18px]" /> Download {gm.name}</Button>
         </div>
       </article>
     {/each}
@@ -84,7 +87,7 @@
   </ul>
 
   <Steps class="mt-9">
-    <Step n={1} title="Download the game"><p>Go to <a href="/download#games">Downloads</a>, check the box to agree to the Terms, and click <b>Download</b> next to the game. You’ll get a file like <b>GRIDPOP.py</b>. Don’t rename it: calculator program names can only be 1 to 8 letters.</p></Step>
+    <Step n={1} title="Download the game"><p>Click <b>Download</b> under the game you want, in <a href="#games">The games</a> above. By downloading, you agree to the <a href="/terms">Terms</a>. You’ll get a file like <b>GRIDPOP.py</b>. Don’t rename it: calculator program names can only be 1 to 8 letters.</p></Step>
     <Step n={2} title="Open TI Connect Evo"><p>Go to <a href="https://education.ti.com/en/products/calculators/graphing-calculators/ti-84-evo/ti-connect-evo" rel="noopener">TI Connect Evo</a> on Texas Instruments’ website and open it in your browser.</p></Step>
     <Step n={3} title="Connect your calculator"><p>Plug your TI-84 Evo into the computer with the USB-C cable and turn it on. If your browser asks to let the page connect to your calculator, pick your calculator and click <b>Connect</b>.</p></Step>
     <Step n={4} title="Send the game"><p>In TI Connect Evo, choose <b>Send files</b>, pick the <b>.py</b> file you downloaded, and send it to your calculator. Do the same for each game you want.</p></Step>
@@ -99,10 +102,10 @@
     <FaqItem q="The game disappeared from my calculator."><p>Calculators are often reset before tests, which removes games. Just send them again with TI Connect Evo.</p></FaqItem>
     <FaqItem q="Can I play at school?"><p>Only when your teacher says it’s OK, and never during a test.</p></FaqItem>
     <FaqItem q="Will it work on a TI-84 Plus CE or another calculator?"><p>These games are made for the TI-84 Evo. Other calculators may not be able to run them.</p></FaqItem>
-    <FaqItem q="Still stuck?"><p>Call <a href="tel:+14752661457">(475) 266-1457</a> or email <a href={`mailto:${SITE.contactEmail}`}>{SITE.contactEmail}</a>.</p></FaqItem>
+    <FaqItem q="Still stuck?"><p>Email <a href={`mailto:${SITE.contactEmail}`}>{SITE.contactEmail}</a>.</p></FaqItem>
   </div>
 
   <Callout class="mt-11"><Icon name="info" /><p>Programs For You isn’t affiliated with Texas Instruments. TI-84 Evo is a trademark of Texas Instruments. Our games are © 2026 Programs For You. All rights reserved.</p></Callout>
 </Section>
 
-<DownloadCta title="Get the games" text="Free for your TI-84 Evo. Pick a game on the Downloads page and download it. No email needed." buttons={[{ href: '/download#games', label: 'Get them free' }, ...games.map((x) => ({ href: '/download#games', label: x.name }))]} note="Requires a TI-84 Evo" />
+<DownloadCta title="Get the games" text="Free for your TI-84 Evo. Download any game below. No email needed." buttons={games.map((x) => ({ href: `/downloads/${x.file}`, label: x.name, download: true }))} note="Requires a TI-84 Evo" />

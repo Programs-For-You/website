@@ -36,16 +36,16 @@
       <div>
         <h2 class="mb-0 max-w-[16ch] text-[max(1.75rem,min(calc(1.75rem+.014*(100vw-27.5rem)),2.625rem))] leading-[1.2] tracking-[-.02em] text-white">Ready to make your day easier?</h2>
         <p class="mt-5 mb-0 max-w-[34ch] text-[max(.875rem,min(calc(.875rem+.005*(100vw-27.5rem)),1.1875rem))] leading-[1.3] text-white/80">Grab the apps. No email or password needed.</p>
-        <div class="mt-10"><Button href="/download" variant="notch">Get the apps</Button></div>
+        <div class="mt-10"><Button href="/email-assistant" variant="notch">Get the apps</Button></div>
       </div>
       <nav class="relative flex flex-col gap-[50px] border-l border-white/20 pl-5 desktop:grid desktop:grid-cols-2 desktop:gap-10 desktop:border-l-0 desktop:pl-0 min-[1281px]:pr-[88px]" aria-label="Footer">
         <div class={col}>
           <p class="{label} mb-0">Apps</p>
-          <div class="flex flex-col gap-2"><a class={link} href="/school-schedule">School Schedule</a><a class={link} href="/email-assistant">Email Assistant</a><a class={link} href="/screen-assistant">Screen Assistant</a><a class={link} href="/ti-84-evo-games">TI-84 Evo Games</a><a class={link} href="/download">Downloads</a></div>
+          <div class="flex flex-col gap-2"><a class={link} href="/school-schedule">School Schedule</a><a class={link} href="/email-assistant">Email Assistant</a><a class={link} href="/screen-assistant">Screen Assistant</a><a class={link} href="/ti-84-evo-games">TI-84 Evo Games</a></div>
         </div>
         <div class={col}>
           <p class="{label} mb-0">Help</p>
-          <div class="flex flex-col gap-2"><a class={link} href="/install">How to install</a><a class={link} href="/#faq">FAQ</a><a class={link} href="/contact">Contact us</a><a class={link} href="/founders">Founders</a><a class={link} href="/team">Team</a><a class={link} href="/apply">Join the team</a></div>
+          <div class="flex flex-col gap-2"><a class={link} href="/install">How to install</a><a class={link} href="/#faq">FAQ</a><a class={link} href="/contact">Contact us</a><a class={link} href="/founders">Board</a><a class={link} href="/apply">Join us</a></div>
         </div>
         <button type="button" onclick={top} aria-label="Back to top" class="group absolute top-0 right-0 size-12 cursor-pointer overflow-hidden rounded-2xl border border-white/20 bg-transparent">
           <svg class="absolute inset-0 m-auto size-3 transition-transform duration-[400ms] ease-in-out-quart group-hover-fine:-translate-y-8" viewBox="0 0 12 12" fill="#fff" aria-hidden="true"><path d="M5.25 2.869V12h1.5V2.869l4.2 4.2L12 6 6 0 0 6l1.05 1.069 4.2-4.2Z"/></svg>
@@ -60,7 +60,7 @@
       <div class="max-w-[90ch] text-white/70 text-pretty">
         <p class="mb-0">© 2026 Programs For You. All rights reserved.</p>
       </div>
-      <div class="flex flex-wrap gap-x-10 gap-y-3 desktop:justify-end min-[1281px]:pr-[88px]"><a class="link-draw" href="/terms">Terms of Service</a><a class="link-draw" href="/privacy">Privacy Policy</a></div>
+      <div class="flex flex-wrap gap-x-10 gap-y-3 desktop:justify-end min-[1281px]:pr-[88px]"><a class="link-draw" href="/terms">Terms of Service</a><a class="link-draw" href="/privacy">Privacy Policy</a><a class="link-draw" href="/licenses">Licenses</a></div>
     </div>
   </Container>
 </footer>

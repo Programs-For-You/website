@@ -20,7 +20,7 @@ export const organization = () => ({
     { '@type': 'Person', name: 'Brady Krupa', jobTitle: 'CEO & Founder', url: abs('/founders') },
     { '@type': 'Person', name: 'Arjun Bhanderi', jobTitle: 'Co-Founder & CFO', url: abs('/founders') }
   ],
-  contactPoint: [{ '@type': 'ContactPoint', contactType: 'customer support', email: SITE.contactEmail, telephone: '+1-475-266-1457', availableLanguage: 'English', url: abs('/contact') }]
+  contactPoint: [{ '@type': 'ContactPoint', contactType: 'customer support', email: SITE.contactEmail, availableLanguage: 'English', url: abs('/contact') }]
 });
 
 export const website = () => ({

@@ -25,7 +25,7 @@ export const APPS = [
   {
     id: 'school-schedule',
     name: 'School Schedule',
-    blurb: 'A live class timer at the top of your screen, plus your homework and a plan for tonight. Coming soon.',
+    blurb: 'Always know what period it is, how many minutes are left, and what homework is due.',
     icon: '/assets/img/school-schedule.svg',
     page: '/school-schedule',
     status: 'coming-soon',   // 'coming-soon' or 'available'. We're making a new version; it comes back here when it's ready.

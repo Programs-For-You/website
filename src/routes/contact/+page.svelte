@@ -148,13 +148,12 @@
       <SideCard title="Quick fixes">
         <ul class="grid gap-2 text-[.93rem]">
           <li><a href="/install#open-anyway">My Mac won’t open the app</a></li>
-          <li><a href="/school-schedule#how-to-use">School Schedule shows the wrong day</a></li>
           <li><a href="/screen-assistant#how-to-use">Screen Assistant can’t see my screen</a></li>
           <li><a href="/ti-84-evo-games#how-to-install">Putting games on my calculator</a></li>
         </ul>
       </SideCard>
       <SideCard title="Other ways to reach us">
-        <p class="m-0 text-[.9rem] text-muted">Email <a href={`mailto:${SITE.contactEmail}`}>{SITE.contactEmail}</a><br>or call <a href="tel:+14752661457">(475) 266-1457</a>.</p>
+        <p class="m-0 text-[.9rem] text-muted">Email <a href={`mailto:${SITE.contactEmail}`}>{SITE.contactEmail}</a>.</p>
       </SideCard>
     </aside>
   </Container>

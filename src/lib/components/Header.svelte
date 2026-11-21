@@ -5,19 +5,14 @@
   // Grouped nav: dropdowns inside the frosted pill on desktop, a full-screen dark menu on phones.
   const GROUPS = [
     { label: 'Apps', links: [
-      ['/school-schedule', 'School Schedule', 'Coming soon'],
+      ['/school-schedule', 'School Schedule', 'Class countdown and homework'],
       ['/email-assistant', 'Email Assistant', 'Daily summary and replies'],
       ['/screen-assistant', 'Screen Assistant', 'Help with what is on screen'],
       ['/ti-84-evo-games', 'TI-84 Evo Games', 'Games for your calculator']
     ] },
-    { label: 'Get started', links: [
-      ['/download', 'Downloads', 'Get every app'],
-      ['/install', 'How to install', 'Step by step for Mac']
-    ] },
-    { label: 'About', links: [
-      ['/founders', 'Founders', 'Our founders and board'],
-      ['/team', 'Team', 'Department heads'],
-      ['/apply', 'Join the team', 'Open roles']
+    { label: 'About us', links: [
+      ['/founders', 'Board', 'Our founders and board'],
+      ['/apply', 'Join us', 'Open roles']
     ] }
   ];
   import { DARK_HERO } from '#lib/chrome.js';
@@ -53,7 +48,7 @@
       <!-- desktop pill -->
       <nav id="site-nav" aria-label="Main" class="hidden h-[54px] items-center gap-3 rounded-xl border border-border bg-(--header-bg) py-1 pr-1 pl-3 backdrop-blur-[14px] desktop:flex">
         <div class="flex items-center gap-px">
-          {#each GROUPS as g}
+          {#each GROUPS as g, gi}
             <div class="relative">
               <button type="button" class={item} aria-haspopup="true" aria-expanded={openGroup === g.label} aria-current={groupActive(g)}
                 onclick={(e) => { e.stopPropagation(); openGroup = openGroup === g.label ? null : g.label; }}>
@@ -61,7 +56,7 @@
                 <svg class="size-3 transition-transform duration-300 {openGroup === g.label ? 'rotate-180' : ''}" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
               </button>
               {#if openGroup === g.label}
-                <div class="absolute top-[calc(100%+16px)] left-0 w-[300px] rounded-card-lg border border-border bg-surface p-2 shadow-lift" onclick={(e) => e.stopPropagation()} role="presentation">
+                <div class="absolute top-[calc(100%+16px)] w-[300px] max-w-[calc(100vw-2*var(--gutter,24px))] rounded-card-lg {gi === GROUPS.length - 1 ? 'right-0' : 'left-0'} border border-border bg-surface p-2 shadow-lift" onclick={(e) => e.stopPropagation()} role="presentation">
                   {#each g.links as [href, label, hint]}
                     <a {href} aria-current={here === href ? 'page' : undefined} class={menuLink}>
                       <span class="block text-[1.0625rem] leading-tight tracking-[-.02em]">{label}</span>

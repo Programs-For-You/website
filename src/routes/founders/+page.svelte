@@ -65,9 +65,3 @@
   </Section>
 {/if}
 
-<Section tight sectionClass="pt-[max(56px,min(calc(56px+.04*(100vw-440px)),96px))]">
-  <div class="mx-auto flex max-w-[740px] flex-wrap items-center justify-center gap-x-[18px] gap-y-3 rounded-card-lg border border-border bg-surface px-6 py-[22px] text-center">
-    <p class="m-0 text-muted">Meet the people who build, share, and support our apps.</p>
-    <Button variant="ghost" href="/team">Meet the team</Button>
-  </div>
-</Section>
