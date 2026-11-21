@@ -7,6 +7,7 @@
   import Lead from '#lib/components/Lead.svelte';
   import Button from '#lib/components/Button.svelte';
   import Avatar from '#lib/components/team/Avatar.svelte';
+  import ShaderBackdrop from '#lib/components/ShaderBackdrop.svelte';
 
   // Founders page: the founders with "Why we started" between them, then the Board of Trustees.
   // The people are listed in src/lib/team.js.
@@ -27,23 +28,30 @@
   </article>
 {/snippet}
 
-<PageHead center eyebrow="About us" title="Our founders" lead="Programs For You makes simple, free apps that save people time. Meet the people who started it and lead everything we build." />
-
-<Section tight>
-  <div class="grid grid-cols-[1fr_1.25fr_1fr] items-stretch gap-[22px] max-[1000px]:grid-cols-1 max-[1000px]:mx-auto max-[1000px]:max-w-[560px]">
-    {#if first}{@render founder(first)}{/if}
-    <figure class="relative m-0 flex flex-col rounded-card-lg px-8 pt-[34px] pb-7 text-white shadow-[0_26px_60px_-28px_rgba(124,58,237,.75)] bg-[radial-gradient(130%_120%_at_0%_0%,#6366f1_0%,#7c3aed_48%,#db2777_100%)]" data-reveal>
-      <span class="pointer-events-none absolute -top-1 right-[22px] font-serif text-[7.5rem] leading-none font-bold opacity-20" aria-hidden="true">“</span>
-      <p class="mb-3 font-mono text-mono text-white/80 uppercase">Why we started</p>
-      <blockquote class="m-0 mb-[22px] flex-1 text-[1.08rem] leading-[1.65]">{WHY_WE_STARTED}</blockquote>
-      <figcaption class="flex items-center font-semibold">
-        {#each named as f, i}<Avatar initials={f.initials} g1={f.g1} g2={f.g2} size="sm" class="border-2 border-white/90 shadow-none {i ? '-ml-2.5' : ''}" />{/each}
-        <span class="ml-3">{named.map((f) => f.name.split(' ')[0]).join(' & ')}, {named.length === 1 ? 'founder' : 'founders'}</span>
-      </figcaption>
-    </figure>
-    {#each rest as f}{@render founder(f)}{/each}
+<!-- Top half: the page heading and founder cards over the dark flowing backdrop (same one as the footer). -->
+<div class="relative isolate mb-2 desktop:mb-3">
+  <div class="pointer-events-none absolute inset-x-2 -top-24 bottom-0 -z-10 overflow-hidden rounded-card-lg border border-border bg-bg desktop:inset-x-3 desktop:-top-30" aria-hidden="true">
+    <div class="absolute inset-0 opacity-80"><ShaderBackdrop tone="night" scale={0.4} /></div>
+    <div class="absolute inset-0 bg-[linear-gradient(180deg,transparent_55%,rgb(11_17_16/.6)_100%)]"></div>
   </div>
-</Section>
+  <PageHead center eyebrow="About us" title="Our founders" lead="Programs For You makes simple, free apps that save people time. Meet the people who started it and lead everything we build." />
+
+  <Section tight>
+    <div class="grid grid-cols-[1fr_1.25fr_1fr] items-stretch gap-[22px] max-[1000px]:grid-cols-1 max-[1000px]:mx-auto max-[1000px]:max-w-[560px]">
+      {#if first}{@render founder(first)}{/if}
+      <figure class="relative m-0 flex flex-col rounded-card-lg px-8 pt-[34px] pb-7 border border-border text-white shadow-lift bg-(image:--desk)" data-reveal>
+        <span class="pointer-events-none absolute -top-1 right-[22px] font-serif text-[7.5rem] leading-none font-bold text-accent opacity-40" aria-hidden="true">“</span>
+        <p class="mb-3 font-mono text-mono text-white/80 uppercase">Why we started</p>
+        <blockquote class="m-0 mb-[22px] flex-1 text-[1.08rem] leading-[1.65]">{WHY_WE_STARTED}</blockquote>
+        <figcaption class="flex items-center font-semibold">
+          {#each named as f, i}<Avatar initials={f.initials} g1={f.g1} g2={f.g2} size="sm" class="border-2 border-white/90 shadow-none {i ? '-ml-2.5' : ''}" />{/each}
+          <span class="ml-3">{named.map((f) => f.name.split(' ')[0]).join(' & ')}, {named.length === 1 ? 'founder' : 'founders'}</span>
+        </figcaption>
+      </figure>
+      {#each rest as f}{@render founder(f)}{/each}
+    </div>
+  </Section>
+</div>
 
 {#if BOARD.length}
   <Section soft center>

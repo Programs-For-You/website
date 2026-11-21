@@ -3,8 +3,8 @@
 // A spot with `soon: true` (and no name) shows "Coming soon" with an empty dashed circle.
 // Fields: name, initials, g1/g2 (avatar gradient colours), title, note (optional).
 
-const BK = { name: 'Brady Krupa', initials: 'BK', g1: '#4f46e5', g2: '#9333ea' };
-const AB = { name: 'Arjun Bhanderi', initials: 'AB', g1: '#0284c7', g2: '#6366f1' };
+const BK = { name: 'Brady Krupa', initials: 'BK', g1: '#15803d', g2: '#0f766e' };
+const AB = { name: 'Arjun Bhanderi', initials: 'AB', g1: '#a16207', g2: '#4d7c0f' };
 const SA = { name: 'Sid Agrawal', initials: 'SA', g1: '#65a30d', g2: '#0d9488' };
 const EK = { name: 'Ethan Krishna', initials: 'EK', g1: '#0d9488', g2: '#0284c7' };
 const AJ = { name: 'Adam Johnson', initials: 'AJ', g1: '#d97706', g2: '#dc2626' };

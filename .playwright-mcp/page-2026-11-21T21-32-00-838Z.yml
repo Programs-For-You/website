@@ -1,0 +1,111 @@
+- generic [ref=f4e3]:
+  - link "Skip to content" [ref=f4e4] [cursor=pointer]:
+    - /url: "#main"
+  - banner:
+    - generic:
+      - link "Programs For You home" [ref=f4e5] [cursor=pointer]:
+        - /url: /
+        - generic [ref=f4e6]: Programs For You
+      - navigation "Main" [ref=f4e8]:
+        - generic [ref=f4e9]:
+          - button "Apps" [ref=f4e11] [cursor=pointer]
+          - button "About us" [ref=f4e15] [cursor=pointer]
+        - link "Contact" [ref=f4e18] [cursor=pointer]:
+          - /url: /contact
+          - generic [aria-hidden] [ref=f4e20]: Contact
+  - main [ref=f4e21]:
+    - generic [ref=f4e22]:
+      - generic [ref=f4e24]:
+        - paragraph [ref=f4e25]: About us
+        - heading "Our founders" [level=1] [ref=f4e26]
+        - paragraph [ref=f4e27]: Programs For You makes simple, free apps that save people time. Meet the people who started it and lead everything we build.
+      - generic [ref=f4e30]:
+        - article [ref=f4e31]:
+          - generic [aria-hidden] [ref=f4e32]: BK
+          - generic [ref=f4e33]: Founder
+          - heading "Brady Krupa" [level=2] [ref=f4e34]
+          - paragraph [ref=f4e35]: CEO & Founder
+          - paragraph [ref=f4e36]: Leads the company and decides what we build next.
+        - figure "Brady & Arjun, founders" [ref=f4e37]:
+          - generic [aria-hidden]: “
+          - paragraph [ref=f4e38]: Why we started
+          - blockquote [ref=f4e39]: "Every school day we saw the same small problems: losing track of what period it is, homework piling up, and an inbox nobody has time for. The apps that could help were expensive, complicated, or not made for students. So we built our own: simple, free tools that each do one job well. We want to keep making things that give people a little more time and a little less stress."
+          - generic [ref=f4e40]:
+            - generic [aria-hidden] [ref=f4e41]: BK
+            - generic [aria-hidden] [ref=f4e42]: AB
+            - generic [ref=f4e43]: Brady & Arjun, founders
+        - article [ref=f4e44]:
+          - generic [aria-hidden] [ref=f4e45]: AB
+          - generic [ref=f4e46]: Founder
+          - heading "Arjun Bhanderi" [level=2] [ref=f4e47]
+          - paragraph [ref=f4e48]: Co-Founder & CFO
+          - paragraph [ref=f4e49]: Keeps track of the money.
+    - generic [ref=f4e51]:
+      - paragraph [ref=f4e52]: Governance
+      - heading "Board of Trustees" [level=2] [ref=f4e53]
+      - paragraph [ref=f4e54]: Our Board of Trustees gives advice on the big decisions.
+      - generic [ref=f4e56]:
+        - generic [ref=f4e57]:
+          - generic [aria-hidden] [ref=f4e58]: BK
+          - generic [ref=f4e59]: Brady Krupa
+          - generic [ref=f4e60]: CEO & Founder
+        - generic [ref=f4e61]:
+          - generic [aria-hidden] [ref=f4e62]: AB
+          - generic [ref=f4e63]: Arjun Bhanderi
+          - generic [ref=f4e64]: Co-Founder & CFO
+        - generic [ref=f4e65]:
+          - generic [aria-hidden] [ref=f4e66]: SA
+          - generic [ref=f4e67]: Sid Agrawal
+          - generic [ref=f4e68]: Head of Website Development & CTO
+        - generic [ref=f4e69]:
+          - generic [aria-hidden] [ref=f4e70]: EK
+          - generic [ref=f4e71]: Ethan Krishna
+          - generic [ref=f4e72]: Head of App Development & CAIO
+        - generic [ref=f4e73]:
+          - generic [aria-hidden] [ref=f4e74]: AJ
+          - generic [ref=f4e75]: Adam Johnson
+          - generic [ref=f4e76]: Head of Hospitality & CMO
+  - contentinfo [ref=f4e78]:
+    - generic [ref=f4e79]:
+      - generic [ref=f4e80]:
+        - generic [ref=f4e81]:
+          - heading "Ready to make your day easier?" [level=2] [ref=f4e82]
+          - paragraph [ref=f4e83]: Grab the apps. No email or password needed.
+          - link "Get the apps" [ref=f4e85] [cursor=pointer]:
+            - /url: /email-assistant
+        - navigation "Footer" [ref=f4e97]:
+          - generic [ref=f4e98]:
+            - paragraph [ref=f4e99]: Apps
+            - generic [ref=f4e100]:
+              - link "School Schedule" [ref=f4e101] [cursor=pointer]:
+                - /url: /school-schedule
+              - link "Email Assistant" [ref=f4e102] [cursor=pointer]:
+                - /url: /email-assistant
+              - link "Screen Assistant" [ref=f4e103] [cursor=pointer]:
+                - /url: /screen-assistant
+              - link "TI-84 Evo Games" [ref=f4e104] [cursor=pointer]:
+                - /url: /ti-84-evo-games
+          - generic [ref=f4e105]:
+            - paragraph [ref=f4e106]: Help
+            - generic [ref=f4e107]:
+              - link "How to install" [ref=f4e108] [cursor=pointer]:
+                - /url: /install
+              - link "FAQ" [ref=f4e109] [cursor=pointer]:
+                - /url: /#faq
+              - link "Contact us" [ref=f4e110] [cursor=pointer]:
+                - /url: /contact
+              - link "Board" [ref=f4e111] [cursor=pointer]:
+                - /url: /founders
+              - link "Join us" [ref=f4e112] [cursor=pointer]:
+                - /url: /apply
+          - button "Back to top" [ref=f4e113] [cursor=pointer]
+      - paragraph [aria-hidden] [ref=f4e119]: Programs For You
+      - generic [ref=f4e120]:
+        - paragraph [ref=f4e122]: © 2026 Programs For You. All rights reserved.
+        - generic [ref=f4e123]:
+          - link "Terms of Service" [ref=f4e124] [cursor=pointer]:
+            - /url: /terms
+          - link "Privacy Policy" [ref=f4e125] [cursor=pointer]:
+            - /url: /privacy
+          - link "Licenses" [ref=f4e126] [cursor=pointer]:
+            - /url: /licenses

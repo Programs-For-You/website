@@ -1,0 +1,110 @@
+- generic [ref=e3]:
+  - link "Skip to content" [ref=e4] [cursor=pointer]:
+    - /url: "#main"
+  - banner:
+    - generic:
+      - link "Programs For You home" [ref=e5] [cursor=pointer]:
+        - /url: /
+        - generic [ref=e6]: Programs For You
+      - navigation "Main" [ref=e8]:
+        - generic [ref=e9]:
+          - button "Apps" [ref=e11] [cursor=pointer]
+          - button "About us" [ref=e15] [cursor=pointer]
+        - link "Contact" [ref=e18] [cursor=pointer]:
+          - /url: /contact
+          - generic [aria-hidden] [ref=e20]: Contact
+  - main [ref=e21]:
+    - generic [ref=e23]:
+      - paragraph [ref=e24]: About us
+      - heading "Our founders" [level=1] [ref=e25]
+      - paragraph [ref=e26]: Programs For You makes simple, free apps that save people time. Meet the people who started it and lead everything we build.
+    - generic [ref=e29]:
+      - article [ref=e30]:
+        - generic [aria-hidden] [ref=e31]: BK
+        - generic [ref=e32]: Founder
+        - heading "Brady Krupa" [level=2] [ref=e33]
+        - paragraph [ref=e34]: CEO & Founder
+        - paragraph [ref=e35]: Leads the company and decides what we build next.
+      - figure "Brady & Arjun, founders" [ref=e36]:
+        - generic [aria-hidden]: “
+        - paragraph [ref=e37]: Why we started
+        - blockquote [ref=e38]: "Every school day we saw the same small problems: losing track of what period it is, homework piling up, and an inbox nobody has time for. The apps that could help were expensive, complicated, or not made for students. So we built our own: simple, free tools that each do one job well. We want to keep making things that give people a little more time and a little less stress."
+        - generic [ref=e39]:
+          - generic [aria-hidden] [ref=e40]: BK
+          - generic [aria-hidden] [ref=e41]: AB
+          - generic [ref=e42]: Brady & Arjun, founders
+      - article [ref=e43]:
+        - generic [aria-hidden] [ref=e44]: AB
+        - generic [ref=e45]: Founder
+        - heading "Arjun Bhanderi" [level=2] [ref=e46]
+        - paragraph [ref=e47]: Co-Founder & CFO
+        - paragraph [ref=e48]: Keeps track of the money.
+    - generic [ref=e50]:
+      - paragraph [ref=e51]: Governance
+      - heading "Board of Trustees" [level=2] [ref=e52]
+      - paragraph [ref=e53]: Our Board of Trustees gives advice on the big decisions.
+      - generic [ref=e55]:
+        - generic [ref=e56]:
+          - generic [aria-hidden] [ref=e57]: BK
+          - generic [ref=e58]: Brady Krupa
+          - generic [ref=e59]: CEO & Founder
+        - generic [ref=e60]:
+          - generic [aria-hidden] [ref=e61]: AB
+          - generic [ref=e62]: Arjun Bhanderi
+          - generic [ref=e63]: Co-Founder & CFO
+        - generic [ref=e64]:
+          - generic [aria-hidden] [ref=e65]: SA
+          - generic [ref=e66]: Sid Agrawal
+          - generic [ref=e67]: Head of Website Development & CTO
+        - generic [ref=e68]:
+          - generic [aria-hidden] [ref=e69]: EK
+          - generic [ref=e70]: Ethan Krishna
+          - generic [ref=e71]: Head of App Development & CAIO
+        - generic [ref=e72]:
+          - generic [aria-hidden] [ref=e73]: AJ
+          - generic [ref=e74]: Adam Johnson
+          - generic [ref=e75]: Head of Hospitality & CMO
+  - contentinfo [ref=e77]:
+    - generic [ref=e78]:
+      - generic [ref=e79]:
+        - generic [ref=e80]:
+          - heading "Ready to make your day easier?" [level=2] [ref=e81]
+          - paragraph [ref=e82]: Grab the apps. No email or password needed.
+          - link "Get the apps" [ref=e84] [cursor=pointer]:
+            - /url: /email-assistant
+        - navigation "Footer" [ref=e96]:
+          - generic [ref=e97]:
+            - paragraph [ref=e98]: Apps
+            - generic [ref=e99]:
+              - link "School Schedule" [ref=e100] [cursor=pointer]:
+                - /url: /school-schedule
+              - link "Email Assistant" [ref=e101] [cursor=pointer]:
+                - /url: /email-assistant
+              - link "Screen Assistant" [ref=e102] [cursor=pointer]:
+                - /url: /screen-assistant
+              - link "TI-84 Evo Games" [ref=e103] [cursor=pointer]:
+                - /url: /ti-84-evo-games
+          - generic [ref=e104]:
+            - paragraph [ref=e105]: Help
+            - generic [ref=e106]:
+              - link "How to install" [ref=e107] [cursor=pointer]:
+                - /url: /install
+              - link "FAQ" [ref=e108] [cursor=pointer]:
+                - /url: /#faq
+              - link "Contact us" [ref=e109] [cursor=pointer]:
+                - /url: /contact
+              - link "Board" [ref=e110] [cursor=pointer]:
+                - /url: /founders
+              - link "Join us" [ref=e111] [cursor=pointer]:
+                - /url: /apply
+          - button "Back to top" [ref=e112] [cursor=pointer]
+      - paragraph [aria-hidden] [ref=e118]: Programs For You
+      - generic [ref=e119]:
+        - paragraph [ref=e121]: © 2026 Programs For You. All rights reserved.
+        - generic [ref=e122]:
+          - link "Terms of Service" [ref=e123] [cursor=pointer]:
+            - /url: /terms
+          - link "Privacy Policy" [ref=e124] [cursor=pointer]:
+            - /url: /privacy
+          - link "Licenses" [ref=e125] [cursor=pointer]:
+            - /url: /licenses
