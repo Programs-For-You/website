@@ -14,6 +14,8 @@
   import Icon from '#lib/components/apphero/Icon.svelte';
   import WhatsNew from '#lib/components/apphero/WhatsNew.svelte';
   import DownloadCta from '#lib/components/apphero/DownloadCta.svelte';
+  import AgreeBox from '#lib/components/AgreeBox.svelte';
+  import { gate } from '#lib/agree.svelte.js';
   import { APPS } from '#lib/config.js';
 
   const app = APPS.find((a) => a.id === 'screen-assistant');
@@ -37,8 +39,9 @@
 <AppHero icon="/assets/img/screen-assistant.svg" title="Screen Assistant" statusId="screen-assistant" howHref="#how-to-use" req="Requires macOS 26 Tahoe or newer on a Mac with Apple silicon (M1 or later) · Windows version coming soon · Free">
   Press <kbd>⌥</kbd> <kbd>Space</kbd> and your personal assistant looks at what you’re working on. Ask it to sum it up, explain it, make a to-do list, write a reply, or quiz you.
   {#snippet actions()}
-    <Button href="/download"><Icon name="download" class="size-[18px]" /> Mac Download</Button>
+    <Button href={app.file} download onclick={gate}><Icon name="download" class="size-[18px]" /> Mac Download</Button>
     <Button tag="span" variant="ghost" aria-disabled="true">Windows: coming soon</Button>
+    <AgreeBox />
   {/snippet}
   {#snippet visual()}
     <img class="mx-auto block h-auto w-full max-w-[560px]" src="/assets/img/screen-assistant-panel.png" width="680" height="636" alt="Screen Assistant reading a biology assignment and turning it into a to-do list">
@@ -74,7 +77,7 @@
     <Step n={6} title="Make to-dos and reminders"><p>After <b>Make to-dos</b>, click <b>Add to my to-dos</b>. Open the <b>To-dos</b> tab to check things off, and click the bell to get a reminder. The first time, your Mac asks to allow notifications: click <b>Allow</b>. Dates on your screen also show up as <b>Remind me</b> buttons.</p></Step>
     <Step n={7} title="Look again"><p>Switched windows? Click the round arrow next to the picture to look at the window again or at your whole screen. You can also copy all the words on the screen from there.</p></Step>
     <Step n={8} title="Make it yours"><p>Click the gear (or right-click the button at the top of your screen and choose <b>Settings</b>) to change the shortcut, look at your whole screen instead of one window, pick short or detailed answers, and open it when you log in.</p></Step>
-    <Step n={9} title="Optional: smarter AI"><p>In Settings, turn on <b>Use my Claude API key</b> and paste a key from console.anthropic.com. Claude sees the actual picture of your screen, so it’s better with charts and math. The picture is sent to Anthropic, and Anthropic charges your API account a small amount for each answer, so only do this if you’re OK with that.</p></Step>
+    <Step n={9} title="Optional: smarter AI"><p>In Settings, turn on <b>Use my Claude API key</b> and paste a key from console.anthropic.com. (Anthropic only lets adults, 18 and older, make an account and a key, so if you’re under 18, ask a parent or guardian, or skip this and use the AI built into your Mac.) Claude sees the actual picture of your screen, so it’s better with charts and math. The picture is sent to Anthropic, and Anthropic charges your API account a small amount for each answer, so only do this if you’re OK with that.</p></Step>
   </Steps>
 
   <Callout tone="info" class="mt-11"><Icon name="info" /><p><b>Using it for school:</b> Screen Assistant is great for understanding lessons, studying, and staying organized. Follow your teacher’s and school’s rules about using AI on assignments and tests, and double-check important answers, because AI can make mistakes.</p></Callout>
@@ -91,4 +94,4 @@
 
 <WhatsNew id="screen-assistant" />
 
-<DownloadCta title="Get Screen Assistant" text="Free for Mac. Download it, then follow the install guide." buttons={[{ href: '/download', label: 'Mac Download' }]} note="Requires macOS 26 Tahoe or newer on a Mac with Apple silicon (M1 or later)" />
+<DownloadCta title="Get Screen Assistant" text="Free for Mac. Download it, then follow the install guide." buttons={[{ href: app.file, label: 'Mac Download', download: true }]} note="Requires macOS 26 Tahoe or newer on a Mac with Apple silicon (M1 or later)." />

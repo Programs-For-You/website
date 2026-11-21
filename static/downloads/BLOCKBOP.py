@@ -1,5 +1,5 @@
 # BLOCKBOP - a brick breaker for the TI-84 Evo (Python)
-# (c) 2026 Brady Krupa and Arjun Bhanderi. All rights reserved. programsforyou.com
+# (c) 2026 Programs For You. All rights reserved. programsforyou.com
 # Left/right move the paddle. [2nd] or up launches the ball. Silver bricks take 2 hits.
 # [enter] pauses, [clear] quits.
 import ti_draw

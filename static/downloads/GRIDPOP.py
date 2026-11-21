@@ -1,5 +1,5 @@
 # GRIDPOP - a block-placing puzzle for the TI-84 Evo (Python)
-# (c) 2026 Brady Krupa and Arjun Bhanderi. All rights reserved. programsforyou.com
+# (c) 2026 Programs For You. All rights reserved. programsforyou.com
 # Place the 3 shapes on the 8x8 board. Fill a whole row or column to clear it.
 # Arrows move the shape, [enter] picks a different shape, [2nd] places it. [clear] quits.
 import ti_draw

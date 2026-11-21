@@ -9,30 +9,29 @@ export function GET() {
   const appLines = APPS.map((a) => {
     const win = a.windows?.status === 'available' ? ' and Windows' : '';
     const ready = a.status === 'available' && a.file ? `version ${a.version}, free download` : 'coming soon';
-    return `- [${a.name}](${u(a.page)}): ${a.blurb} Mac${win}; ${ready}. Requires ${a.requires}.`;
+    return `- [${a.name}](${u(a.page)}): ${a.blurb} Mac${win}; ${ready}.${a.requires ? ` Requires ${a.requires}.` : ''}`;
   });
   const text = `# ${SITE.name}
 
-> ${SITE.name} makes free, simple apps that save students time: School Schedule, Email Assistant and Screen Assistant for Mac (School Schedule also for Windows), plus free Python games for the TI-84 Evo graphing calculator. Everything is free; you only type your email to download. It was started by high school students in Wilton, Connecticut, and the company was founded by Brady Krupa and Arjun Bhanderi.
+> ${SITE.name} makes free, simple apps that save students time: Email Assistant and Screen Assistant for Mac, plus free Python games for the TI-84 Evo graphing calculator. School Schedule is coming soon. Everything is free, with no email, password or account needed to download.
 
 Key facts:
-- Price: free. No password or account; downloads open after typing an email address.
+- Price: free. No email, password or account; downloads open after agreeing to the Terms (13 or older).
 - Privacy: schedule and homework stay on the user's computer. Email Assistant and Screen Assistant use the AI built into the Mac, so the company does not see the user's email or screen.
 - Not affiliated with Apple Inc. Mac apps are not yet notarized, so macOS asks the user to approve them once (see the install guide).
-- Support: ${SITE.contactEmail}, phone +1 (475) 266-1457, or a support ticket at ${u('/contact')}.
+- Support: ${SITE.contactEmail}, or a support ticket at ${u('/contact')}.
 
 ## Apps
 ${appLines.join('\n')}
 - [TI-84 Evo Games](${u('/ti-84-evo-games')}): ${GAMES.map((g) => g.name).join(', ')}. Free Python games for the TI-84 Evo calculator.
 
 ## Get started
-- [Downloads](${u('/download')}): download every app (type your email).
-- [How to install](${u('/install')}): step-by-step for Mac and Windows, with pictures.
+- [How to install](${u('/install')}): step-by-step for Mac, with pictures.
 - [Contact](${u('/contact')}): send a support ticket.
 
 ## Company
-- [Team](${u('/team')}): founders Brady Krupa (CEO & Founder) and Arjun Bhanderi (Co-Founder, CFO & Developer), and the board members.
-- [Join the team](${u('/apply')}): apply as an intern or employee.
+- [Founders](${u('/founders')}): Brady Krupa (CEO & Founder) and Arjun Bhanderi (Co-Founder & CFO), why we started, and the Board of Trustees.
+- [Join the team](${u('/apply')}): apply to volunteer.
 
 ## Legal
 - [Terms of Service](${u('/terms')})

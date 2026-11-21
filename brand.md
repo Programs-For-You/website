@@ -1,7 +1,7 @@
 # Programs For You: Brand Guide
 
 ## Who we are
-Programs For You makes free, simple apps that save students time. We're high school students from Wilton, Connecticut, founded by Brady Krupa and Arjun Bhanderi. Everything is free; people only type their email to download.
+Programs For You makes free, simple apps that save students time. We're a small team of students. Everything is free, with no email or account needed to download. Don't name team members, schools, grades, or towns on the site unless that person has said it's OK.
 
 ## Voice
 - Plain, friendly, and short. Write the way a student would explain it to a friend.
@@ -37,6 +37,6 @@ Use lime sparingly. Don't add other accent colors. Per-person avatar gradients o
 - Easing: `ease-out-expo` and `ease-in-out-quart`. Respect reduced motion.
 
 ## Ownership and legal
-- Programs For You, Email Assistant and Screen Assistant are © 2026 Brady Krupa and Arjun Bhanderi. All rights reserved.
-- School Schedule is © 2026 Owen Wang & Brady Krupa, free software under the GNU AGPL v3, based on Owen Wang's School Schedule Manager.
+- Programs For You, Email Assistant and Screen Assistant are © 2026 Programs For You. All rights reserved.
+- School Schedule is coming soon (a new version is being made).
 - Not affiliated with Apple Inc.

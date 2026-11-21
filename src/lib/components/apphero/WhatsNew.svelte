@@ -15,7 +15,7 @@
   <div class="mb-11">
     <p class="mb-3 text-[.78rem] font-semibold tracking-[.09em] text-accent uppercase">Updates</p>
     <h2>What’s new on Mac</h2>
-    <p class="text-muted">The app updates itself, so you always have the newest version. Here’s what recent updates fixed and added.</p>
+    <p class="text-muted">Click Check for Updates in the app to get the newest version. Here’s what recent updates fixed and added.</p>
   </div>
   <div class="grid gap-3.5">
     {#each history as h, i}

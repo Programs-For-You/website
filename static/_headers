@@ -13,15 +13,6 @@
   Cache-Control: no-cache
   Access-Control-Allow-Origin: *
 
-# Owners-only page: keep it out of search engines and always load the newest copy.
-/admin
-  X-Robots-Tag: noindex, nofollow
-  Cache-Control: no-cache
-
-/admin.html
-  X-Robots-Tag: noindex, nofollow
-  Cache-Control: no-cache
-
 /llms.txt
   Content-Type: text/plain; charset=utf-8
 
@@ -35,7 +26,7 @@
 /sitemap.xml
   Cache-Control: public, max-age=3600
 
-# LOCKDOWN: remove with the redirect in _redirects.
+# The "under development" page (only used if the site is locked down again).
 /maintenance.html
   X-Robots-Tag: noindex, nofollow
   Cache-Control: no-store
