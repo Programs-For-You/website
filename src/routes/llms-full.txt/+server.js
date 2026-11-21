@@ -38,6 +38,7 @@ ${faq}
 - Arjun Bhanderi: Co-Founder & CFO
 - Sid Agrawal: Head of Website Development & CTO
 - Ethan Krishna: Head of App Development & CAIO
+- Adam Johnson: Head of Hospitality & CMO
 
 Legal: ${u('/terms')} · ${u('/privacy')}
 `;

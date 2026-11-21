@@ -7,6 +7,7 @@ const BK = { name: 'Brady Krupa', initials: 'BK', g1: '#4f46e5', g2: '#9333ea' }
 const AB = { name: 'Arjun Bhanderi', initials: 'AB', g1: '#0284c7', g2: '#6366f1' };
 const SA = { name: 'Sid Agrawal', initials: 'SA', g1: '#65a30d', g2: '#0d9488' };
 const EK = { name: 'Ethan Krishna', initials: 'EK', g1: '#0d9488', g2: '#0284c7' };
+const AJ = { name: 'Adam Johnson', initials: 'AJ', g1: '#d97706', g2: '#dc2626' };
 
 // Founders page: the big founder boxes, with the "Why we started" quote between the first two.
 export const FOUNDERS = [
@@ -25,7 +26,8 @@ export const BOARD = [
   { ...BK, title: 'CEO & Founder' },
   { ...AB, title: 'Co-Founder & CFO' },
   { ...SA, title: 'Head of Website Development & CTO' },
-  { ...EK, title: 'Head of App Development & CAIO' }
+  { ...EK, title: 'Head of App Development & CAIO' },
+  { ...AJ, title: 'Head of Hospitality & CMO' }
 ];
 
 // Team page: Heads of Departments, each with its co-heads underneath.
