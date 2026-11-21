@@ -24,8 +24,8 @@ export const WHY_WE_STARTED =
 export const BOARD = [
   { ...BK, title: 'CEO & Founder' },
   { ...AB, title: 'Co-Founder & CFO' },
-  { ...SA, title: 'Board Member & CTO' },
-  { ...EK, title: 'Head of Development & CAIO' }
+  { ...SA, title: 'Head of Website Development & CTO' },
+  { ...EK, title: 'Head of App Development & CAIO' }
 ];
 
 // Team page: Heads of Departments, each with its co-heads underneath.

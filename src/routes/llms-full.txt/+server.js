@@ -36,8 +36,8 @@ ${faq}
 ## People
 - Brady Krupa: CEO & Founder
 - Arjun Bhanderi: Co-Founder & CFO
-- Sid Agrawal: Board Member & CTO
-- Ethan Krishna: Head of Development & CAIO
+- Sid Agrawal: Head of Website Development & CTO
+- Ethan Krishna: Head of App Development & CAIO
 
 Legal: ${u('/terms')} · ${u('/privacy')}
 `;
