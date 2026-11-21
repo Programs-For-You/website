@@ -31,7 +31,8 @@ ${appLines.join('\n')}
 - [Contact](${u('/contact')}): send a support ticket.
 
 ## Company
-- [Team](${u('/team')}): Brady Krupa (CEO & Founder) and the team.
+- [Founders](${u('/founders')}): Brady Krupa (CEO & Founder), why we started, and the Board of Trustees.
+- [Team](${u('/team')}): department heads and co-heads.
 - [Join the team](${u('/apply')}): apply as an intern or employee.
 
 ## Legal

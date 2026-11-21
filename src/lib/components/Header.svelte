@@ -15,7 +15,8 @@
       ['/install', 'How to install', 'Step by step for Mac']
     ] },
     { label: 'About', links: [
-      ['/team', 'Team', 'Our founders and board'],
+      ['/founders', 'Founders', 'Our founders and board'],
+      ['/team', 'Team', 'Department heads'],
       ['/apply', 'Join the team', 'Open roles']
     ] }
   ];

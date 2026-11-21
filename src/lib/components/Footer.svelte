@@ -45,7 +45,7 @@
         </div>
         <div class={col}>
           <p class="{label} mb-0">Help</p>
-          <div class="flex flex-col gap-2"><a class={link} href="/install">How to install</a><a class={link} href="/#faq">FAQ</a><a class={link} href="/contact">Contact us</a><a class={link} href="/team">Team</a><a class={link} href="/apply">Join the team</a></div>
+          <div class="flex flex-col gap-2"><a class={link} href="/install">How to install</a><a class={link} href="/#faq">FAQ</a><a class={link} href="/contact">Contact us</a><a class={link} href="/founders">Founders</a><a class={link} href="/team">Team</a><a class={link} href="/apply">Join the team</a></div>
         </div>
         <button type="button" onclick={top} aria-label="Back to top" class="group absolute top-0 right-0 size-12 cursor-pointer overflow-hidden rounded-2xl border border-white/20 bg-transparent">
           <svg class="absolute inset-0 m-auto size-3 transition-transform duration-[400ms] ease-in-out-quart group-hover-fine:-translate-y-8" viewBox="0 0 12 12" fill="#fff" aria-hidden="true"><path d="M5.25 2.869V12h1.5V2.869l4.2 4.2L12 6 6 0 0 6l1.05 1.069 4.2-4.2Z"/></svg>
