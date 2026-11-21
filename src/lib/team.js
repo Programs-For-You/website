@@ -11,7 +11,7 @@ const EK = { name: 'Ethan Krishna', initials: 'EK', g1: '#0d9488', g2: '#0284c7'
 // Founders page: the big founder boxes, with the "Why we started" quote between the first two.
 export const FOUNDERS = [
   { ...BK, title: 'CEO & Founder', note: 'Leads the company and decides what we build next.' },
-  { ...AB, title: 'Co-Founder, CFO & Developer', note: 'Keeps track of the money, and helps build, test, and improve every app.' }
+  { ...AB, title: 'Co-Founder & CFO', note: 'Keeps track of the money.' }
 ];
 
 export const WHY_WE_STARTED =
@@ -23,7 +23,7 @@ export const WHY_WE_STARTED =
 // Founders page: the Board of Trustees, shown as seats around a table.
 export const BOARD = [
   { ...BK, title: 'CEO & Founder' },
-  { ...AB, title: 'Co-Founder, CFO & Developer' },
+  { ...AB, title: 'Co-Founder & CFO' },
   { ...SA, title: 'Board Member' },
   { ...EK, title: 'Board Member' }
 ];

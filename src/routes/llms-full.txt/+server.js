@@ -35,7 +35,7 @@ ${faq}
 
 ## People
 - Brady Krupa: CEO & Founder
-- Arjun Bhanderi: Co-Founder, CFO & Developer
+- Arjun Bhanderi: Co-Founder & CFO
 - Sid Agrawal: Board Member
 - Ethan Krishna: Board Member
 
