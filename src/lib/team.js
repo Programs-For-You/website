@@ -25,7 +25,7 @@ export const BOARD = [
   { ...BK, title: 'CEO & Founder' },
   { ...AB, title: 'Co-Founder & CFO' },
   { ...SA, title: 'Board Member & CTO' },
-  { ...EK, title: 'Board Member' }
+  { ...EK, title: 'Head of Development & CAIO' }
 ];
 
 // Team page: Heads of Departments, each with its co-heads underneath.
