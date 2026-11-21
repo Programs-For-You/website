@@ -24,15 +24,16 @@
     <li><strong>Support tickets.</strong> When you send a ticket on our Contact page, we save your name, your email address, what it’s about, and your summary, so we can help you and write back. Tickets are stored by our host, Netlify, and only we can see them.</li>
     <li><strong>Website logs.</strong> Like most websites, our hosting provider may keep standard logs, such as your IP address, browser type, and pages visited, for security and reliability.</li>
   </ul>
-  <p><strong>Update checks.</strong> About once a day, each app checks programsforyou.com for a newer version. That’s a normal web request: it doesn’t include your email, name, or anything from the app, though our host may log your IP address like any website visit.</p>
+  <p><strong>Update checks.</strong> Programs For You checks programsforyou.com for a newer version only when you click Check for Updates. (The older separate apps checked about once a day.) That’s a normal web request: it doesn’t include your email, name, or anything from the app, though our host may log your IP address like any website visit.</p>
   <p>We don’t use advertising, analytics trackers, or tracking cookies. If you send a support ticket, your browser remembers the email you typed so you don’t have to type it again. That stays in your browser.</p>
 
   <h2>Children under 13</h2>
   <p>Our Services are for people 13 and older. We don’t knowingly collect personal information from children under 13. If you think a child under 13 has sent us information, email us and we’ll delete it.</p>
 
   <h2>Our Mac apps</h2>
-  <h3>School Schedule</h3>
-  <p>School Schedule is coming soon. If you already have it: your classes, bell times, homework, events, and settings are saved on your Mac only. They aren’t sent to us. School Schedule doesn’t need you to sign in. If you choose to link your Schoology calendar, your private calendar link is saved on your Mac and used only to download your calendar directly from Schoology. It isn’t sent to us.</p>
+  <h3>School Calendar</h3>
+  <p>Your school setup, classes, and homework are saved on your Mac only. They aren’t sent to us. Homework reminders are notifications made on your Mac.</p>
+  <p>If you still have the older School Schedule app: your classes, bell times, homework, events, and settings are saved on your Mac only. They aren’t sent to us. School Schedule doesn’t need you to sign in. If you choose to link your Schoology calendar, your private calendar link is saved on your Mac and used only to download your calendar directly from Schoology. It isn’t sent to us.</p>
   <h3>Email Assistant</h3>
   <ul>
     <li>The app connects straight from your Mac to your email provider (Gmail, iCloud, or Yahoo). Your emails don’t pass through our servers, and we never see them.</li>

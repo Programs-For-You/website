@@ -2,11 +2,11 @@
 // priority/changefreq are hints for search engines. `index: false` pages stay out of the sitemap.
 export const PAGES = [
   { path: '/', name: 'Home', desc: 'Free Mac apps that make a student’s day easier.', priority: 1.0, changefreq: 'weekly' },
-  { path: '/school-schedule', name: 'School Schedule', desc: 'Coming soon: a live class countdown, homework plan and reminders in the Mac menu bar.', priority: 0.9, changefreq: 'weekly' },
+  { path: '/school-calendar', name: 'School Calendar', desc: 'A live class countdown, the whole school year on one calendar, and homework with reminders. Part of Programs For You.', priority: 0.9, changefreq: 'weekly' },
   { path: '/email-assistant', name: 'Email Assistant', desc: 'Once a day, a card sums up your email and helps you reply with one click.', priority: 0.9, changefreq: 'weekly' },
   { path: '/screen-assistant', name: 'Screen Assistant', desc: 'Press Option-Space and an assistant looks at your screen to summarize, explain, make to-dos or quiz you.', priority: 0.9, changefreq: 'weekly' },
   { path: '/ti-84-evo-games', name: 'TI-84 Evo Games', desc: 'Free Python games for the TI-84 Evo graphing calculator: Grid Pop, Block Bop and Blackjack.', priority: 0.7, changefreq: 'monthly' },
-  { path: '/download', name: 'Downloads', desc: 'Download every app. No email needed.', priority: 0.9, changefreq: 'weekly' },
+  { path: '/download', name: 'Downloads', desc: 'Download Programs For You. No email needed.', priority: 0.9, changefreq: 'weekly' },
   { path: '/install', name: 'How to install', desc: 'Step-by-step install guide for Mac.', priority: 0.8, changefreq: 'monthly' },
   { path: '/founders', name: 'Founders', desc: 'Our founders, why we started, and our Board of Trustees.', priority: 0.6, changefreq: 'monthly' },
   { path: '/team', name: 'Team', desc: 'Our department heads and co-heads.', priority: 0.6, changefreq: 'monthly' },

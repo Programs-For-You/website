@@ -34,11 +34,10 @@
 
 <Seo title="Screen Assistant · Programs For You" description="A free Mac app: press Option-Space and an assistant looks at your screen to summarize, explain, make to-dos, or quiz you, using the AI built into your Mac." jsonLd={[softwareApp('screen-assistant')]} />
 
-<AppHero icon="/assets/img/screen-assistant.svg" title="Screen Assistant" statusId="screen-assistant" howHref="#how-to-use" req="Requires macOS 26 Tahoe or newer on a Mac with Apple silicon (M1 or later) · Windows version coming soon · Free">
+<AppHero icon="/assets/img/screen-assistant.svg" title="Screen Assistant" statusId="screen-assistant" howHref="#how-to-use" req="Part of Programs For You · Requires macOS 26 Tahoe or newer on a Mac with Apple silicon (M1 or later) · Free">
   Press <kbd>⌥</kbd> <kbd>Space</kbd> and your personal assistant looks at what you’re working on. Ask it to sum it up, explain it, make a to-do list, write a reply, or quiz you.
   {#snippet actions()}
-    <Button href="/download"><Icon name="download" class="size-[18px]" /> Mac Download</Button>
-    <Button tag="span" variant="ghost" aria-disabled="true">Windows: coming soon</Button>
+    <Button href="/download"><Icon name="download" class="size-[18px]" /> Download Programs For You</Button>
   {/snippet}
   {#snippet visual()}
     <img class="mx-auto block h-auto w-full max-w-[560px]" src="/assets/img/screen-assistant-panel.png" width="680" height="636" alt="Screen Assistant reading a biology assignment and turning it into a to-do list">
@@ -63,7 +62,7 @@
   </ul>
 
   <Steps class="mt-9">
-    <Step n={1} title="Install it"><p>Download the app and open it the first time by following the <a href="/install">install guide</a>.</p></Step>
+    <Step n={1} title="Install Programs For You"><p>Download <b>Programs For You</b> (Screen Assistant is inside it) and open it the first time by following the <a href="/install">install guide</a>.</p></Step>
     <Step n={2} title="Let it see your screen">
       <p>The first time, your Mac asks whether Screen Assistant can record your screen. Click <b>Open System Settings</b>, turn on <b>Screen Assistant</b> under <Path>Privacy &amp; Security → Screen &amp; System Audio Recording</Path>, then click <b>Quit &amp; Reopen</b>.</p>
       <p class="text-[.9rem]">“Record” sounds scary, but it only takes one picture each time you open it. It never records video.</p>
@@ -91,4 +90,4 @@
 
 <WhatsNew id="screen-assistant" />
 
-<DownloadCta title="Get Screen Assistant" text="Free for Mac. Download it, then follow the install guide." buttons={[{ href: '/download', label: 'Mac Download' }]} note="Requires macOS 26 Tahoe or newer on a Mac with Apple silicon (M1 or later)" />
+<DownloadCta title="Get Screen Assistant" text="It’s part of Programs For You, one free Mac app. Download it, then follow the install guide." buttons={[{ href: '/download', label: 'Download Programs For You' }]} note="Requires macOS 26 Tahoe or newer on a Mac with Apple silicon (M1 or later)" />

@@ -13,23 +13,36 @@ export const SITE = {
   appleSignIn: false,
 };
 
-// Your apps. Each one has a Mac download, plus a Windows download in `windows`.
-// When an app is ready (or updated):
-//   1. Put its .zip file in website/downloads/ (apps/build.sh does this)
-//   2. Change status to 'available' and fill in version, file, and size.
-//   3. history = the Mac update notes, newest first: what each version FIXED and what it ADDED (short, plain words).
-//      apps/release.sh adds one for every update. They show on the app pages, the Downloads page, the update
-//      window, and the app's What's New card after it updates. /updates.json is made from this list by
-//      tools/build_pages.py. (Windows versions don't get these updates, so the notes are Mac only.)
+// The one app people download: Programs For You, with School Calendar, Email Assistant, and Screen Assistant inside.
+// When there's a new version: put its .zip in static/downloads/, update version, file, size, and history (newest first:
+// what it FIXED and what it ADDED, in short plain words), and add the same version to static/updates.json.
+export const APP = {
+  id: 'programs-for-you',
+  name: 'Programs For You',
+  blurb: 'One app with School Calendar, Email Assistant, and Screen Assistant inside.',
+  icon: '/assets/img/logo.svg',
+  page: '/download',
+  status: 'available',
+  version: '1.0.0',
+  file: '/downloads/ProgramsForYou-1.0.0.zip',
+  size: '3.6 MB',
+  requires: 'macOS 14 Sonoma or newer. Email Assistant and Screen Assistant need macOS 26 Tahoe or newer on a Mac with Apple silicon (M1 or later).',
+  history: [
+    { version: '1.0.0', fixed: '', added: 'School Calendar, Email Assistant, and Screen Assistant are now one app. School Calendar is new: a live countdown to the end of class, the whole school year on one calendar, and your homework with reminders. Updates only happen when you click Check for Updates.' },
+  ],
+};
+
+// The tools inside Programs For You. Each has its own page; they all download as Programs For You.
 export const APPS = [
   {
-    id: 'school-schedule',
-    name: 'School Schedule',
-    blurb: 'A live class timer at the top of your screen, plus your homework and a plan for tonight. Coming soon.',
+    id: 'school-calendar',
+    name: 'School Calendar',
+    blurb: 'A live countdown to the end of class, the whole school year on one calendar, and your homework with reminders.',
     icon: '/assets/img/school-schedule.svg',
-    page: '/school-schedule',
-    status: 'coming-soon',   // 'coming-soon' or 'available'. We're making a new version; it comes back here when it's ready.
-    windows: { status: 'coming-soon' },
+    page: '/school-calendar',
+    status: 'available',
+    file: APP.file,
+    requires: 'macOS 14 Sonoma or newer',
   },
   {
     id: 'email-assistant',
@@ -38,16 +51,8 @@ export const APPS = [
     icon: '/assets/img/email-assistant.svg',
     page: '/email-assistant',
     status: 'available',
-    // Email Assistant is part of Programs For You now: this downloads that one app.
-    version: '1.0.0',
-    file: '/downloads/ProgramsForYou-1.0.0.zip',
-    size: '3.6 MB',
-    history: [
-      { version: '1.0.0', fixed: '', added: 'Now part of Programs For You: one app with School Calendar, Email Assistant, and Screen Assistant inside. Updates only when you click Check for Updates.' },
-      { version: '1.2.3', fixed: 'It now opens with a welcome card instead of Settings when you haven’t added an email yet.', added: 'On screen: open any email, even school email, and it reads that email and writes replies for you to copy and paste. Settings now say clearly that the daily summary works with personal email only.' },
-    ],
+    file: APP.file,
     requires: 'macOS 26 Tahoe or newer · Mac with Apple silicon (M1 or later)',
-    windows: { status: 'coming-soon' },   // the Windows version is being built
   },
   {
     id: 'screen-assistant',
@@ -56,16 +61,8 @@ export const APPS = [
     icon: '/assets/img/screen-assistant.svg',
     page: '/screen-assistant',
     status: 'available',
-    // Screen Assistant is part of Programs For You now: this downloads that one app.
-    version: '1.0.0',
-    file: '/downloads/ProgramsForYou-1.0.0.zip',
-    size: '3.6 MB',
-    history: [
-      { version: '1.0.0', fixed: '', added: 'Now part of Programs For You: one app with School Calendar, Email Assistant, and Screen Assistant inside. Updates only when you click Check for Updates.' },
-      { version: '1.1.2', fixed: 'Automatic updates are more reliable: they also check right after your Mac wakes up.', added: 'If the app is running from your Downloads folder, it offers to move itself to Applications so it can keep updating.' },
-    ],
+    file: APP.file,
     requires: 'macOS 26 Tahoe or newer · Mac with Apple silicon (M1 or later)',
-    windows: { status: 'coming-soon' },   // the Windows version is being built
   },
 ];
 

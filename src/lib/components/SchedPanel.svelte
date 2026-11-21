@@ -1,8 +1,8 @@
 <script>
   import { cn } from '#lib/cn.js';
   /**
-   * The School Schedule drop-down from the menu bar (decorative).
-   * full = all five periods plus tonight's homework (School Schedule page). Without it: just Lunch and period 4 (home page).
+   * The School Calendar drop-down from the menu bar (decorative).
+   * full = all five periods plus tonight's homework (School Calendar page). Without it: just Lunch and period 4 (home page).
    * fluid = full width on phones.
    */
   let { full = false, fluid = false, class: cls = '' } = $props();

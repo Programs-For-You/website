@@ -34,11 +34,10 @@
 
 <Seo title="Email Assistant · Programs For You" description="A free Mac app that sums up your personal email once a day and helps you reply with one click. On screen answers any email you have open, school email too." jsonLd={[softwareApp('email-assistant')]} />
 
-<AppHero icon="/assets/img/email-assistant.svg" title="Email Assistant" statusId="email-assistant" howHref="#how-to-use" req="Requires macOS 26 Tahoe or newer on a Mac with Apple silicon (M1 or later) · Windows version coming soon · Free">
+<AppHero icon="/assets/img/email-assistant.svg" title="Email Assistant" statusId="email-assistant" howHref="#how-to-use" req="Part of Programs For You · Requires macOS 26 Tahoe or newer on a Mac with Apple silicon (M1 or later) · Free">
   Once a day, a little card sums up your personal email and helps you reply with one click. For school email, <b>On screen</b> reads the email you have open and writes replies for you.
   {#snippet actions()}
-    <Button href="/download"><Icon name="download" class="size-[18px]" /> Mac Download</Button>
-    <Button tag="span" variant="ghost" aria-disabled="true">Windows: coming soon</Button>
+    <Button href="/download"><Icon name="download" class="size-[18px]" /> Download Programs For You</Button>
   {/snippet}
   {#snippet visual()}
     <AskCard demo size="lg" />
@@ -66,7 +65,7 @@
   </ul>
 
   <Steps class="mt-9">
-    <Step n={1} title="Install it"><p>Download the app and open it the first time by following the <a href="/install">install guide</a>.</p></Step>
+    <Step n={1} title="Install Programs For You"><p>Download <b>Programs For You</b> (Email Assistant is inside it) and open it the first time by following the <a href="/install">install guide</a>.</p></Step>
     <Step n={2} title="Connect your personal email">
       <p><b>Personal accounts only.</b> School and work accounts can’t be connected. To answer those, use <a href="#on-screen">On screen</a>.</p>
       <p>Open the app, click <b>Add personal email</b>, and pick your email. Gmail, iCloud, and Yahoo use an <b>app password</b>: a special password just for this app, so your real password stays private. (Outlook support is coming soon.)</p>
@@ -113,4 +112,4 @@
 
 <WhatsNew id="email-assistant" />
 
-<DownloadCta title="Get Email Assistant" text="Free for Mac. Download it, then follow the install guide." buttons={[{ href: '/download', label: 'Mac Download' }]} note="Requires macOS 26 Tahoe or newer on a Mac with Apple silicon (M1 or later)" />
+<DownloadCta title="Get Email Assistant" text="It’s part of Programs For You, one free Mac app. Download it, then follow the install guide." buttons={[{ href: '/download', label: 'Download Programs For You' }]} note="Requires macOS 26 Tahoe or newer on a Mac with Apple silicon (M1 or later)" />

@@ -1,6 +1,6 @@
 // Structured data (JSON-LD) builders. Search engines use it for rich results; answer engines and AI assistants
 // use it to quote facts (who we are, what each app does, the FAQ) accurately.
-import { SITE, APPS, GAMES } from './config.js';
+import { SITE, APP, APPS, GAMES } from './config.js';
 import { PAGES } from './pages.js';
 
 export const abs = (path = '/') => { const p = path.replace(/\.html$/, ''); return SITE.url + (p === '/' ? '/' : p); };
@@ -14,7 +14,7 @@ export const organization = () => ({
   url: SITE.url + '/',
   logo: { '@type': 'ImageObject', url: SITE.url + '/assets/img/logo.svg' },
   image: SITE.url + '/og.png',
-  description: 'Programs For You makes free, simple apps that save students time: Email Assistant and Screen Assistant for Mac, plus games for the TI-84 Evo calculator. School Schedule is coming soon.',
+  description: 'Programs For You makes free, simple tools that save students time: one Mac app with School Calendar, Email Assistant, and Screen Assistant inside, plus games for the TI-84 Evo calculator.',
   foundingDate: '2026',
   founder: [
     { '@type': 'Person', name: 'Brady Krupa', jobTitle: 'CEO & Founder', url: abs('/founders') },
@@ -77,10 +77,9 @@ export const howTo = ({ name, description, steps, path }) => ({
 
 /** SoftwareApplication for an app id from config.js (price, version, platforms, download). */
 export const softwareApp = (id) => {
-  const a = APPS.find((x) => x.id === id);
+  const a = [APP, ...APPS].find((x) => x.id === id);
   if (!a) return null;
   const ready = a.status === 'available' && a.file;
-  const win = a.windows?.status === 'available';
   return {
     '@context': 'https://schema.org',
     '@type': 'SoftwareApplication',
@@ -89,14 +88,13 @@ export const softwareApp = (id) => {
     description: a.blurb,
     url: abs(a.page),
     image: SITE.url + a.icon,
-    applicationCategory: id === 'school-schedule' ? 'EducationalApplication' : 'ProductivityApplication',
-    operatingSystem: win ? 'macOS, Windows' : 'macOS',
+    applicationCategory: id === 'school-calendar' ? 'EducationalApplication' : 'ProductivityApplication',
+    operatingSystem: 'macOS',
     softwareRequirements: a.requires,
-    ...(ready ? { softwareVersion: a.version, fileSize: a.size, downloadUrl: SITE.url + a.file } : {}),
+    ...(ready ? { softwareVersion: APP.version, fileSize: APP.size, downloadUrl: SITE.url + APP.file } : {}),
     isAccessibleForFree: true,
     offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD', availability: ready ? 'https://schema.org/InStock' : 'https://schema.org/PreOrder' },
     publisher: { '@id': ID.org },
-    ...(a.license ? { license: 'https://www.gnu.org/licenses/agpl-3.0.html' } : {})
   };
 };
 

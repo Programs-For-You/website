@@ -25,8 +25,8 @@
 
   const how = [
     { title: '1. Check one box', paths: '<rect x="4" y="4" width="16" height="16" rx="3"/><path d="M8.5 12.5l2.5 2.5 4.5-5"/>', body: 'No email, no password, and no account. Agree to the Terms and the downloads open right up.' },
-    { title: '2. Download and open', paths: '<path d="M12 3v12M7 10l5 5 5-5"/><path d="M5 21h14"/>', body: 'Download the app and follow the <a href="/install">install guide</a>. The first time, your Mac asks you to allow it.' },
-    { title: '3. Click the button up top', paths: '<rect x="3" y="4" width="18" height="16" rx="2.5"/><path d="M3 8.5h18"/><path d="M15 6.25h3"/>', body: 'The app lives in the bar at the top of your screen. Click its button anytime.' }
+    { title: '2. Download and open', paths: '<path d="M12 3v12M7 10l5 5 5-5"/><path d="M5 21h14"/>', body: 'Download Programs For You and follow the <a href="/install">install guide</a>. The first time, your Mac asks you to allow it.' },
+    { title: '3. Click the button up top', paths: '<rect x="3" y="4" width="18" height="16" rx="2.5"/><path d="M3 8.5h18"/><path d="M15 6.25h3"/>', body: 'Each tool gets a button in the bar at the top of your screen. Click it anytime.' }
   ];
   const why = [
     { title: 'Private by design', paths: '<path d="M12 3l8 3v6c0 4.6-3.4 8.3-8 9-4.6-.7-8-4.4-8-9V6l8-3z"/><path d="M9 12l2 2 4-4"/>', body: 'Your schedule and homework stay on your Mac. Email Assistant and Screen Assistant use the AI built into your Mac, so we never see your email or your screen.' },
@@ -35,17 +35,17 @@
   ];
   const apps = [
     {
-      id: 'school-schedule', name: 'School Schedule', icon: '/assets/img/school-schedule.svg', plat: 'Mac', page: '/school-schedule',
-      blurb: 'Always know what period it is, how many minutes are left, and what homework is due.',
-      points: ['Live countdown at the top of your screen', 'A homework plan for tonight', 'Homework list with reminders']
+      id: 'school-calendar', name: 'School Calendar', icon: '/assets/img/school-schedule.svg', plat: 'Inside Programs For You', page: '/school-calendar',
+      blurb: 'Always know what class you’re in, how many minutes are left, and what homework is due.',
+      points: ['Live countdown at the top of your screen', 'The whole school year on one calendar', 'Homework list with reminders']
     },
     {
-      id: 'email-assistant', name: 'Email Assistant', icon: '/assets/img/email-assistant.svg', plat: 'Mac · Windows soon', page: '/email-assistant',
+      id: 'email-assistant', name: 'Email Assistant', icon: '/assets/img/email-assistant.svg', plat: 'Inside Programs For You', page: '/email-assistant',
       blurb: 'Once a day, a little card sums up your email and lets you reply with one click.',
       points: ['Daily summary card in the corner of your screen', 'Pick a ready-made reply or type your own', 'On screen: replies for any email you have open']
     },
     {
-      id: 'screen-assistant', name: 'Screen Assistant', icon: '/assets/img/screen-assistant.svg', plat: 'Mac · Windows soon', page: '/screen-assistant',
+      id: 'screen-assistant', name: 'Screen Assistant', icon: '/assets/img/screen-assistant.svg', plat: 'Inside Programs For You', page: '/screen-assistant',
       blurb: 'Press ⌥ Space and your personal assistant looks at what you’re working on and helps.',
       points: ['Summarize, explain, or quiz you on any page', 'Turns assignments into to-dos with reminders', 'Only looks when you ask']
     }
@@ -54,12 +54,12 @@
 
 <Seo
   title="Programs For You: simple apps that make your day easier"
-  description="Free Mac apps for students: a school schedule with a live class countdown, an email assistant that writes replies, and a helper that sees your screen." jsonLd={[faqPage(HOME_FAQ), softwareApp('email-assistant'), softwareApp('screen-assistant')]} />
+  description="Programs For You: one free Mac app for students with a school calendar and live class countdown, an email assistant that writes replies, and a helper that sees your screen." jsonLd={[faqPage(HOME_FAQ), softwareApp('programs-for-you'), softwareApp('school-calendar'), softwareApp('email-assistant'), softwareApp('screen-assistant')]} />
 
 <HeroXL title="Simple apps that make your day easier." text="Your school schedule, your email, and a helper that can see your screen, all one click away. Free, simple, and private.">
   {#snippet note()}Free · No email needed · For Mac{/snippet}
   {#snippet actions()}
-    <Button variant="notch" href="/download">Get the apps</Button>
+    <Button variant="notch" href="/download">Get the app</Button>
     <Button variant="outline" href="#how" class="border-white/40 text-white hover-fine:bg-white/10">How it works</Button>
   {/snippet}
 </HeroXL>
@@ -85,7 +85,7 @@
 </Section>
 
 <Section id="apps">
-  <SectionHead eyebrow="The apps" title="Three apps. One click each." lead="Each app gets its own button at the top of your screen. Click it, and it’s right there." />
+  <SectionHead eyebrow="The app" title="One app. Three tools." lead="Download Programs For You once and you get School Calendar, Email Assistant, and Screen Assistant. Each one gets its own button at the top of your screen." />
   <div class={grid3}>
     {#each apps as a}
       <Card tag="article" class="flex flex-col gap-4">
@@ -137,12 +137,12 @@
 <Section soft narrow id="faq">
   <SectionHead eyebrow="FAQ" title="Questions people ask" />
   <div class="grid gap-2.5">
-    <FaqItem q="Is there a Windows version?"><p>Not yet. Windows versions are coming soon.</p></FaqItem>
+    <FaqItem q="Is it one app or three?"><p>One. Download <b>Programs For You</b> and you get School Calendar, Email Assistant, and Screen Assistant. You can turn each one on or off in Settings.</p></FaqItem>
     <FaqItem q="I need help. Who do I contact?"><p>Call <a href="tel:+14752661457">(475) 266-1457</a> or email <a href={`mailto:${SITE.contactEmail}`}>{SITE.contactEmail}</a>. The <a href="/install">install guide</a> also answers the most common questions.</p></FaqItem>
-    <FaqItem q="How do I get updates?"><p>Automatically. Our apps update themselves in the background and install new versions when you step away from your computer, so you never have to download them again. Before an update installs, the app checks that it really comes from us, and you can turn automatic updates off in each app’s Settings. <a href="/install">More help</a>.</p></FaqItem>
-    <FaqItem q="Is it really free?"><p>Yes. The apps are free to download and use, and you don’t need an email or an account.</p></FaqItem>
-    <FaqItem q="Why does my Mac say it can’t check the app?"><p>Our apps aren’t registered with Apple’s paid developer program yet, so macOS asks you to approve them once. The <a href="/install">install guide</a> shows exactly what to click.</p></FaqItem>
-    <FaqItem q="What computers do they work on?"><p>Email Assistant and Screen Assistant need macOS 26 Tahoe or newer on a Mac with Apple silicon (M1 or later). School Schedule and the Windows versions are coming soon.</p></FaqItem>
+    <FaqItem q="How do I get updates?"><p>Click <b>Check for Updates</b> in Programs For You (on its Home page, in Settings, or in the menu). It never updates by itself. If there’s a newer version, click <b>Update Now</b>: the app checks that the update really comes from us, installs it, and keeps all your settings. <a href="/install">More help</a>.</p></FaqItem>
+    <FaqItem q="Is it really free?"><p>Yes. Programs For You is free to download and use, and you don’t need an email or an account.</p></FaqItem>
+    <FaqItem q="Why does my Mac say it can’t check the app?"><p>Programs For You isn’t registered with Apple’s paid developer program yet, so macOS asks you to approve them once. The <a href="/install">install guide</a> shows exactly what to click.</p></FaqItem>
+    <FaqItem q="What computers do they work on?"><p>Programs For You and School Calendar work on Macs with macOS 14 Sonoma or newer. Email Assistant and Screen Assistant need macOS 26 Tahoe or newer on a Mac with Apple silicon (M1 or later).</p></FaqItem>
     <FaqItem q="Does the Email Assistant send my emails to a server?"><p>No. It connects straight from your Mac to your email and uses the AI built into your Mac. If you choose to add your own Claude API key, the emails being summarized go to Anthropic instead.</p></FaqItem>
     <FaqItem q="Does Screen Assistant watch everything I do?"><p>No. It only looks at your screen when you open it, it never records video, and it doesn’t save pictures. With Apple Intelligence, what it sees stays on your Mac.</p></FaqItem>
     <FaqItem q="Will it ever send an email without asking me?"><p>Never. Every reply waits for you to press <b>Preview &amp; Send</b>.</p></FaqItem>
@@ -152,8 +152,8 @@
 
 <Section center>
   <h2>Ready to make your day easier?</h2>
-  <Lead center class="mb-0">Grab the apps. No email or password needed.</Lead>
+  <Lead center class="mb-0">Grab the app. No email or password needed.</Lead>
   <div class="mt-[26px] flex flex-wrap items-center justify-center gap-3">
-    <Button variant="primary" href="/download"><svg class="size-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12M7 10l5 5 5-5"/><path d="M5 21h14"/></svg> Get the apps</Button>
+    <Button variant="primary" href="/download"><svg class="size-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12M7 10l5 5 5-5"/><path d="M5 21h14"/></svg> Get the app</Button>
   </div>
 </Section>

@@ -117,7 +117,7 @@
         <div class={field}><label class={fieldLabel} for="t-summary">Summary</label>
           <textarea class={cn(input, textarea)} id="t-summary" name="summary" rows="5" maxlength="2000" placeholder="What’s wrong, or what’s your question?" required></textarea></div>
         <div class={field}><label class={fieldLabel} for="t-app">What’s it about?</label>
-          <select class={cn(input, select)} id="t-app" name="app" required><option value="">Choose one…</option><option>School Schedule</option><option>Email Assistant</option><option>Screen Assistant</option><option>TI-84 Evo games</option><option>The website</option><option>Something else</option></select></div>
+          <select class={cn(input, select)} id="t-app" name="app" required><option value="">Choose one…</option><option>Programs For You (the whole app)</option><option>School Calendar</option><option>Email Assistant</option><option>Screen Assistant</option><option>TI-84 Evo games</option><option>The website</option><option>Something else</option></select></div>
         <div class={field}><label class={fieldLabel} for="t-email">Email</label>
           <input class={input} id="t-email" name="email" type="email" autocomplete="email" inputmode="email" placeholder="you@example.com" required>
           <span class={fieldHint}>We’ll reply to this address. We never share it.</span></div>
@@ -148,7 +148,7 @@
       <SideCard title="Quick fixes">
         <ul class="grid gap-2 text-[.93rem]">
           <li><a href="/install#open-anyway">My Mac won’t open the app</a></li>
-          <li><a href="/school-schedule#how-to-use">School Schedule shows the wrong day</a></li>
+          <li><a href="/school-calendar#how-to-use">School Calendar shows the wrong day</a></li>
           <li><a href="/screen-assistant#how-to-use">Screen Assistant can’t see my screen</a></li>
           <li><a href="/ti-84-evo-games#how-to-install">Putting games on my calculator</a></li>
         </ul>

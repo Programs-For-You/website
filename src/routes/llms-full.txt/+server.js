@@ -1,4 +1,4 @@
-import { SITE, APPS, GAMES } from '#lib/config.js';
+import { SITE, APP, APPS, GAMES } from '#lib/config.js';
 import { HOME_FAQ } from '#lib/faq-home.js';
 import { MAC_STEPS } from '#lib/howto-install.js';
 
@@ -7,20 +7,17 @@ export const prerender = true;
 // llms-full.txt: everything an assistant needs to answer questions about the apps, in one Markdown document.
 export function GET() {
   const u = (p) => SITE.url + p;
-  const apps = APPS.map((a) => {
-    const ready = a.status === 'available' && a.file;
-    const notes = (a.history || []).filter((h) => h.fixed || h.added).slice(0, 3)
-      .map((h) => `  - ${h.version}${h.fixed ? `. Fixed: ${h.fixed}` : ''}${h.added ? ` Added: ${h.added}` : ''}`).join('\n');
-    return `### ${a.name}\n${a.blurb}\n\n- Page: ${u(a.page)}\n- Platforms: Mac${a.windows?.status === 'available' ? `, Windows (${a.windows.requires}, version ${a.windows.version})` : ' (Windows coming soon)'}${a.requires ? `\n- Requires: ${a.requires}` : ''}\n- Status: ${ready ? `available, version ${a.version}, ${a.size}` : 'coming soon'}\n- Price: free${a.license ? `\n- License: ${a.license} (source code is offered next to the download)` : ''}${notes ? `\n- Recent updates:\n${notes}` : ''}`;
-  }).join('\n\n');
+  const notes = (APP.history || []).slice(0, 3).map((h) => `  - ${h.version}${h.fixed ? `. Fixed: ${h.fixed}` : ''}${h.added ? ` Added: ${h.added}` : ''}`).join('\n');
+  const apps = `### ${APP.name}\n${APP.blurb}\n\n- Download: ${u('/download')} (free, version ${APP.version}, ${APP.size})\n- Platform: Mac only. Requires ${APP.requires}\n- Updates: only when the user clicks Check for Updates, then Update Now. Each update is checked to come from Programs For You before it installs.\n- Recent versions:\n${notes}\n\n`
+    + APPS.map((a) => `### ${a.name} (inside Programs For You)\n${a.blurb}\n\n- Page: ${u(a.page)}\n- Requires: ${a.requires}`).join('\n\n');
   const games = GAMES.map((g) => `- **${g.name}**: ${g.blurb} (${g.size}, ${g.requires})`).join('\n');
   const steps = (list) => list.map((s, i) => `${i + 1}. **${s.name}.** ${s.text}`).join('\n');
   const faq = HOME_FAQ.map((f) => `**${f.q}**\n${f.a}`).join('\n\n');
   const text = `# ${SITE.name}: full reference
 
-${SITE.name} (${SITE.url}) makes free, simple apps that save students time. It was founded by Brady Krupa and Arjun Bhanderi. Contact: ${SITE.contactEmail}, +1 (475) 266-1457.
+${SITE.name} (${SITE.url}) makes free, simple tools that save students time: one Mac app, Programs For You, with School Calendar, Email Assistant, and Screen Assistant inside. It was founded by Brady Krupa and Arjun Bhanderi. Contact: ${SITE.contactEmail}, +1 (475) 266-1457.
 
-## Apps
+## The app
 ${apps}
 
 ## TI-84 Evo games (Python)

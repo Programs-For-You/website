@@ -5,13 +5,13 @@
   // Grouped nav: dropdowns inside the frosted pill on desktop, a full-screen dark menu on phones.
   const GROUPS = [
     { label: 'Apps', links: [
-      ['/school-schedule', 'School Schedule', 'Coming soon'],
+      ['/school-calendar', 'School Calendar', 'Class countdown and homework'],
       ['/email-assistant', 'Email Assistant', 'Daily summary and replies'],
       ['/screen-assistant', 'Screen Assistant', 'Help with what is on screen'],
       ['/ti-84-evo-games', 'TI-84 Evo Games', 'Games for your calculator']
     ] },
     { label: 'Get started', links: [
-      ['/download', 'Downloads', 'Get every app'],
+      ['/download', 'Downloads', 'Get Programs For You'],
       ['/install', 'How to install', 'Step by step for Mac']
     ] },
     { label: 'About', links: [

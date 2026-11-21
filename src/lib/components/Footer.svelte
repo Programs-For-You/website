@@ -35,13 +35,13 @@
     <div class="flex flex-1 flex-col gap-[50px] pb-[70px] min-[1281px]:grid min-[1281px]:grid-cols-[minmax(0,1fr)_minmax(0,634px)] min-[1281px]:items-start min-[1281px]:pb-[100px]">
       <div>
         <h2 class="mb-0 max-w-[16ch] text-[max(1.75rem,min(calc(1.75rem+.014*(100vw-27.5rem)),2.625rem))] leading-[1.2] tracking-[-.02em] text-white">Ready to make your day easier?</h2>
-        <p class="mt-5 mb-0 max-w-[34ch] text-[max(.875rem,min(calc(.875rem+.005*(100vw-27.5rem)),1.1875rem))] leading-[1.3] text-white/80">Grab the apps. No email or password needed.</p>
-        <div class="mt-10"><Button href="/download" variant="notch">Get the apps</Button></div>
+        <p class="mt-5 mb-0 max-w-[34ch] text-[max(.875rem,min(calc(.875rem+.005*(100vw-27.5rem)),1.1875rem))] leading-[1.3] text-white/80">Grab the app. No email or password needed.</p>
+        <div class="mt-10"><Button href="/download" variant="notch">Get the app</Button></div>
       </div>
       <nav class="relative flex flex-col gap-[50px] border-l border-white/20 pl-5 desktop:grid desktop:grid-cols-2 desktop:gap-10 desktop:border-l-0 desktop:pl-0 min-[1281px]:pr-[88px]" aria-label="Footer">
         <div class={col}>
           <p class="{label} mb-0">Apps</p>
-          <div class="flex flex-col gap-2"><a class={link} href="/school-schedule">School Schedule</a><a class={link} href="/email-assistant">Email Assistant</a><a class={link} href="/screen-assistant">Screen Assistant</a><a class={link} href="/ti-84-evo-games">TI-84 Evo Games</a><a class={link} href="/download">Downloads</a></div>
+          <div class="flex flex-col gap-2"><a class={link} href="/school-calendar">School Calendar</a><a class={link} href="/email-assistant">Email Assistant</a><a class={link} href="/screen-assistant">Screen Assistant</a><a class={link} href="/ti-84-evo-games">TI-84 Evo Games</a><a class={link} href="/download">Downloads</a></div>
         </div>
         <div class={col}>
           <p class="{label} mb-0">Help</p>

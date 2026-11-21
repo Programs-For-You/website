@@ -23,8 +23,8 @@
   <p>Programs For You, and everything it makes (its websites, apps, code, designs, names, logos, and future products), is owned and controlled by Programs For You. No one else gets any ownership, equity, vote, or profits by using the Services, joining the team, or sending us ideas or feedback.</p>
 
   <h2>3. Our website and our code are ours only</h2>
-  <p>The website, Email Assistant, Screen Assistant, our TI-84 Evo games (Grid Pop, Block Bop, and Blackjack), and all of their code, designs, names, logos, pictures, and text are © 2026 Programs For You. All rights reserved.</p>
-  <p>We give you a free, personal, limited permission to use the website, to download and use Email Assistant and Screen Assistant on your own Mac, and to put our TI-84 Evo games on your own calculator. We can take this permission back at any time. It doesn’t give you any ownership.</p>
+  <p>The website, the Programs For You app (including School Calendar, Email Assistant, and Screen Assistant), our TI-84 Evo games (Grid Pop, Block Bop, and Blackjack), and all of their code, designs, names, logos, pictures, and text are © 2026 Programs For You. All rights reserved.</p>
+  <p>We give you a free, personal, limited permission to use the website, to download and use the Programs For You app on your own Mac, and to put our TI-84 Evo games on your own calculator. We can take this permission back at any time. It doesn’t give you any ownership.</p>
   <p>Unless Programs For You gives you written permission, you may not:</p>
   <ul>
     <li>copy, download, scrape, or save our website’s code, design, or content, except what your browser normally does to show you the page;</li>
@@ -39,6 +39,7 @@
 
   <h2>5. Using the apps</h2>
   <ul>
+    <li><strong>School Calendar</strong> shows times and dates from the school’s published schedule or what you type in. Schedules can change, so always check your school’s official schedule for anything important.</li>
     <li><strong>Email Assistant</strong> suggests replies, but you decide what to send. You’re responsible for the emails you send.</li>
     <li><strong>Screen Assistant</strong> gives AI answers that can be wrong, so double-check anything important. Follow your school’s rules about using AI on assignments and tests.</li>
     <li>Don’t use the Services to send spam, harass anyone, cheat, or break the law, and don’t try to hack, overload, or break them.</li>

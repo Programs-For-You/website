@@ -1,6 +1,7 @@
 # Old .html addresses go to the clean address (one URL per page keeps search results tidy).
 /index.html  /  301!
-/school-schedule.html  /school-schedule  301!
+/school-schedule.html  /school-calendar  301!
+/school-schedule  /school-calendar  301!
 /email-assistant.html  /email-assistant  301!
 /screen-assistant.html  /screen-assistant  301!
 /ti-84-evo-games.html  /ti-84-evo-games  301!

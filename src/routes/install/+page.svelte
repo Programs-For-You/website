@@ -17,7 +17,6 @@
   import MockDialog from '#lib/components/install/MockDialog.svelte';
   import MockSettings from '#lib/components/install/MockSettings.svelte';
 
-  // Mac only for now. (The Windows guide comes back when a Windows version is ready.)
   const contactHref = `mailto:${SITE.contactEmail}`;
 </script>
 
@@ -34,7 +33,7 @@
   <Container narrow>
     <Eyebrow>Help</Eyebrow>
     <h1>How to install</h1>
-    <Lead class="mb-0">Get our apps onto your Mac in a few minutes.</Lead>
+    <Lead class="mb-0">Get Programs For You onto your Mac in a few minutes.</Lead>
   </Container>
 </section>
 
@@ -47,9 +46,9 @@
     </Callout>
 
     <Steps class="mt-10">
-      <Step n={1} title="Agree and download"><p>Go to <a href="/download">Downloads</a>, check the box to agree to the Terms (you need to be 13 or older), and click <b>Download</b> next to the app you want. No email needed.</p></Step>
-      <Step n={2} title="Open the download"><p>Open your <b>Downloads</b> folder (in Finder, or click the download arrow in your browser). Double-click the <b>.zip</b> file and it turns into the app.</p></Step>
-      <Step n={3} title="Move it to Applications"><p>Drag the app into the <b>Applications</b> folder in Finder’s sidebar. Keeping it there means it works properly and updates cleanly.</p></Step>
+      <Step n={1} title="Agree and download"><p>Go to <a href="/download">Downloads</a>, check the box to agree to the Terms (you need to be 13 or older), and click <b>Download for Mac</b>. You get one app, <b>Programs For You</b>, with School Calendar, Email Assistant, and Screen Assistant inside. No email needed.</p></Step>
+      <Step n={2} title="Open the download"><p>Open your <b>Downloads</b> folder (in Finder, or click the download arrow in your browser). Double-click the <b>.zip</b> file and it turns into <b>Programs For You</b>.</p></Step>
+      <Step n={3} title="Move it to Applications"><p>Drag <b>Programs For You</b> into the <b>Applications</b> folder in Finder’s sidebar. Keeping it there means it works properly and can update.</p></Step>
       <Step n={4} title="Open it, then click Done" id="open-anyway">
         <p>Double-click the app. Your Mac shows a message saying it couldn’t check the app. Click <b>Done</b>. Don’t click Move to Trash.</p>
         <StepVisual note="Click Done"><MockDialog /></StepVisual>
@@ -60,7 +59,7 @@
         <StepNote class="mt-3">Tip: the Open Anyway button only shows for about an hour after you try to open the app. If it’s gone, double-click the app again, then come back here.</StepNote>
         <StepNote>On macOS 14 Sonoma there’s a shortcut: in Applications, <b>right-click</b> (or Control-click) the app, choose <b>Open</b>, then click <b>Open</b> again.</StepNote>
       </Step>
-      <Step n={6} title="Find the button at the top of your screen"><p>Look in the top-right of your screen for the app’s new button. Click it to get started. Each app page has instructions: <a href="/email-assistant#how-to-use">Email Assistant</a> · <a href="/screen-assistant#how-to-use">Screen Assistant</a>.</p></Step>
+      <Step n={6} title="Find your tools"><p>Programs For You opens its window with School Calendar, Email Assistant, and Screen Assistant in the sidebar. Each tool also adds a button to the top of your screen. Instructions: <a href="/school-calendar#how-to-use">School Calendar</a> · <a href="/email-assistant#how-to-use">Email Assistant</a> · <a href="/screen-assistant#how-to-use">Screen Assistant</a>.</p></Step>
     </Steps>
 
     <h2 class="mt-16 mb-0 text-[1.5rem]">Mac troubleshooting</h2>
@@ -68,14 +67,13 @@
       <FaqItem q="I can’t see the button at the top of my screen."><p>When the menu bar is full, macOS hides some icons, especially on MacBooks with a notch. Quit a few other menu-bar apps, or hold <kbd>⌘</kbd> and drag icons to make room. On macOS 26, also check <Path>System Settings → Menu Bar</Path> and make sure the app is allowed.</p></FaqItem>
       <FaqItem q="It says the app “is damaged and can’t be opened.”"><p>Drag the app to the Trash, download it again, and open the .zip with a normal double-click (not a different unzip app). If it still happens, <a href={contactHref}>contact us</a>.</p></FaqItem>
       <FaqItem q="There’s no Open Anyway button."><p>Double-click the app once more and click <b>Done</b>, then go straight back to <Path>System Settings → Privacy &amp; Security</Path> and scroll all the way down. If it still isn’t there, a school or work Mac may be managed by an IT team that blocks outside apps. Ask them, or use a personal Mac.</p>
-        <p>Comfortable with Terminal? This does the same thing as Open Anyway (change the name for the other app):</p>
-        <p><code>xattr -dr com.apple.quarantine "/Applications/Screen Assistant.app"</code></p></FaqItem>
+        <p>Comfortable with Terminal? This does the same thing as Open Anyway :</p>
+        <p><code>xattr -dr com.apple.quarantine "/Applications/Programs For You.app"</code></p></FaqItem>
       <FaqItem q="My Mac asks for my password to use the “keychain.”"><p>That’s Email Assistant opening the app password it saved in your Mac’s Keychain. Type your Mac password and click <b>Always Allow</b>. You may see this once after each update.</p></FaqItem>
-      <FaqItem q="Screen Assistant says it can’t see my screen."><p>Open <Path>System Settings → Privacy &amp; Security → Screen &amp; System Audio Recording</Path> and turn on <b>Screen Assistant</b>, then quit it and open it again. If it’s already on but still doesn’t work, select Screen Assistant in that list, click <b>−</b> to remove it, then open Screen Assistant and allow it again.</p></FaqItem>
-      <FaqItem q="How do I update an app?"><p>You don’t have to do anything. Our apps update themselves: they check for new versions now and then, download them quietly, and install them the next time you step away from your computer for a couple of minutes (or when you quit the app). It only takes a second, and all your settings stay. You can turn this off in the app’s Settings under <b>Install updates automatically</b>, and then it asks you first. Before any update installs, the app checks that it really comes from us.</p>
-        <p>Automatic updates work in Email Assistant 1.2.1, Screen Assistant 1.1.1, and newer. If you have an older version, download the app once more from <a href="/download">Downloads</a>, drag it into Applications, and choose <b>Replace</b>. After that, you’ll never need to download it again. Keep the app in your Applications folder so it can update itself.</p></FaqItem>
-      <FaqItem q="How do I uninstall an app?"><p>Click the app’s button at the top of your screen and choose <b>Quit</b>. Then drag the app from Applications to the Trash.</p></FaqItem>
-      <FaqItem q="Does it work on Windows, iPhone, iPad, or Chromebook?"><p>Not yet. Windows versions are coming soon. iPhone, iPad, and Chromebook aren’t supported right now.</p></FaqItem>
+      <FaqItem q="Screen Assistant says it can’t see my screen."><p>Open <Path>System Settings → Privacy &amp; Security → Screen &amp; System Audio Recording</Path> and turn on <b>Programs For You</b>, then quit it and open it again. If it’s already on but still doesn’t work, select Screen Assistant in that list, click <b>−</b> to remove it, then open Screen Assistant and allow it again.</p></FaqItem>
+      <FaqItem q="How do I update?"><p>Click <b>Check for Updates</b> in Programs For You (on its Home page, in Settings, or in the menu at the top of your screen). It never updates by itself. If there’s a newer version, click <b>Update Now</b>: it checks that the update really comes from us, installs it in a few seconds, and keeps all your settings.</p><p>Still have the older separate apps (School Schedule, Email Assistant, or Screen Assistant)? Their last update installs Programs For You for you and removes the old app. Very old copies can’t update, so download Programs For You from <a href="/download">Downloads</a> and drag the old apps to the Trash.</p></FaqItem>
+      <FaqItem q="How do I uninstall it?"><p>Choose <b>Quit Programs For You</b> from any of its buttons at the top of your screen. Then drag Programs For You from Applications to the Trash.</p></FaqItem>
+      <FaqItem q="Does it work on iPhone, iPad, Windows, or Chromebook?"><p>No. Programs For You is a Mac app.</p></FaqItem>
     </div>
   </div>
 
