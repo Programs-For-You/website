@@ -14,7 +14,7 @@
   const named = FOUNDERS.filter((f) => f.name);
 </script>
 
-<Seo title="Founders · Programs For You" description="Meet the founder of Programs For You, why we started, and our Board of Trustees." type="AboutPage" />
+<Seo title="Founders · Programs For You" description="Meet Brady Krupa and Arjun Bhanderi, the founders of Programs For You, why we started, and our Board of Trustees." type="AboutPage" />
 
 {#snippet founder(f)}
   <article class="relative overflow-hidden rounded-card-lg border border-border bg-surface px-[26px] pt-[42px] pb-8 text-center" style="--g1:{f.g1};--g2:{f.g2}" data-reveal>

@@ -4,13 +4,14 @@
 // Fields: name, initials, g1/g2 (avatar gradient colours), title, note (optional).
 
 const BK = { name: 'Brady Krupa', initials: 'BK', g1: '#4f46e5', g2: '#9333ea' };
+const AB = { name: 'Arjun Bhanderi', initials: 'AB', g1: '#0284c7', g2: '#6366f1' };
 const SA = { name: 'Sid Agrawal', initials: 'SA', g1: '#65a30d', g2: '#0d9488' };
 const EK = { name: 'Ethan Krishna', initials: 'EK', g1: '#0d9488', g2: '#0284c7' };
 
 // Founders page: the big founder boxes, with the "Why we started" quote between the first two.
 export const FOUNDERS = [
   { ...BK, title: 'CEO & Founder', note: 'Leads the company and decides what we build next.' },
-  { soon: true, g1: '#0284c7', g2: '#6366f1', title: 'Co-Founder' }
+  { ...AB, title: 'Co-Founder, CFO & Developer', note: 'Keeps track of the money, and helps build, test, and improve every app.' }
 ];
 
 export const WHY_WE_STARTED =
@@ -22,11 +23,9 @@ export const WHY_WE_STARTED =
 // Founders page: the Board of Trustees, shown as seats around a table.
 export const BOARD = [
   { ...BK, title: 'CEO & Founder' },
+  { ...AB, title: 'Co-Founder, CFO & Developer' },
   { ...SA, title: 'Board Member' },
-  { ...EK, title: 'Board Member' },
-  { soon: true, title: 'Trustee' },
-  { soon: true, title: 'Trustee' },
-  { soon: true, title: 'Trustee' }
+  { ...EK, title: 'Board Member' }
 ];
 
 // Team page: Heads of Departments, each with its co-heads underneath.

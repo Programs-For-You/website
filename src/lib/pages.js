@@ -8,7 +8,7 @@ export const PAGES = [
   { path: '/ti-84-evo-games', name: 'TI-84 Evo Games', desc: 'Free Python games for the TI-84 Evo graphing calculator: Grid Pop, Block Bop and Blackjack.', priority: 0.7, changefreq: 'monthly' },
   { path: '/download', name: 'Downloads', desc: 'Download every app. No email needed.', priority: 0.9, changefreq: 'weekly' },
   { path: '/install', name: 'How to install', desc: 'Step-by-step install guide for Mac.', priority: 0.8, changefreq: 'monthly' },
-  { path: '/founders', name: 'Founders', desc: 'Our founder, why we started, and our Board of Trustees.', priority: 0.6, changefreq: 'monthly' },
+  { path: '/founders', name: 'Founders', desc: 'Our founders, why we started, and our Board of Trustees.', priority: 0.6, changefreq: 'monthly' },
   { path: '/team', name: 'Team', desc: 'Our department heads and co-heads.', priority: 0.6, changefreq: 'monthly' },
   { path: '/apply', name: 'Join the team', desc: 'Apply to join as an intern or employee.', priority: 0.5, changefreq: 'monthly' },
   { path: '/contact', name: 'Contact', desc: 'Send a support ticket or call (475) 266-1457.', priority: 0.6, changefreq: 'yearly' },

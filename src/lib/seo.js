@@ -17,7 +17,8 @@ export const organization = () => ({
   description: 'Programs For You makes free, simple apps that save students time: Email Assistant and Screen Assistant for Mac, plus games for the TI-84 Evo calculator. School Schedule is coming soon.',
   foundingDate: '2026',
   founder: [
-    { '@type': 'Person', name: 'Brady Krupa', jobTitle: 'CEO & Founder', url: abs('/team') }
+    { '@type': 'Person', name: 'Brady Krupa', jobTitle: 'CEO & Founder', url: abs('/founders') },
+    { '@type': 'Person', name: 'Arjun Bhanderi', jobTitle: 'Co-Founder, CFO & Developer', url: abs('/founders') }
   ],
   contactPoint: [{ '@type': 'ContactPoint', contactType: 'customer support', email: SITE.contactEmail, telephone: '+1-475-266-1457', availableLanguage: 'English', url: abs('/contact') }]
 });
