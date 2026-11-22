@@ -1,5 +1,6 @@
 <script>
-  import { FOUNDERS, BOARD, WHY_WE_STARTED } from '#lib/team.js';
+  let { data } = $props();
+  import { WHY_WE_STARTED } from '#lib/team.js';
   import Seo from '#lib/components/Seo.svelte';
   import PageHead from '#lib/components/PageHead.svelte';
   import Section from '#lib/components/Section.svelte';
@@ -10,9 +11,10 @@
   import ShaderBackdrop from '#lib/components/ShaderBackdrop.svelte';
 
   // Founders page: the founders with "Why we started" between them, then the Board of Trustees.
-  // The people are listed in src/lib/team.js.
-  const [first, ...rest] = FOUNDERS;
-  const named = FOUNDERS.filter((f) => f.name);
+  // The people come from the D1 `people` table (see +page.server.js); the quote is in src/lib/team.js.
+  const [first, ...rest] = $derived(data.founders);
+  const named = $derived(data.founders.filter((f) => f.name));
+  const BOARD = $derived(data.board);
 </script>
 
 <Seo title="Founders · Programs For You" description="Meet Brady Krupa and Arjun Bhanderi, the founders of Programs For You, why we started, and our Board of Trustees." type="AboutPage" />
