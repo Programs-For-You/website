@@ -21,7 +21,7 @@
   <h2>What we collect on the website</h2>
   <ul>
     <li><strong>Downloads.</strong> You don’t give us any information to download our apps.</li>
-    <li><strong>Support tickets.</strong> When you send a ticket on our Contact page, we save your name, your email address, what it’s about, and your summary, so we can help you and write back. Tickets are stored by our host, Netlify (which may run an automatic spam filter on them), and only we can see them.</li>
+    <li><strong>Support tickets.</strong> When you send a ticket on our Contact page, we save your name, your email address, what it’s about, and your summary, so we can help you and write back. Tickets are stored by our host, Cloudflare, and only we can see them.</li>
     <li><strong>How long we keep it.</strong> We keep support tickets and applications only as long as we need them to help you or review your application, and delete them when you ask.</li>
     <li><strong>Website logs.</strong> Like most websites, our hosting provider may keep standard logs, such as your IP address, browser type, and pages visited, for security and reliability.</li>
   </ul>
@@ -63,7 +63,7 @@
   </ul>
 
   <h2>Who we share it with</h2>
-  <p>We don’t sell or rent your information. We share it only with the service providers that run the website (Netlify for hosting and for storing support tickets and job applications), or if the law requires it.</p>
+  <p>We don’t sell or rent your information. We share it only with the service providers that run the website (Cloudflare for hosting and for storing support tickets and job applications), or if the law requires it.</p>
 
   <h2>Your choices</h2>
   <ul>
