@@ -11,7 +11,7 @@
       ['/ti-84-evo-games', 'TI-84 Evo Games', 'Games for your calculator']
     ] },
     { label: 'About us', links: [
-      ['/founders', 'Board', 'Our founders and board'],
+      ['/team', 'Team', 'Our founders and team'],
       ['/apply', 'Join us', 'Open roles']
     ] }
   ];

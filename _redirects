@@ -7,9 +7,9 @@
 /download.html  /  301!
 /download  /  301!
 /install.html  /install  301!
-/founders.html  /founders  301!
-/team.html  /founders  301!
-/team  /founders  301!
+/founders.html  /team  301!
+/founders  /team  301!
+/team.html  /team  301!
 /apply.html  /apply  301!
 /contact.html  /contact  301!
 /terms.html  /terms  301!
@@ -18,8 +18,8 @@
 /admin  /  301!
 
 # Made by tools/build_pages.py from assets/js/config.js. Old download links go to the newest version.
-/creators.html  /founders  301
-/creators  /founders  301
+/creators.html  /team  301
+/creators  /team  301
 /downloads/SLITHER.py  /ti-84-evo-games.html  302
 /downloads/STARDASH.py  /ti-84-evo-games.html  302
 # The separate apps are part of Programs For You now: old download links get that app.
