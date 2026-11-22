@@ -14,8 +14,7 @@
 /contact.html  /contact  301!
 /terms.html  /terms  301!
 /privacy.html  /privacy  301!
-/admin.html  /  301!
-/admin  /  301!
+/admin.html  /admin  301!
 
 # Made by tools/build_pages.py from assets/js/config.js. Old download links go to the newest version.
 /creators.html  /team  301
