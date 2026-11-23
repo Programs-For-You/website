@@ -35,6 +35,15 @@
       "fixed": "",
       "added": "School Schedule is now part of Programs For You. This update installs Programs For You (with your settings) and removes the old School Schedule app.",
       "notes": "Added: School Schedule is now part of Programs For You. This update installs Programs For You (with your settings) and removes the old School Schedule app."
+    },
+    "programs-for-you-2": {
+      "version": "1.1.0",
+      "url": "https://programsforyou.com/downloads/ProgramsForYou-1.1.0.zip",
+      "sha256": "7688b59ecde15a9e75cb8b9cd56eb17878a6c7d8ff4b07c022a3ba55ac9647c4",
+      "size": 4720861,
+      "fixed": "",
+      "added": "One Programs For You icon in the menu bar: click it for School Schedule and Email Assistant tabs and a Screen Assistant button. A new green look, and the rebuilt School Schedule with per-day classes, minis, and Schoology days off.",
+      "notes": "Added: One Programs For You icon in the menu bar: click it for School Schedule and Email Assistant tabs and a Screen Assistant button. A new green look, and the rebuilt School Schedule with per-day classes, minis, and Schoology days off."
     }
   }
 }

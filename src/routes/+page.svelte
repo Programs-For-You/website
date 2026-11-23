@@ -15,6 +15,7 @@
   import SchedPanel from '#lib/components/SchedPanel.svelte';
   import AskCard from '#lib/components/AskCard.svelte';
   import HeroXL from '#lib/components/HeroXL.svelte';
+  import MacDownload from '#lib/components/MacDownload.svelte';
   import { SITE } from '#lib/config.js';
 
   const grid3 = 'grid grid-cols-3 gap-[18px] max-[900px]:grid-cols-2 max-[600px]:grid-cols-1';
@@ -37,7 +38,7 @@
     {
       id: 'school-schedule', name: 'School Schedule', icon: '/assets/img/school-schedule.svg', plat: 'Mac', page: '/school-schedule',
       blurb: 'Always know what period it is, how many minutes are left, and what homework is due.',
-      points: ['Live countdown at the top of your screen', 'A homework plan for tonight', 'Homework list with reminders']
+      points: ['Live countdown at the top of your screen', 'Rotating days, short days, and lunches', 'Homework list with reminders']
     },
     {
       id: 'email-assistant', name: 'Email Assistant', icon: '/assets/img/email-assistant.svg', plat: 'Mac · Windows soon', page: '/email-assistant',
@@ -59,12 +60,16 @@
 <HeroXL title="Simple apps that make your day easier." text="Your school schedule, your email, and a helper that can see your screen, all one click away. Free, simple, and private.">
   {#snippet note()}Free · No email needed · For Mac{/snippet}
   {#snippet actions()}
-    <Button variant="notch" href="/email-assistant">Get the apps</Button>
+    <Button variant="notch" href="#download">Get the apps</Button>
     <Button variant="outline" href="#how" class="border-white/40 text-white hover-fine:bg-white/10">How it works</Button>
   {/snippet}
 </HeroXL>
 
-<Section tight sectionClass="pt-[max(60px,min(calc(60px+.05*(100vw-440px)),110px))]">
+<Section id="download" tight sectionClass="pt-[max(60px,min(calc(60px+.05*(100vw-440px)),110px))]">
+  <MacDownload />
+</Section>
+
+<Section tight>
   <div data-reveal>
     <div
       class="relative mx-auto aspect-[980/700] w-full max-w-[980px] overflow-hidden rounded-[18px] border border-border bg-(--desk) text-left shadow-lift max-[640px]:aspect-auto max-[640px]:rounded-2xl"
@@ -142,7 +147,7 @@
     <FaqItem q="How do I get updates?"><p>Only when you ask. Open the app and click <b>Check for Updates</b>. If there’s a newer version, the app downloads it from us and installs it, and your settings stay. Nothing updates in the background without you. <a href="/install">More help</a>.</p></FaqItem>
     <FaqItem q="Is it really free?"><p>Yes. The apps are free to download and use, and you don’t need an email or an account.</p></FaqItem>
     <FaqItem q="Why does my Mac say it can’t check the app?"><p>Our apps aren’t registered with Apple’s paid developer program yet, so macOS asks you to approve them once. The <a href="/install">install guide</a> shows exactly what to click.</p></FaqItem>
-    <FaqItem q="What computers do they work on?"><p>Email Assistant and Screen Assistant need macOS 26 Tahoe or newer on a Mac with Apple silicon (M1 or later). School Schedule and the Windows versions are coming soon.</p></FaqItem>
+    <FaqItem q="What computers do they work on?"><p>School Schedule works on macOS 14 Sonoma or newer, on any Mac with Apple silicon or Intel. Email Assistant and Screen Assistant need macOS 26 Tahoe or newer on a Mac with Apple silicon (M1 or later). Windows versions are coming soon.</p></FaqItem>
     <FaqItem q="Does the Email Assistant send my emails to a server?"><p>No. It connects straight from your Mac to your email and uses the AI built into your Mac. If you choose to add your own Claude API key, the emails being summarized go to Anthropic instead.</p></FaqItem>
     <FaqItem q="Does Screen Assistant watch everything I do?"><p>No. It only looks at your screen when you open it, it never records video, and it doesn’t save pictures. With Apple Intelligence, what it sees stays on your Mac.</p></FaqItem>
     <FaqItem q="Will it ever send an email without asking me?"><p>Never. Every reply waits for you to press <b>Preview &amp; Send</b>.</p></FaqItem>
@@ -154,6 +159,6 @@
   <h2>Ready to make your day easier?</h2>
   <Lead center class="mb-0">Grab the apps. No email or password needed.</Lead>
   <div class="mt-[26px] flex flex-wrap items-center justify-center gap-3">
-    <Button variant="primary" href="/email-assistant"><svg class="size-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12M7 10l5 5 5-5"/><path d="M5 21h14"/></svg> Get the apps</Button>
+    <Button variant="primary" href="#download"><svg class="size-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12M7 10l5 5 5-5"/><path d="M5 21h14"/></svg> Get the apps</Button>
   </div>
 </Section>

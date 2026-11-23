@@ -33,7 +33,7 @@
 
   <h2>Our Mac apps</h2>
   <h3>School Schedule</h3>
-  <p>School Schedule is coming soon. When it’s available: your classes, bell times, homework, events, and settings are saved on your Mac only. They aren’t sent to us. School Schedule doesn’t need you to sign in. If you choose to link your Schoology calendar, your private calendar link is saved on your Mac and used only to download your calendar directly from Schoology. It isn’t sent to us.</p>
+  <p>School Schedule: your classes, bell times, homework, events, and settings are saved on your Mac only. They aren’t sent to us. School Schedule doesn’t need you to sign in. If you choose to link your Schoology calendar, your private calendar link is saved on your Mac and used only to download your calendar directly from Schoology. It isn’t sent to us.</p>
   <h3>Email Assistant</h3>
   <ul>
     <li>The app connects straight from your Mac to your email provider (Gmail, iCloud, or Yahoo). Your emails don’t pass through our servers, and we never see them.</li>

@@ -11,11 +11,11 @@
 
 <div class={cn('w-[252px] rounded-xl border border-(--panel-line) bg-(--panel-bg) p-3 text-[12.5px] leading-[1.4] text-(--panel-ink) shadow-[0_14px_40px_rgb(0_0_0/.18)]', fluid && 'max-[480px]:w-full', cls)}>
   <div class="mb-2 flex items-baseline justify-between px-0.5"><b class="text-[13px]">Day 2</b><span class="text-(--panel-muted)">Tuesday</span></div>
-  <div class="mb-2 rounded-[9px] bg-[linear-gradient(135deg,#5b5bf0,#7c4ddb)] px-[11px] py-2.5 text-white">
+  <div class="mb-2 rounded-[9px] bg-[linear-gradient(135deg,#34d27b,#139a52)] px-[11px] py-2.5 text-[#0b1110]">
     <span class="block text-[11px] opacity-85">Now · Period 3</span>
     <span class="my-px block text-[19px] font-bold tracking-[-.02em]">Biology</span>
     <span class="block text-[11px] opacity-85">11:42 left · Next: Lunch</span>
-    <span class="mt-2 block h-1 overflow-hidden rounded bg-white/30"><i class="block h-full w-[76%] rounded bg-white"></i></span>
+    <span class="mt-2 block h-1 overflow-hidden rounded bg-[#0b1110]/25"><i class="block h-full w-[76%] rounded bg-[#0b1110]"></i></span>
   </div>
   <ul class="m-0 list-none p-0">
     {#if full}
@@ -31,7 +31,7 @@
       <b class="mb-1 block">Tonight · 1h 5m</b>
       <div class="flex items-center gap-2 py-[3px]"><span class="size-[13px] flex-none rounded border-[1.5px] border-(--panel-muted)"></span>Bio worksheet<em class="ml-auto text-[11px] not-italic text-(--panel-muted)">25m</em></div>
       <div class="flex items-center gap-2 py-[3px]"><span class="size-[13px] flex-none rounded border-[1.5px] border-(--panel-muted)"></span>Study: math quiz<em class="ml-auto text-[11px] not-italic text-(--panel-muted)">30m</em></div>
-      <div class="flex items-center gap-2 py-[3px] text-(--panel-muted) line-through"><span class="size-[13px] flex-none rounded border-[1.5px] border-[#5b5bf0] bg-[#5b5bf0]"></span>Read ch. 5<em class="ml-auto text-[11px] not-italic text-(--panel-muted)">done</em></div>
+      <div class="flex items-center gap-2 py-[3px] text-(--panel-muted) line-through"><span class="size-[13px] flex-none rounded border-[1.5px] border-[#34d27b] bg-[#34d27b]"></span>Read ch. 5<em class="ml-auto text-[11px] not-italic text-(--panel-muted)">done</em></div>
     </div>
   {/if}
 </div>

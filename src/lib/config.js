@@ -28,7 +28,16 @@ export const APPS = [
     blurb: 'Always know what period it is, how many minutes are left, and what homework is due.',
     icon: '/assets/img/school-schedule.svg',
     page: '/school-schedule',
-    status: 'coming-soon',   // 'coming-soon' or 'available'. We're making a new version; it comes back here when it's ready.
+    status: 'available',
+    // School Schedule is part of Programs For You (in the app it's the School Calendar tab): this downloads that one app.
+    version: '1.1.0',
+    file: '/downloads/ProgramsForYou-1.1.0.zip',
+    size: '4.5 MB',
+    history: [
+      { version: '1.1.0', fixed: 'Uses much less battery: the class countdown updates once a minute instead of every second.', added: 'A new look that matches programsforyou.com, with Dark, Light, and five accent colors. School Calendar: type each class once, minis, your Schoology calendar for days off, a class bar in the corner, quick-note homework, and a study plan.' },
+      { version: '1.0.0', fixed: '', added: 'Back as part of Programs For You: one app with School Schedule, Email Assistant, and Screen Assistant inside. Updates only when you click Check for Updates.' },
+    ],
+    requires: 'macOS 14 Sonoma or newer, on a Mac with Apple silicon or Intel',
     windows: { status: 'coming-soon' },
   },
   {
@@ -39,10 +48,11 @@ export const APPS = [
     page: '/email-assistant',
     status: 'available',
     // Email Assistant is part of Programs For You now: this downloads that one app.
-    version: '1.0.0',
-    file: '/downloads/ProgramsForYou-1.0.0.zip',
-    size: '3.6 MB',
+    version: '1.1.0',
+    file: '/downloads/ProgramsForYou-1.1.0.zip',
+    size: '4.5 MB',
     history: [
+      { version: '1.1.0', fixed: 'Uses much less battery: the class countdown updates once a minute instead of every second.', added: 'A new look that matches programsforyou.com, with Dark, Light, and five accent colors. School Calendar: type each class once, minis, your Schoology calendar for days off, a class bar in the corner, quick-note homework, and a study plan.' },
       { version: '1.0.0', fixed: '', added: 'Now part of Programs For You: one app with School Calendar, Email Assistant, and Screen Assistant inside. Updates only when you click Check for Updates.' },
       { version: '1.2.3', fixed: 'It now opens with a welcome card instead of Settings when you haven’t added an email yet.', added: 'On screen: open any email, even school email, and it reads that email and writes replies for you to copy and paste. Settings now say clearly that the daily summary works with personal email only.' },
     ],
@@ -57,10 +67,11 @@ export const APPS = [
     page: '/screen-assistant',
     status: 'available',
     // Screen Assistant is part of Programs For You now: this downloads that one app.
-    version: '1.0.0',
-    file: '/downloads/ProgramsForYou-1.0.0.zip',
-    size: '3.6 MB',
+    version: '1.1.0',
+    file: '/downloads/ProgramsForYou-1.1.0.zip',
+    size: '4.5 MB',
     history: [
+      { version: '1.1.0', fixed: 'Uses much less battery: the class countdown updates once a minute instead of every second.', added: 'A new look that matches programsforyou.com, with Dark, Light, and five accent colors. School Calendar: type each class once, minis, your Schoology calendar for days off, a class bar in the corner, quick-note homework, and a study plan.' },
       { version: '1.0.0', fixed: '', added: 'Now part of Programs For You: one app with School Calendar, Email Assistant, and Screen Assistant inside. Updates only when you click Check for Updates.' },
       { version: '1.1.2', fixed: 'Automatic updates are more reliable: they also check right after your Mac wakes up.', added: 'If the app is running from your Downloads folder, it offers to move itself to Applications so it can keep updating.' },
     ],
@@ -68,6 +79,21 @@ export const APPS = [
     windows: { status: 'coming-soon' },   // the Windows version is being built
   },
 ];
+
+// The Mac app: one download with School Schedule, Email Assistant, and Screen Assistant inside.
+// Shown near the top of the home page (#download). For a new version: build it with apps/build.sh hub on the Mac
+// that has the Programs For You signing certificate, put the .zip in static/downloads/, then change version,
+// file, and size here. Only ever link a build signed with the certificate (never a test build).
+export const MAC_APP = {
+  id: 'programs-for-you',
+  name: 'Programs For You for Mac',
+  status: 'available',   // 'available' or 'coming-soon'
+  version: '1.1.0',
+  file: '/downloads/ProgramsForYou-1.1.0.zip',
+  size: '4.5 MB',
+  icon: '/favicon.svg',
+  requires: 'macOS 14 Sonoma or newer, on Apple silicon or Intel. Email Assistant and Screen Assistant need macOS 26 Tahoe on a Mac with Apple silicon (M1 or later).',
+};
 
 // TI-84 Evo calculator games (Python). They say "Coming soon" until their status is 'available'.
 // To release one: copy its .py file from calculator/games/ into website/downloads/, then change
