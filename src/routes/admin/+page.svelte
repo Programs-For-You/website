@@ -11,15 +11,21 @@
   import TeamEditor from '#lib/components/admin/TeamEditor.svelte';
   import TicketCard from '#lib/components/admin/TicketCard.svelte';
   import ApplicationCard from '#lib/components/admin/ApplicationCard.svelte';
+  import NotifyToggle from '#lib/components/admin/NotifyToggle.svelte';
   import { cn } from '#lib/cn.js';
 
   let { data, form } = $props();
 
+  const TABS = ['people', 'tickets', 'applications'];
   let tab = $state('people');
   // When /admin is installed as an app (PWA), the tabs become a floating bottom bar, like a phone app.
   // ?nav=1 shows it in a normal browser tab too, for trying it out.
   let standalone = $state(false);
   onMount(() => {
+    // Notifications open /admin?tab=tickets or ?tab=applications.
+    const want = new URLSearchParams(location.search).get('tab');
+    if (TABS.includes(want)) tab = want;
+    navigator.serviceWorker?.register('/admin-sw.js', { scope: '/admin' }).catch(() => {});
     const mq = matchMedia('(display-mode: standalone)');
     const update = () => { standalone = mq.matches || navigator.standalone === true || new URLSearchParams(location.search).has('nav'); };
     update();
@@ -40,6 +46,7 @@
 <svelte:head>
   <title>Admin · Programs For You</title>
   <meta name="robots" content="noindex, nofollow">
+  <link rel="manifest" href="/admin.webmanifest">
 </svelte:head>
 
 <PageHead eyebrow="Admin" title="Dashboard" lead="Manage the Team page, and read contact messages and job applications." />
@@ -56,6 +63,7 @@
         <a href="/team" class="text-[.9rem]">View Team page →</a>
         <form method="POST" action="?/logout" use:enhance><Button type="submit" variant="outline" size="sm">Log out</Button></form>
       </div>
+      <NotifyToggle vapidKey={data.vapidKey} />
       <FormMessage text={form?.message ?? ''} kind="ok" />
       <FormMessage text={form?.error ?? ''} />
 

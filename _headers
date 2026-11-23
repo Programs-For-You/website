@@ -42,3 +42,12 @@
 /admin
   Cache-Control: no-store
   X-Robots-Tag: noindex, nofollow
+
+# The installed admin app: its manifest, and its service worker (always the newest copy).
+/admin.webmanifest
+  Content-Type: application/manifest+json
+  Cache-Control: public, max-age=3600
+
+/admin-sw.js
+  Cache-Control: no-cache
+  Service-Worker-Allowed: /admin
