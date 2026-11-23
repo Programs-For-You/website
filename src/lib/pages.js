@@ -7,7 +7,7 @@ export const PAGES = [
   { path: '/screen-assistant', name: 'Screen Assistant', desc: 'Press Option-Space and an assistant looks at your screen to summarize, explain, make to-dos or quiz you.', priority: 0.9, changefreq: 'weekly' },
   { path: '/ti-84-evo-games', name: 'TI-84 Evo Games', desc: 'Free Python games for the TI-84 Evo graphing calculator: Grid Pop, Block Bop and Blackjack.', priority: 0.7, changefreq: 'monthly' },
   { path: '/install', name: 'How to install', desc: 'Step-by-step install guide for Mac.', priority: 0.8, changefreq: 'monthly' },
-  { path: '/founders', name: 'Board', desc: 'Our founders, why we started, and our Board of Trustees.', priority: 0.6, changefreq: 'monthly' },
+  { path: '/team', name: 'Team', desc: 'Our founders, why we started, and the people on our team.', priority: 0.6, changefreq: 'monthly' },
   { path: '/apply', name: 'Join us', desc: 'Apply to volunteer with the team.', priority: 0.5, changefreq: 'monthly' },
   { path: '/contact', name: 'Contact', desc: 'Send a support ticket or email us.', priority: 0.6, changefreq: 'yearly' },
   { path: '/terms', name: 'Terms of Service', desc: 'The terms for using the website and apps.', priority: 0.3, changefreq: 'yearly' },

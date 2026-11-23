@@ -1,0 +1,12 @@
+{
+  "name": "pfy-dev",
+  "compatibility_date": "2026-11-01",
+  "d1_databases": [
+    {
+      "binding": "DB",
+      "database_name": "programsforyou",
+      "database_id": "4a6344e1-bff9-4dec-b95b-094bacdbc1cc",
+      "migrations_dir": "migrations"
+    }
+  ]
+}

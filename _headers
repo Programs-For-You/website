@@ -30,3 +30,8 @@
 /maintenance.html
   X-Robots-Tag: noindex, nofollow
   Cache-Control: no-store
+
+# The admin page is private: never cached, never indexed.
+/admin
+  Cache-Control: no-store
+  X-Robots-Tag: noindex, nofollow

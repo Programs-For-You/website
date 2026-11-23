@@ -63,7 +63,7 @@
   <p>When we change these Terms, we’ll update the date at the top. If you keep using the Services after a change, you agree to the new Terms.</p>
 
   <h2>8. Other companies’ services</h2>
-  <p>Our Services work with services from other companies, like Google, Yahoo, Netlify, and Anthropic. Their own terms apply when you use them, and we aren’t responsible for them.</p>
+  <p>Our Services work with services from other companies, like Google, Yahoo, Cloudflare, and Anthropic. Their own terms apply when you use them, and we aren’t responsible for them.</p>
 
   <h2>9. Your stuff and your feedback</h2>
   <p>Your own content, like your homework list, your to-dos, and your emails, belongs to you. If you send us ideas, feedback, or suggestions, we can use them however we want, without paying you or owing you anything, and they don’t give you any ownership or rights in Programs For You.</p>
@@ -94,7 +94,7 @@
   <ul>
     <li><strong>Whole agreement:</strong> these Terms and our <a href="/privacy">Privacy Policy</a> are the whole agreement between you and us about the Services.</li>
     <li><strong>If part doesn’t work:</strong> if a court decides any part of these Terms can’t be enforced, that part is limited only as much as needed, and the rest stays in full effect.</li>
-    <li><strong>Trademarks:</strong> Programs For You is independent and isn’t affiliated with, sponsored by, or endorsed by Apple Inc., Google LLC, Yahoo, Schoology (PowerSchool), Anthropic PBC, Netlify, Inc., or Texas Instruments. Apple, Mac, macOS, and Apple Intelligence are trademarks of Apple Inc. Gmail and Google are trademarks of Google LLC. Yahoo is a trademark of Yahoo. Schoology and PowerSchool are trademarks of PowerSchool Group LLC. Claude and Anthropic are trademarks of Anthropic PBC. Netlify is a trademark of Netlify, Inc. TI-84 Evo and Texas Instruments are trademarks of Texas Instruments Incorporated. These and any other names we mention belong to their owners, and we use them only to say what our apps work with. “Programs For You” and our logo are ours. See also our <a href="/licenses">Licenses</a> page for the software we build on.</li>
+    <li><strong>Trademarks:</strong> Programs For You is independent and isn’t affiliated with, sponsored by, or endorsed by Apple Inc., Google LLC, Yahoo, Schoology (PowerSchool), Anthropic PBC, Cloudflare, Inc., or Texas Instruments. Apple, Mac, macOS, and Apple Intelligence are trademarks of Apple Inc. Gmail and Google are trademarks of Google LLC. Yahoo is a trademark of Yahoo. Schoology and PowerSchool are trademarks of PowerSchool Group LLC. Claude and Anthropic are trademarks of Anthropic PBC. Cloudflare is a trademark of Cloudflare, Inc. TI-84 Evo and Texas Instruments are trademarks of Texas Instruments Incorporated. These and any other names we mention belong to their owners, and we use them only to say what our apps work with. “Programs For You” and our logo are ours. See also our <a href="/licenses">Licenses</a> page for the software we build on.</li>
   </ul>
 
   <h2>16. Contact</h2>

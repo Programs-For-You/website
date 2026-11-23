@@ -14,7 +14,7 @@
   import { cn } from '#lib/cn.js';
   import { input, select, field, fieldLabel, fieldHint } from '#lib/ui.js';
 
-  // Support tickets. Each ticket gets a number (like PFY-7K3Q2) and is sent to Netlify Forms ("support-ticket").
+  // Support tickets. Each ticket gets a number (like PFY-7K3Q2) and is saved to the D1 database (tickets table).
   const EMAIL_OK = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
   const HISTORY = 'pfy-tickets';
   const textarea = 'h-auto min-h-[140px] py-3 leading-normal resize-y';
@@ -71,8 +71,7 @@
       console.info('[preview] Would send support ticket', id, Object.fromEntries(new FormData(form)));
     } else {
       try {
-        const r = await fetch('/', { method: 'POST', headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-          body: new URLSearchParams(new FormData(form)).toString() });
+        const r = await fetch('/api/contact', { method: 'POST', body: new FormData(form) });
         ok = r.ok;
       } catch { ok = false; }
     }
@@ -108,8 +107,7 @@
 <section class="pt-2 pb-18">
   <Container class="grid grid-cols-[1.6fr_1fr] items-start gap-6 max-[860px]:grid-cols-1">
     <div>
-      <form class={cardCls} name="support-ticket" method="POST" data-netlify="true" netlify-honeypot="company" bind:this={form} onsubmit={submit} hidden={sent}>
-        <input type="hidden" name="form-name" value="support-ticket">
+      <form class={cardCls} name="support-ticket" method="POST" bind:this={form} onsubmit={submit} hidden={sent}>
         <input type="hidden" name="ticket" value="">
         <Honeypot />
         <div class={field}><label class={fieldLabel} for="t-name">Name</label>

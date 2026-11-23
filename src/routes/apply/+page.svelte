@@ -13,7 +13,7 @@
   import { cn } from '#lib/cn.js';
   import { input, select, field, fieldLabel, fine, check } from '#lib/ui.js';
 
-  // Job applications ("Join the team"). Each one goes to Netlify Forms ("job-application").
+  // Job applications ("Join the team"). Each one is saved to the D1 database (applications table).
   const EMAIL_OK = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
   const textarea = 'h-auto min-h-[140px] py-3 leading-normal resize-y';
   const cardCls = 'relative rounded-card-lg border border-border bg-surface p-7';
@@ -57,8 +57,7 @@
       console.info('[preview] Would send job application', Object.fromEntries(new FormData(form)));
     } else {
       try {
-        const r = await fetch('/', { method: 'POST', headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-          body: new URLSearchParams(new FormData(form)).toString() });
+        const r = await fetch('/api/apply', { method: 'POST', body: new FormData(form) });
         ok = r.ok;
       } catch { ok = false; }
     }
@@ -79,8 +78,7 @@
 <section class="pt-2 pb-18">
   <Container class="grid grid-cols-[1.6fr_1fr] items-start gap-6 max-[860px]:grid-cols-1">
     <div>
-      <form class={cardCls} name="job-application" method="POST" data-netlify="true" netlify-honeypot="company" bind:this={form} onsubmit={submit} hidden={sent} novalidate>
-        <input type="hidden" name="form-name" value="job-application">
+      <form class={cardCls} name="job-application" method="POST" bind:this={form} onsubmit={submit} hidden={sent} novalidate>
         <Honeypot />
         <div class={cn(row, 'grid-cols-2')}>
           <div class={field}><label class={fieldLabel} for="a-name">Name</label>
