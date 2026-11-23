@@ -37,7 +37,7 @@
 <AppHero icon="/assets/img/screen-assistant.svg" title="Screen Assistant" statusId="screen-assistant" howHref="#how-to-use" req="Requires macOS 26 Tahoe or newer on a Mac with Apple silicon (M1 or later) · Windows version coming soon · Free">
   Press <kbd>⌥</kbd> <kbd>Space</kbd> and your personal assistant looks at what you’re working on. Ask it to sum it up, explain it, make a to-do list, write a reply, or quiz you.
   {#snippet actions()}
-    <Button href="/#download"><Icon name="download" class="size-[18px]" /> Get the Programs For You App</Button>
+    <Button href="/programs-for-you"><Icon name="download" class="size-[18px]" /> Get the Programs For You App</Button>
     <Button tag="span" variant="ghost" aria-disabled="true">Windows: coming soon</Button>
   {/snippet}
   {#snippet visual()}
@@ -91,4 +91,4 @@
 
 <WhatsNew id="screen-assistant" />
 
-<DownloadCta title="Get Screen Assistant" text="It comes inside the free Programs For You app for Mac, along with our other apps." buttons={[{ href: '/#download', label: 'Get the Programs For You App' }]} note="Requires macOS 26 Tahoe or newer on a Mac with Apple silicon (M1 or later)." />
+<DownloadCta title="Get Screen Assistant" text="It comes inside the free Programs For You app for Mac, along with our other apps." buttons={[{ href: '/programs-for-you', label: 'Get the Programs For You App' }]} note="Requires macOS 26 Tahoe or newer on a Mac with Apple silicon (M1 or later)." />

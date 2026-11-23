@@ -2,7 +2,7 @@
 export const MAC_STEPS = [
   {
     "name": "Agree and download",
-    "text": "Go to the Programs For You download on the home page and click Download for Mac. It has School Schedule, Email Assistant, and Screen Assistant inside. By downloading, you agree to the Terms (you need to be 13 or older). No email needed."
+    "text": "Go to the Programs For You App page and click Download for Mac. It has School Schedule, Email Assistant, and Screen Assistant inside. By downloading, you agree to the Terms (you need to be 13 or older). No email needed."
   },
   {
     "name": "Open the download",

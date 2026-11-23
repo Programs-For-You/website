@@ -33,7 +33,7 @@
 <AppHero icon="/assets/img/school-schedule.svg" title="School Schedule" statusId="school-schedule" howHref="#how-to-use" req="Requires macOS 14 Sonoma or newer, on a Mac with Apple silicon or Intel · Windows version coming soon · Free">
   Always know what period it is, how many minutes are left, and what homework is due. It comes in the Programs For You app, together with Email Assistant and Screen Assistant.
   {#snippet actions()}
-    <Button href="/#download"><Icon name="download" class="size-[18px]" /> Get the Programs For You App</Button>
+    <Button href="/programs-for-you"><Icon name="download" class="size-[18px]" /> Get the Programs For You App</Button>
     <Button tag="span" variant="ghost" aria-disabled="true">Windows: coming soon</Button>
   {/snippet}
   {#snippet visual()}

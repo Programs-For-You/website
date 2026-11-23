@@ -5,7 +5,7 @@
   // Grouped nav: dropdowns inside the frosted pill on desktop, a full-screen dark menu on phones.
   const GROUPS = [
     { label: 'Apps', links: [
-      ['/#download', 'Programs For You App', 'All our Mac apps in one download'],
+      ['/programs-for-you', 'Programs For You App', 'All our Mac apps in one download'],
       ['/ti-84-evo-games', 'TI-84 Evo Games', 'Games for your calculator']
     ] },
     { label: 'About us', links: [
