@@ -27,6 +27,8 @@ Dark, warm, calm: deep teal-black surfaces, cream text, and one bright lime acce
 
 Use lime sparingly. Don't add other accent colors. Per-person avatar gradients on the team page are the exception.
 
+App icons follow the logo: the dark teal rounded tile (#16231f → #0b1110) with the logo's two greens (#34d27b → #139a52 and #c4f08a → #7fd35a). No blue, purple, or pink.
+
 ### Type
 - **Aspekta** (variable) for everything.
 - **Roboto Mono**, uppercase, for labels, eyebrows, and tags.
@@ -38,5 +40,5 @@ Use lime sparingly. Don't add other accent colors. Per-person avatar gradients o
 
 ## Ownership and legal
 - Programs For You, Email Assistant and Screen Assistant are © 2026 Programs For You. All rights reserved.
-- School Schedule is coming soon (a new version is being made).
+- School Schedule, Email Assistant, and Screen Assistant all come in one Mac app, Programs For You (in the app, School Schedule is the School Calendar tab).
 - Not affiliated with Apple Inc.

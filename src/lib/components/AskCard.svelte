@@ -27,15 +27,15 @@
       e.currentTarget.parentElement.children[next].focus();
     }
   }
-  const opt = 'flex items-start gap-2.5 rounded-lg border border-[#343434] bg-[#262627] px-2.5 py-2 aria-checked:border-[#3794ff] aria-checked:bg-[rgb(55_148_255/.13)]';
-  const radio = 'mt-0.5 size-3.5 flex-none rounded-full border-[1.5px] border-[#8a8a8a] group-aria-checked:border-[#3794ff] group-aria-checked:bg-[#3794ff] group-aria-checked:shadow-[inset_0_0_0_3px_#22282f]';
+  const opt = 'flex items-start gap-2.5 rounded-lg border border-[#343434] bg-[#262627] px-2.5 py-2 aria-checked:border-[#a7e26e] aria-checked:bg-[rgb(167_226_110/.12)]';
+  const radio = 'mt-0.5 size-3.5 flex-none rounded-full border-[1.5px] border-[#8a8a8a] group-aria-checked:border-[#a7e26e] group-aria-checked:bg-[#a7e26e] group-aria-checked:shadow-[inset_0_0_0_3px_#22282f]';
   const btn = 'inline-flex h-7 items-center rounded-md border border-[#3c3c3c] bg-[#2c2c2c] px-3 text-[12.5px] font-semibold text-[#e8e8e8]';
 </script>
 
 <div
   class={cn('rounded-xl border border-[#3a3a3a] bg-[#1f1f1f] px-4 py-3.5 text-left text-[13px] leading-[1.45] text-[#e8e8e8] shadow-[0_22px_54px_rgb(0_0_0/.38)]', size === 'lg' ? 'w-[400px] text-[13.5px] max-[480px]:w-full' : 'w-[344px]', cls)}
   role={demo ? 'group' : undefined} aria-label={demo ? 'Email Assistant demo card' : undefined}>
-  <div class="mb-2.5 flex items-center gap-2"><span class="inline-flex h-5 items-center rounded-full bg-[#263446] px-[9px] text-[11.5px] font-semibold text-[#9ccbff]">Daily summary</span><span class="ml-auto text-[11.5px] text-[#8d8d8d]">1 of 3 important</span></div>
+  <div class="mb-2.5 flex items-center gap-2"><span class="inline-flex h-5 items-center rounded-full bg-[rgb(167_226_110/.14)] px-[9px] text-[11.5px] font-semibold text-[#c4f08a]">Daily summary</span><span class="ml-auto text-[11.5px] text-[#8d8d8d]">1 of 3 important</span></div>
   <p class="m-0 text-xs text-[#9a9a9a]">Mr. Lee · Biology</p>
   <p class="mb-1 text-sm font-[650] text-white">Quiz moved to Friday</p>
   <p class="mb-3 text-[#bdbdbd]">Your quiz moved from Wednesday to Friday. He wants a quick reply so he knows you saw it.</p>
@@ -58,7 +58,7 @@
       <span class="min-w-0 flex-1"><b class="block font-semibold text-[#efefef]">Other</b>
         {#if demo}
           <input bind:this={otherInput} type="text" placeholder="Type your own reply…" aria-label="Your own reply" onfocus={() => choose(options.length)}
-            class="mt-[5px] block w-full rounded-md border border-[#3a3a3a] bg-[#191919] px-2 py-[5px] text-[12.5px] text-[#e8e8e8] focus:border-[#3794ff] focus:outline-none">
+            class="mt-[5px] block w-full rounded-md border border-[#3a3a3a] bg-[#191919] px-2 py-[5px] text-[12.5px] text-[#e8e8e8] focus:border-[#a7e26e] focus:outline-none">
         {:else if fakeOther}
           <span class="mt-[5px] block w-full rounded-md border border-[#3a3a3a] bg-[#191919] px-2 py-[5px] text-[12.5px] text-[#777]">Type your own reply…</span>
         {/if}
@@ -68,9 +68,9 @@
   <div class="flex justify-end gap-2">
     {#if demo}
       <button class="{btn} hover:bg-[#333]" type="button" onclick={() => (note = 'Skipped. In the app, the next email shows up here.')}>Skip</button>
-      <button class="{btn} border-[#0e639c] bg-[#0e639c] text-white hover:bg-[#1177bb]" type="button" onclick={() => (note = 'Just a demo, so nothing was sent.')}>Preview &amp; Send</button>
+      <button class="{btn} border-[#a7e26e] bg-[#a7e26e] !text-[#0b1110] hover:bg-[#cef79e]" type="button" onclick={() => (note = 'Just a demo, so nothing was sent.')}>Preview &amp; Send</button>
     {:else}
-      <span class={btn}>Skip</span><span class="{btn} border-[#0e639c] bg-[#0e639c] text-white">Preview &amp; Send</span>
+      <span class={btn}>Skip</span><span class="{btn} border-[#a7e26e] bg-[#a7e26e] !text-[#0b1110]">Preview &amp; Send</span>
     {/if}
   </div>
   {#if demo}<p class="mt-2 mb-0 text-right text-[11.5px] text-[#8d8d8d] empty:hidden" aria-live="polite">{note}</p>{/if}

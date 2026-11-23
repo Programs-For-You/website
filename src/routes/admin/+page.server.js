@@ -1,4 +1,5 @@
 import { fail } from '@sveltejs/kit';
+import { env } from 'cloudflare:workers';
 import { getDb, isAdmin, passwordOk, startSession, endSession } from '#lib/server.js';
 
 export const prerender = false;
@@ -9,14 +10,14 @@ const initialsOf = (name) => name.split(/\s+/).filter(Boolean).slice(0, 2).map((
 const text = (f, k, max) => String(f.get(k) ?? '').trim().slice(0, max);
 
 export async function load({ cookies }) {
-  if (!(await isAdmin(cookies))) return { authed: false, people: [], tickets: [], applications: [] };
+  if (!(await isAdmin(cookies))) return { authed: false, people: [], tickets: [], applications: [], vapidKey: '' };
   const db = getDb();
   const [people, tickets, applications] = await db.batch([
     db.prepare('SELECT id, sort, name, title, note, founder, soon FROM people ORDER BY sort, id'),
     db.prepare('SELECT id, name, email, app, summary, created_at FROM tickets ORDER BY created_at DESC, rowid DESC LIMIT 200'),
     db.prepare('SELECT id, name, email, grade, role, department, why, skills, created_at FROM applications ORDER BY created_at DESC, id DESC LIMIT 200')
   ]);
-  return { authed: true, people: people.results, tickets: tickets.results, applications: applications.results };
+  return { authed: true, people: people.results, tickets: tickets.results, applications: applications.results, vapidKey: env.VAPID_PUBLIC_KEY ?? '' };
 }
 
 export const actions = {

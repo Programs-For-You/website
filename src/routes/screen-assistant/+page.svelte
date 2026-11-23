@@ -14,8 +14,6 @@
   import Icon from '#lib/components/apphero/Icon.svelte';
   import WhatsNew from '#lib/components/apphero/WhatsNew.svelte';
   import DownloadCta from '#lib/components/apphero/DownloadCta.svelte';
-  import AgreeBox from '#lib/components/AgreeBox.svelte';
-  import { gate } from '#lib/agree.svelte.js';
   import { APPS } from '#lib/config.js';
 
   const app = APPS.find((a) => a.id === 'screen-assistant');
@@ -39,12 +37,11 @@
 <AppHero icon="/assets/img/screen-assistant.svg" title="Screen Assistant" statusId="screen-assistant" howHref="#how-to-use" req="Requires macOS 26 Tahoe or newer on a Mac with Apple silicon (M1 or later) · Windows version coming soon · Free">
   Press <kbd>⌥</kbd> <kbd>Space</kbd> and your personal assistant looks at what you’re working on. Ask it to sum it up, explain it, make a to-do list, write a reply, or quiz you.
   {#snippet actions()}
-    <Button href={app.file} download onclick={gate}><Icon name="download" class="size-[18px]" /> Mac Download</Button>
+    <Button href="/#download"><Icon name="download" class="size-[18px]" /> Get the Programs For You App</Button>
     <Button tag="span" variant="ghost" aria-disabled="true">Windows: coming soon</Button>
-    <AgreeBox />
   {/snippet}
   {#snippet visual()}
-    <img class="mx-auto block h-auto w-full max-w-[560px]" src="/assets/img/screen-assistant-panel.png" width="680" height="636" alt="Screen Assistant reading a biology assignment and turning it into a to-do list">
+    <img class="mx-auto block h-auto w-full max-w-[560px]" src="/assets/img/screen-assistant-panel.webp" width="680" height="636" decoding="async" alt="Screen Assistant reading a biology assignment and turning it into a to-do list">
   {/snippet}
 </AppHero>
 
@@ -94,4 +91,4 @@
 
 <WhatsNew id="screen-assistant" />
 
-<DownloadCta title="Get Screen Assistant" text="Free for Mac. Download it, then follow the install guide." buttons={[{ href: app.file, label: 'Mac Download', download: true }]} note="Requires macOS 26 Tahoe or newer on a Mac with Apple silicon (M1 or later)." />
+<DownloadCta title="Get Screen Assistant" text="It comes inside the free Programs For You app for Mac, along with our other apps." buttons={[{ href: '/#download', label: 'Get the Programs For You App' }]} note="Requires macOS 26 Tahoe or newer on a Mac with Apple silicon (M1 or later)." />
