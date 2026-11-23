@@ -96,7 +96,7 @@ export const softwareApp = (id) => {
     isAccessibleForFree: true,
     offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD', availability: ready ? 'https://schema.org/InStock' : 'https://schema.org/PreOrder' },
     publisher: { '@id': ID.org },
-    ...(a.license ? { license: 'https://www.gnu.org/licenses/agpl-3.0.html' } : {})
+    license: SITE.url + '/terms'   // freeware: © Programs For You, all rights reserved
   };
 };
 
