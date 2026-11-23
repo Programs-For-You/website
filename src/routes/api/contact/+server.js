@@ -1,5 +1,5 @@
 import { json } from '@sveltejs/kit';
-import { getDb, bad, str, EMAIL_OK } from '#lib/server.js';
+import { getDb, bad, str, notify, EMAIL_OK } from '#lib/server.js';
 
 export const prerender = false;
 
@@ -13,5 +13,6 @@ export async function POST({ request }) {
   if (!/^PFY-[A-Z0-9]{5}$/.test(t.id) || !t.name || t.summary.length < 5 || !t.app || !EMAIL_OK.test(t.email)) return bad('Invalid ticket.');
   await getDb().prepare('INSERT INTO tickets (id, name, email, app, summary) VALUES (?, ?, ?, ?, ?)')
     .bind(t.id, t.name, t.email, t.app, t.summary).run();
+  await notify(`New message ${t.id} from ${t.name}`, [`From: ${t.name} <${t.email}>`, `App: ${t.app}`, '', t.summary], t.email);
   return json({ ok: true });
 }

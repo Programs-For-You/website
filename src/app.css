@@ -24,7 +24,7 @@
   --text: #f1f1ec;
   --on-ink: #0b1110;          /* text that sits on a cream (--text) fill */
   --muted: #a3bab6;
-  --faint: rgb(241 241 236 / .5);
+  --faint: rgb(241 241 236 / .6);
   --accent: #a7e26e;          /* lime: the one bright accent (links, labels, strong outlines) */
   --accent-hover: #cef79e;
   --accent-ink: #0b1110;

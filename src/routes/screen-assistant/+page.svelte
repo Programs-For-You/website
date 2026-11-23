@@ -44,7 +44,7 @@
     <AgreeBox />
   {/snippet}
   {#snippet visual()}
-    <img class="mx-auto block h-auto w-full max-w-[560px]" src="/assets/img/screen-assistant-panel.png" width="680" height="636" alt="Screen Assistant reading a biology assignment and turning it into a to-do list">
+    <img class="mx-auto block h-auto w-full max-w-[560px]" src="/assets/img/screen-assistant-panel.webp" width="680" height="636" decoding="async" alt="Screen Assistant reading a biology assignment and turning it into a to-do list">
   {/snippet}
 </AppHero>
 

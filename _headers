@@ -5,6 +5,13 @@
 /assets/*
   Cache-Control: public, max-age=0, must-revalidate
 
+# Fonts and images keep the same file names, so cache them for a week (and refresh quietly in the background).
+/fonts/*
+  Cache-Control: public, max-age=604800, stale-while-revalidate=86400
+
+/assets/img/*
+  Cache-Control: public, max-age=604800, stale-while-revalidate=86400
+
 /downloads/*
   Content-Disposition: attachment
 

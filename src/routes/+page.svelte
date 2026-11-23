@@ -73,7 +73,7 @@
       aria-hidden="true">
       <div class="absolute top-0 left-0 h-[700px] w-[980px] origin-top-left [transform:scale(var(--s))] max-[640px]:static max-[640px]:flex max-[640px]:h-auto max-[640px]:w-auto max-[640px]:flex-col max-[640px]:items-center max-[640px]:gap-3.5 max-[640px]:pb-[18px] max-[640px]:[transform:none]">
         <MenuBar class="absolute inset-x-0 top-0 max-[640px]:static max-[640px]:self-stretch" />
-        <img class="absolute top-[58px] left-[18px] h-auto w-[470px] max-[640px]:hidden" src="/assets/img/screen-assistant-panel.png" width="680" height="636" alt="">
+        <img class="absolute top-[58px] left-[18px] h-auto w-[470px] max-[640px]:hidden" src="/assets/img/screen-assistant-panel.webp" width="680" height="636" decoding="async" alt="">
         <SchedPanel class="absolute top-9 right-[92px] max-[640px]:static max-[640px]:w-[calc(100%-28px)]! max-[640px]:max-w-[380px]" />
         <AskCard size="md" fakeOther class="absolute right-[22px] bottom-[22px] max-[640px]:static max-[640px]:w-[calc(100%-28px)]! max-[640px]:max-w-[380px]" options={[
           { title: 'Thanks, see you Friday!', note: 'Short and friendly' },

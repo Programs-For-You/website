@@ -10,9 +10,6 @@ export function savedEmail() {
 export function saveEmail(email) {
   try { localStorage.setItem(KEY, email); } catch { /* private mode: they'll just type it again next time */ }
 }
-export function forgetEmail() {
-  try { localStorage.removeItem(KEY); } catch { /* nothing saved */ }
-}
 
 // ---------- Terms of Service (asked only when downloading) ----------
 // The Downloads page asks once: "I'm 13 or older and I agree to the Terms". After that this browser remembers it.

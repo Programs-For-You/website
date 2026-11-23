@@ -52,3 +52,26 @@ export async function isAdmin(cookies) {
   if (!env.ADMIN_PASSWORD || !exp || !sig || Number(exp) < Date.now() / 1000) return false;
   return same(sig, await sign(exp));
 }
+
+// Your pfy-forward API: the site just hands it each submission.
+const FORWARD_URL = 'https://pfy-forward.agsid502.workers.dev';
+
+/**
+ * Tells the team when a contact message or application comes in, by POSTing it to pfy-forward.
+ * Needs the FORWARD_SECRET secret on the site (same value as on the worker). Without it, nothing is sent.
+ * Best effort: the submission is already saved, so a missing setup or failure never breaks the form.
+ */
+export async function notify(subject, lines, replyTo) {
+  if (!env.FORWARD_SECRET) return;
+  try {
+    const res = await fetch(env.FORWARD_URL || FORWARD_URL, {
+      method: 'POST',
+      headers: { 'content-type': 'application/json', 'x-forward-secret': env.FORWARD_SECRET },
+      body: JSON.stringify({ subject, text: lines.join('\n') + '\n\nManage it at /admin', replyTo })
+    });
+    const out = await res.json().catch(() => null);
+    if (!res.ok || !out?.ok) console.error('notify failed', res.status, out);
+  } catch (e) {
+    console.error('notify failed', e);
+  }
+}
