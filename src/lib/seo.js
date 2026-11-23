@@ -14,7 +14,7 @@ export const organization = () => ({
   url: SITE.url + '/',
   logo: { '@type': 'ImageObject', url: SITE.url + '/assets/img/logo.svg' },
   image: SITE.url + '/og.png',
-  description: 'Programs For You makes free, simple apps that save students time: Email Assistant and Screen Assistant for Mac, plus games for the TI-84 Evo calculator. School Schedule is coming soon.',
+  description: 'Programs For You makes free, simple apps that save students time: School Schedule, Email Assistant, and Screen Assistant for Mac, plus games for the TI-84 Evo calculator.',
   foundingDate: '2026',
   founder: [
     { '@type': 'Person', name: 'Brady Krupa', jobTitle: 'CEO & Founder', url: abs('/team') },

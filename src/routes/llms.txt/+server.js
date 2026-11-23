@@ -13,7 +13,7 @@ export function GET() {
   });
   const text = `# ${SITE.name}
 
-> ${SITE.name} makes free, simple apps that save students time: Email Assistant and Screen Assistant for Mac, plus free Python games for the TI-84 Evo graphing calculator. School Schedule is coming soon. Everything is free, with no email, password or account needed to download.
+> ${SITE.name} makes free, simple apps that save students time: School Schedule, Email Assistant, and Screen Assistant for Mac (all in one app, Programs For You), plus free Python games for the TI-84 Evo graphing calculator. Everything is free, with no email, password or account needed to download.
 
 Key facts:
 - Price: free. No email, password or account; downloads open after agreeing to the Terms (13 or older).
