@@ -17,6 +17,8 @@
   const send = (method, body, q = '') => fetch('/admin/push' + q, { method, headers: { 'content-type': 'application/json' }, body: JSON.stringify(body) });
   const registration = () => navigator.serviceWorker.register('/admin-sw.js', { scope: '/admin' }).then(() => navigator.serviceWorker.ready);
 
+  const installed = () => matchMedia('(display-mode: standalone)').matches || navigator.standalone === true;
+
   onMount(async () => {
     if (!('serviceWorker' in navigator && 'PushManager' in window && 'Notification' in window)) return (state = 'unsupported');
     if (!vapidKey) return (state = 'unset');
@@ -26,7 +28,17 @@
       // Already on: tell the server again, in case it lost this device (or the push service changed its address).
       if (sub && Notification.permission === 'granted') await send('POST', sub.toJSON());
       state = sub ? 'on' : 'off';
-    } catch { state = 'off'; }
+    } catch { state = 'off'; return; }
+
+    // First open of the installed app: ask for permission right away. iPhones only allow the prompt after a tap,
+    // so if it didn't show, ask on the first tap instead. Never asks again once allowed or blocked.
+    if (state === 'off' && Notification.permission === 'default' && installed()) {
+      await turnOn();
+      if (state === 'off' && Notification.permission === 'default') {
+        const onTap = () => { removeEventListener('pointerdown', onTap, true); if (state === 'off') turnOn(); };
+        addEventListener('pointerdown', onTap, true);
+      }
+    }
   });
 
   async function turnOn() {

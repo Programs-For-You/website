@@ -1,9 +1,11 @@
 <script>
   import { cn } from '#lib/cn.js';
   import { card, when } from '#lib/admin.js';
+  import { enhance } from '$app/forms';
+  import Button from '#lib/components/Button.svelte';
   import DeleteButton from './DeleteButton.svelte';
 
-  let { application: a } = $props();
+  let { application: a, canAdd = false } = $props();
 </script>
 
 <article class={cn(card, 'mb-4')}>
@@ -18,5 +20,10 @@
     <p class="mb-1 text-[.82rem] font-semibold">Skills or experience</p>
     <p class="mb-3 whitespace-pre-wrap">{a.skills}</p>
   {/if}
-  <DeleteButton action="?/removeApplication" id={a.id} label={`the application from ${a.name}`} />
+  <div class="flex flex-wrap gap-2">
+    {#if canAdd}
+      <form method="POST" action="?/addFromApplication" use:enhance><input type="hidden" name="id" value={a.id}><Button type="submit" size="sm">Add as volunteer</Button></form>
+    {/if}
+    <DeleteButton action="?/removeApplication" id={a.id} label={`the application from ${a.name}`} />
+  </div>
 </article>

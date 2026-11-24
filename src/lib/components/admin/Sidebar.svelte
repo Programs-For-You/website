@@ -20,7 +20,7 @@
     {/each}
   </nav>
   <div class="flex flex-col items-start gap-3 border-t border-border pt-4">
-    <a href="/team" class="text-[.9rem]">View Team page →</a>
+    <a href="/account" class="text-[.9rem]">Your account</a>
     <form method="POST" action="?/logout" use:enhance><Button type="submit" variant="outline" size="sm">Log out</Button></form>
   </div>
 </aside>

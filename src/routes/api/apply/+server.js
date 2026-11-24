@@ -1,5 +1,5 @@
 import { json } from '@sveltejs/kit';
-import { getDb, bad, str, notify, EMAIL_OK } from '#lib/server.js';
+import { getDb, bad, str, notify, replyToApplicant, EMAIL_OK } from '#lib/server.js';
 import { pushAdmins } from '#lib/push.js';
 
 export const prerender = false;
@@ -16,6 +16,7 @@ export async function POST({ request }) {
   await getDb().prepare('INSERT INTO applications (name, email, grade, role, department, why, skills) VALUES (?, ?, ?, ?, ?, ?, ?)')
     .bind(a.name, a.email, a.grade, a.role, a.department, a.why, a.skills || null).run();
   await Promise.all([
+    replyToApplicant(a),
     notify(`New application from ${a.name}`, [`${a.name} <${a.email}>`, `${a.grade} grade · ${a.role} · ${a.department}`, '', 'Why:', a.why, ...(a.skills ? ['', 'Skills:', a.skills] : [])], a.email),
     pushAdmins({ title: `New application from ${a.name}`, body: `${a.role} · ${a.department}`, url: '/admin?tab=applications' })
   ]);

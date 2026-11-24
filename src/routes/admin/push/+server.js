@@ -1,5 +1,6 @@
 import { json } from '@sveltejs/kit';
-import { getDb, isAdmin } from '#lib/server.js';
+import { getDb } from '#lib/server.js';
+import { isAdmin } from '#lib/auth.js';
 import { pushAdmins } from '#lib/push.js';
 
 export const prerender = false;

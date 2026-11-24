@@ -1,6 +1,7 @@
 // Server-only helpers for /api routes.
 import { json } from '@sveltejs/kit';
 import { env } from 'cloudflare:workers';
+import { SITE } from '#lib/config.js';
 
 export const EMAIL_OK = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
 
@@ -15,63 +16,71 @@ export function getDb() {
 
 export const bad = (message) => json({ ok: false, message }, { status: 400 });
 
-// ---------- Admin login ----------
-// One shared password (the ADMIN_PASSWORD secret). Logging in sets a signed cookie that expires after 8 hours.
-const COOKIE = 'pfy-admin';
-const MAX_AGE = 60 * 60 * 8;
-const enc = new TextEncoder();
+// Login and accounts live in #lib/auth.js.
 
-async function sign(text) {
-  const key = await crypto.subtle.importKey('raw', enc.encode(env.ADMIN_PASSWORD), { name: 'HMAC', hash: 'SHA-256' }, false, ['sign']);
-  const sig = await crypto.subtle.sign('HMAC', key, enc.encode(text));
-  return Array.from(new Uint8Array(sig), (b) => b.toString(16).padStart(2, '0')).join('');
+/** Sends one email with Cloudflare Email Sending (the EMAIL binding). Returns true if it was sent. Never throws. */
+export async function sendMail({ to, subject, text, replyTo }) {
+  if (!env.EMAIL) return false;
+  try {
+    await env.EMAIL.send({ to, from: { email: `notifications@${SITE.domain}`, name: SITE.name }, replyTo: replyTo && EMAIL_OK.test(replyTo) ? replyTo : undefined, subject, text });
+    return true;
+  } catch (e) {
+    console.error('email failed', e?.code, e?.message ?? e);
+    return false;
+  }
 }
-
-// Compare without stopping at the first different character.
-function same(a, b) {
-  if (a.length !== b.length) return false;
-  let diff = 0;
-  for (let i = 0; i < a.length; i++) diff |= a.charCodeAt(i) ^ b.charCodeAt(i);
-  return diff === 0;
-}
-
-export async function passwordOk(given) {
-  if (!env.ADMIN_PASSWORD) return false; // not set up: nobody can log in
-  return same(await sign('pw:' + given), await sign('pw:' + env.ADMIN_PASSWORD));
-}
-
-export async function startSession(cookies, url) {
-  const exp = String(Math.floor(Date.now() / 1000) + MAX_AGE);
-  cookies.set(COOKIE, `${exp}.${await sign(exp)}`, { path: '/admin', httpOnly: true, sameSite: 'strict', secure: url.protocol === 'https:', maxAge: MAX_AGE });
-}
-
-export const endSession = (cookies) => cookies.delete(COOKIE, { path: '/admin' });
-
-export async function isAdmin(cookies) {
-  const [exp, sig] = (cookies.get(COOKIE) ?? '').split('.');
-  if (!env.ADMIN_PASSWORD || !exp || !sig || Number(exp) < Date.now() / 1000) return false;
-  return same(sig, await sign(exp));
-}
-
-// Your pfy-forward API: the site just hands it each submission.
-const FORWARD_URL = 'https://pfy-forward.agsid502.workers.dev';
 
 /**
- * Tells the team when a contact message or application comes in, by POSTing it to pfy-forward.
- * Needs the FORWARD_SECRET secret on the site (same value as on the worker). Without it, nothing is sent.
+ * Emails the team when a contact message or application comes in, with Cloudflare Email Sending (the EMAIL binding).
+ * Goes to every active admin account (Admin 1 and Admin 2), plus the optional NOTIFY_TO secret (extra addresses, comma-separated).
+ * Sent from notifications@<SITE.domain>, so that domain must be onboarded to Email Sending.
  * Best effort: the submission is already saved, so a missing setup or failure never breaks the form.
  */
 export async function notify(subject, lines, replyTo) {
-  if (!env.FORWARD_SECRET) return;
+  if (!env.EMAIL) return;
+  // Every active admin (level 1 and 2), plus anyone listed in NOTIFY_TO.
+  const { results } = await getDb().prepare("SELECT email FROM users WHERE role IN ('admin1', 'admin2') AND disabled = 0 AND pw_hash IS NOT NULL").all().catch(() => ({ results: [] }));
+  const to = [...new Set([...results.map((r) => r.email), ...(env.NOTIFY_TO ?? '').split(',').map((a) => a.trim().toLowerCase())].filter(Boolean))];
+  if (!to.length) return;
   try {
-    const res = await fetch(env.FORWARD_URL || FORWARD_URL, {
-      method: 'POST',
-      headers: { 'content-type': 'application/json', 'x-forward-secret': env.FORWARD_SECRET },
-      body: JSON.stringify({ subject, text: lines.join('\n') + '\n\nManage it at /admin', replyTo })
+    await env.EMAIL.send({
+      to,
+      from: { email: `notifications@${SITE.domain}`, name: SITE.name },
+      replyTo: replyTo && EMAIL_OK.test(replyTo) ? replyTo : undefined,
+      subject,
+      text: lines.join('\n') + '\n\nManage it at ' + SITE.url + '/admin'
     });
-    const out = await res.json().catch(() => null);
-    if (!res.ok || !out?.ok) console.error('notify failed', res.status, out);
   } catch (e) {
-    console.error('notify failed', e);
+    console.error('notify failed', e?.code, e?.message ?? e);
+  }
+}
+
+/**
+ * Emails the applicant a "we got it" reply with Cloudflare Email Sending (the same EMAIL binding as notify()).
+ * Sent from notifications@<SITE.domain>; replies go to SITE.contactEmail.
+ * Best effort like notify(): the application is already saved, so a failure never breaks the form.
+ */
+export async function replyToApplicant({ name, email, role, department }) {
+  if (!env.EMAIL) return;
+  const first = name.split(/\s+/)[0].replace(/[\r\n]/g, ' ');
+  try {
+    await env.EMAIL.send({
+      to: email,
+      from: { email: `notifications@${SITE.domain}`, name: SITE.name },
+      replyTo: SITE.contactEmail,
+      subject: `We got your application, ${first}`,
+      text: [
+        `Hi ${first},`,
+        '',
+        `Thanks for applying to ${SITE.name} as ${role} in ${department}. We got your application and a real person on the team will read it.`,
+        '',
+        'We will email you back at this address once we have decided on next steps. You can reply to this email if you want to add anything.',
+        '',
+        `The ${SITE.name} team`,
+        SITE.url
+      ].join('\n')
+    });
+  } catch (e) {
+    console.error('applicant reply failed', e?.code, e?.message ?? e);
   }
 }

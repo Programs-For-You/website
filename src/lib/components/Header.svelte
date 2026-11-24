@@ -10,6 +10,7 @@
     ] },
     { label: 'About us', links: [
       ['/team', 'Team', 'Our founders and team'],
+      ['/volunteers', 'Volunteers', 'Our student volunteer teams'],
       ['/apply', 'Join us', 'Open roles']
     ] }
   ];
