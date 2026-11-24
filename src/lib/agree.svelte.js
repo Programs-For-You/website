@@ -18,5 +18,7 @@ export function gate(e) {
   if (agree.ok) return;
   e.preventDefault();
   agree.warn = true;
-  document.querySelector('[data-agree]')?.scrollIntoView({ block: 'center', behavior: 'smooth' });
+  // The box nearest the button (a page can have more than one; they share one checkmark).
+  const box = e.currentTarget?.closest?.('section')?.querySelector('[data-agree]') ?? document.querySelector('[data-agree]');
+  box?.scrollIntoView({ block: 'center', behavior: 'smooth' });
 }

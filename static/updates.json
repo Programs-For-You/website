@@ -44,6 +44,13 @@
       "fixed": "",
       "added": "One Programs For You icon in the menu bar: click it for School Schedule and Email Assistant tabs and a Screen Assistant button. A new green look, and the rebuilt School Schedule with per-day classes, minis, and Schoology days off.",
       "notes": "Added: One Programs For You icon in the menu bar: click it for School Schedule and Email Assistant tabs and a Screen Assistant button. A new green look, and the rebuilt School Schedule with per-day classes, minis, and Schoology days off."
+    },
+    "programs-for-you-windows": {
+      "version": "1.0.0",
+      "url": "https://programsforyou.com/programs-for-you#windows",
+      "fixed": "",
+      "added": "Programs For You for Windows: School Schedule, plus Email Assistant and Screen Assistant with Microsoft Copilot.",
+      "notes": "Added: Programs For You for Windows: School Schedule, plus Email Assistant and Screen Assistant with Microsoft Copilot."
     }
   }
 }

@@ -14,6 +14,8 @@ export const SITE = {
 };
 
 // Your apps. Each one has a Mac download, plus a Windows download in `windows`.
+// On Windows, all three are in one app: Programs For You for Windows (WINDOWS_APP, below).
+const IN_WINDOWS_APP = { status: 'available', version: '1.0.0', requires: 'Windows 10 or 11, inside Programs For You for Windows' };
 // When an app is ready (or updated):
 //   1. Put its .zip file in website/downloads/ (apps/build.sh does this)
 //   2. Change status to 'available' and fill in version, file, and size.
@@ -38,7 +40,7 @@ export const APPS = [
       { version: '1.0.0', fixed: '', added: 'Back as part of Programs For You: one app with School Schedule, Email Assistant, and Screen Assistant inside. Updates only when you click Check for Updates.' },
     ],
     requires: 'macOS 14 Sonoma or newer, on a Mac with Apple silicon or Intel',
-    windows: { status: 'coming-soon' },
+    windows: IN_WINDOWS_APP,
   },
   {
     id: 'email-assistant',
@@ -57,7 +59,7 @@ export const APPS = [
       { version: '1.2.3', fixed: 'It now opens with a welcome card instead of Settings when you haven’t added an email yet.', added: 'On screen: open any email, even school email, and it reads that email and writes replies for you to copy and paste. Settings now say clearly that the daily summary works with personal email only.' },
     ],
     requires: 'macOS 26 Tahoe or newer · Mac with Apple silicon (M1 or later)',
-    windows: { status: 'coming-soon' },   // the Windows version is being built
+    windows: IN_WINDOWS_APP,
   },
   {
     id: 'screen-assistant',
@@ -76,7 +78,7 @@ export const APPS = [
       { version: '1.1.2', fixed: 'Automatic updates are more reliable: they also check right after your Mac wakes up.', added: 'If the app is running from your Downloads folder, it offers to move itself to Applications so it can keep updating.' },
     ],
     requires: 'macOS 26 Tahoe or newer · Mac with Apple silicon (M1 or later)',
-    windows: { status: 'coming-soon' },   // the Windows version is being built
+    windows: IN_WINDOWS_APP,
   },
 ];
 
@@ -93,6 +95,24 @@ export const MAC_APP = {
   size: '4.5 MB',
   icon: '/favicon.svg',
   requires: 'macOS 14 Sonoma or newer, on Apple silicon or Intel. Email Assistant and Screen Assistant need macOS 26 Tahoe on a Mac with Apple silicon (M1 or later).',
+};
+
+// The Windows app: School Schedule, plus Email Assistant and Screen Assistant through Microsoft Copilot (free on
+// Windows 11, no API key). Built from apps/Windows with `npm run dist`. The zips are about 110 MB each, too big for
+// static/downloads (Cloudflare allows 25 MB a file), so they're attached to a GitHub release on the public website
+// repo (tag windows-<version>). For a new version: build it, make a new release with both zips, then change version,
+// the two file links, and the sizes here. It isn't code-signed yet, so Windows shows a SmartScreen warning.
+const WIN_RELEASE = 'https://github.com/Programs-For-You/website/releases/download/windows-1.0.0';
+export const WINDOWS_APP = {
+  id: 'programs-for-you-windows',
+  name: 'Programs For You for Windows',
+  status: 'available',   // 'available' or 'coming-soon'
+  version: '1.0.0',
+  fileX64: `${WIN_RELEASE}/ProgramsForYou-Windows-1.0.0-x64.zip`,
+  fileArm64: `${WIN_RELEASE}/ProgramsForYou-Windows-1.0.0-arm64.zip`,
+  size: '106 MB',
+  sizeArm64: '111 MB',
+  requires: 'Windows 10 or 11, on Intel, AMD, or ARM. Email Assistant and Screen Assistant use Microsoft Copilot, which is free on Windows 11.',
 };
 
 // TI-84 Evo calculator games (Python). They say "Coming soon" until their status is 'available'.

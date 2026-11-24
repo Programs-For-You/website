@@ -1,7 +1,7 @@
 <!-- © 2026 Programs For You. All rights reserved. -->
 <script>
   import Seo from '#lib/components/Seo.svelte';
-  import { SITE, MAC_APP } from '#lib/config.js';
+  import { SITE, MAC_APP, WINDOWS_APP } from '#lib/config.js';
   import Section from '#lib/components/Section.svelte';
   import SectionHead from '#lib/components/SectionHead.svelte';
   import Button from '#lib/components/Button.svelte';
@@ -17,6 +17,13 @@
 
   const app = MAC_APP;
   const ready = app.status === 'available' && Boolean(app.file);
+  const win = WINDOWS_APP;
+  const winReady = win.status === 'available' && Boolean(win.fileX64);
+  const onWindows = [
+    { name: 'School Schedule', text: 'Works the same as on Mac: your classes, the countdown, homework, and your Schoology calendar. The class and minutes left show in a small bar in a corner of the screen.' },
+    { name: 'Email Assistant', text: 'Uses Microsoft Copilot, free on Windows 11. Open an email, press Alt + Space, share the window, and ask for a summary or replies.' },
+    { name: 'Screen Assistant', text: 'Also uses Copilot: press Alt + Space in any app and share your screen to summarize, explain, make to-dos, or quiz you.' },
+  ];
 
   const inside = [
     { name: 'School Schedule', href: '/school-schedule', icon: '/assets/img/school-schedule.svg', text: 'What period it is, how many minutes are left, and what homework is due. The countdown sits next to the icon in the bar at the top of your screen.', req: 'macOS 14 or newer' },
@@ -38,11 +45,11 @@
     '@context': 'https://schema.org',
     '@type': 'SoftwareApplication',
     name: 'Programs For You',
-    description: 'One free Mac app with School Schedule, Email Assistant, and Screen Assistant inside.',
+    description: winReady ? 'One free app for Mac and Windows with School Schedule, Email Assistant, and Screen Assistant inside.' : 'One free Mac app with School Schedule, Email Assistant, and Screen Assistant inside.',
     url: SITE.url + '/programs-for-you',
     image: SITE.url + app.icon,
     applicationCategory: 'EducationalApplication',
-    operatingSystem: 'macOS',
+    operatingSystem: winReady ? 'macOS, Windows' : 'macOS',
     softwareRequirements: app.requires,
     ...(ready ? { softwareVersion: app.version, fileSize: app.size, downloadUrl: SITE.url + app.file } : {}),
     isAccessibleForFree: true,
@@ -50,13 +57,14 @@
   };
 </script>
 
-<Seo title="Programs For You for Mac · Free download" description="One free Mac app with School Schedule, Email Assistant, and Screen Assistant inside. Everything lives in one icon at the top of your screen." jsonLd={[jsonLd]} />
+<Seo title={winReady ? 'Programs For You for Mac and Windows · Free download' : 'Programs For You for Mac · Free download'} description={winReady ? 'One free app for Mac and Windows with School Schedule, Email Assistant, and Screen Assistant inside. Everything lives in one icon by the clock.' : 'One free Mac app with School Schedule, Email Assistant, and Screen Assistant inside. Everything lives in one icon at the top of your screen.'} jsonLd={[jsonLd]} />
 
 <AppHero icon={app.icon} title="Programs For You" statusId="programs-for-you" howHref="#how-to-use" req={ready ? `Version ${app.version} · ${app.size} · Free · ${app.requires}` : app.requires}>
-  One free Mac app with School Schedule, Email Assistant, and Screen Assistant inside. Install it once and it lives in one icon at the top of your screen.
+  {#if winReady}One free app for Mac and Windows with School Schedule, Email Assistant, and Screen Assistant inside. Install it once and it lives in one icon by the clock.{:else}One free Mac app with School Schedule, Email Assistant, and Screen Assistant inside. Install it once and it lives in one icon at the top of your screen.{/if}
   {#snippet actions()}
     {#if ready}
       <Button href={app.file} download onclick={gate}><Icon name="download" class="size-[18px]" /> Download for Mac</Button>
+      {#if winReady}<Button variant="ghost" href="#windows">Download for Windows</Button>{/if}
       <Button variant="ghost" href="/install">How to install</Button>
       <AgreeBox />
     {:else}
@@ -83,6 +91,41 @@
   </ul>
 </Section>
 
+<Section id="windows">
+  <SectionHead eyebrow="Windows" title="Programs For You for Windows" />
+  <div class="grid grid-cols-[minmax(0,1fr)_minmax(0,1.4fr)] items-start gap-8 max-[900px]:grid-cols-1">
+    <div class="flex flex-col gap-4">
+      <p class="m-0 text-lead text-muted">The same app for Windows PCs, in one icon next to the clock. No API key and no account: the assistants use Microsoft Copilot, which comes free with Windows 11.</p>
+      <div class="flex flex-wrap items-center gap-3">
+        {#if winReady}
+          <Button href={win.fileX64} download onclick={gate}><Icon name="download" class="size-[18px]" /> Download for Windows</Button>
+          {#if win.fileArm64}<Button variant="ghost" href={win.fileArm64} download onclick={gate}>Windows on ARM</Button>{/if}
+          <AgreeBox />
+        {:else}
+          <Button tag="span" variant="ghost" aria-disabled="true">Windows: coming soon</Button>
+        {/if}
+      </div>
+      <p class="m-0 text-[.85rem] text-faint">{winReady ? `Version ${win.version} · ${win.size} · Free · ` : ''}{win.requires} Most PCs need the regular download; pick Windows on ARM only for a Snapdragon PC.</p>
+    </div>
+    <ul class="m-0 grid list-none gap-3 p-0">
+      {#each onWindows as a}
+        <li class="rounded-xl border border-border bg-bg-soft p-4"><h3 class="mb-1 text-[1.05rem]">{a.name}</h3><p class="m-0 text-[.92rem] text-muted">{a.text}</p></li>
+      {/each}
+    </ul>
+  </div>
+  {#if winReady}
+    <div class="mt-10">
+      <h3 class="mb-4 text-[1.25rem]">Install it on Windows</h3>
+      <Steps>
+        <Step n={1} title="Unzip it"><p>Open your Downloads folder, right-click the .zip, and choose <b>Extract All…</b>, then <b>Extract</b>. Move the folder somewhere you’ll keep it, like Documents.</p></Step>
+        <Step n={2} title="Open Programs For You"><p>In the folder, double-click <b>Programs For You</b> (Programs For You.exe).</p></Step>
+        <Step n={3} title="If Windows warns you"><p>Windows may say <b>“Windows protected your PC.”</b> Click <b>More info</b>, then <b>Run anyway</b>. It shows up because the app isn’t registered with Microsoft yet, not because something is wrong with it. Only do this for apps you downloaded from programsforyou.com.</p></Step>
+        <Step n={4} title="Find the icon by the clock"><p>The Programs For You icon is in the bottom-right corner, next to the clock. If you can’t see it, click the <b>^</b> arrow there. Click the icon for School Schedule and Email Assistant; right-click it for Settings and Check for Updates. It starts with Windows from now on.</p></Step>
+      </Steps>
+    </div>
+  {/if}
+</Section>
+
 <Section id="what-it-stores">
   <SectionHead eyebrow="What it stores" title="Your stuff stays on your Mac" />
   <FeatureGrid items={stores} />
@@ -102,5 +145,5 @@
 </Section>
 
 {#if ready}
-  <DownloadCta title="Get Programs For You" text="Free for Mac. One download with all three apps inside." buttons={[{ href: app.file, label: 'Download for Mac', download: true }]} note={app.requires} />
+  <DownloadCta title="Get Programs For You" text={winReady ? 'Free for Mac and Windows. One download with all three apps inside.' : 'Free for Mac. One download with all three apps inside.'} buttons={[{ href: app.file, label: 'Download for Mac', download: true }, ...(winReady ? [{ href: win.fileX64, label: 'Download for Windows', download: true }] : [])]} note={app.requires} />
 {/if}

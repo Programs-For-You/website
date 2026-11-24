@@ -34,11 +34,11 @@
 
 <Seo title="Email Assistant · Programs For You" description="A free Mac app that sums up your personal email once a day and helps you reply with one click. On screen answers any email you have open, school email too." jsonLd={[softwareApp('email-assistant')]} />
 
-<AppHero icon="/assets/img/email-assistant.svg" title="Email Assistant" statusId="email-assistant" howHref="#how-to-use" req="Requires macOS 26 Tahoe or newer on a Mac with Apple silicon (M1 or later) · Windows version coming soon · Free">
+<AppHero icon="/assets/img/email-assistant.svg" title="Email Assistant" statusId="email-assistant" howHref="#how-to-use" req="Requires macOS 26 Tahoe or newer on a Mac with Apple silicon (M1 or later) · On Windows 10 or 11 too · Free">
   Once a day, a little card sums up your personal email and helps you reply with one click. For school email, <b>On screen</b> reads the email you have open and writes replies for you.
   {#snippet actions()}
     <Button href="/programs-for-you"><Icon name="download" class="size-[18px]" /> Get the Programs For You App</Button>
-    <Button tag="span" variant="ghost" aria-disabled="true">Windows: coming soon</Button>
+    <Button variant="ghost" href="/programs-for-you#windows">Get it for Windows</Button>
   {/snippet}
   {#snippet visual()}
     <AskCard demo size="lg" />
