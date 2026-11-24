@@ -1,7 +1,7 @@
 <!-- © 2026 Programs For You. All rights reserved. -->
 <script>
   import Seo from '#lib/components/Seo.svelte';
-  import { SITE, MAC_APP } from '#lib/config.js';
+  import { SITE, MAC_APP, WINDOWS_APP } from '#lib/config.js';
   import Section from '#lib/components/Section.svelte';
   import SectionHead from '#lib/components/SectionHead.svelte';
   import Button from '#lib/components/Button.svelte';
@@ -17,6 +17,13 @@
 
   const app = MAC_APP;
   const ready = app.status === 'available' && Boolean(app.file);
+  const win = WINDOWS_APP;
+  const winReady = win.status === 'available' && Boolean(win.fileX64);
+  const onWindows = [
+    { name: 'School Schedule', text: 'Works the same as on Mac: your classes, the countdown, homework, and your Schoology calendar. The class and minutes left show in a small bar in a corner of the screen.' },
+    { name: 'Email Assistant', text: 'Uses Microsoft Copilot, free on Windows 11. Open an email, press Alt + Space, share the window, and ask for a summary or replies.' },
+    { name: 'Screen Assistant', text: 'Also uses Copilot: press Alt + Space in any app and share your screen to summarize, explain, make to-dos, or quiz you.' },
+  ];
 
   const inside = [
     { name: 'School Schedule', href: '/school-schedule', icon: '/assets/img/school-schedule.svg', text: 'What period it is, how many minutes are left, and what homework is due. The countdown sits next to the icon in the bar at the top of your screen.', req: 'macOS 14 or newer' },
@@ -81,6 +88,29 @@
       </li>
     {/each}
   </ul>
+</Section>
+
+<Section id="windows">
+  <SectionHead eyebrow="Windows" title="Programs For You for Windows" />
+  <div class="grid grid-cols-[minmax(0,1fr)_minmax(0,1.4fr)] items-start gap-8 max-[900px]:grid-cols-1">
+    <div class="flex flex-col gap-4">
+      <p class="m-0 text-lead text-muted">The same app for Windows PCs, in one icon next to the clock. No API key and no account: the assistants use Microsoft Copilot, which comes free with Windows 11.</p>
+      <div class="flex flex-wrap items-center gap-3">
+        {#if winReady}
+          <Button href={win.fileX64} download onclick={gate}><Icon name="download" class="size-[18px]" /> Download for Windows</Button>
+          {#if win.fileArm64}<Button variant="ghost" href={win.fileArm64} download onclick={gate}>Windows on ARM</Button>{/if}
+        {:else}
+          <Button tag="span" variant="ghost" aria-disabled="true">Windows: coming soon</Button>
+        {/if}
+      </div>
+      <p class="m-0 text-[.85rem] text-faint">{win.requires}</p>
+    </div>
+    <ul class="m-0 grid list-none gap-3 p-0">
+      {#each onWindows as a}
+        <li class="rounded-xl border border-border bg-bg-soft p-4"><h3 class="mb-1 text-[1.05rem]">{a.name}</h3><p class="m-0 text-[.92rem] text-muted">{a.text}</p></li>
+      {/each}
+    </ul>
+  </div>
 </Section>
 
 <Section id="what-it-stores">

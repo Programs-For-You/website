@@ -95,6 +95,21 @@ export const MAC_APP = {
   requires: 'macOS 14 Sonoma or newer, on Apple silicon or Intel. Email Assistant and Screen Assistant need macOS 26 Tahoe on a Mac with Apple silicon (M1 or later).',
 };
 
+// The Windows app: School Schedule, plus Email Assistant and Screen Assistant through Microsoft Copilot (free on
+// Windows 11, no API key). Built from apps/Windows. It says "Coming soon" until someone has tested it on a Windows
+// PC. To release it: host the zips (about 110 MB each, too big for static/downloads), fill in fileX64/fileArm64
+// and size, and change status to 'available'.
+export const WINDOWS_APP = {
+  id: 'programs-for-you-windows',
+  name: 'Programs For You for Windows',
+  status: 'coming-soon',   // 'available' or 'coming-soon'
+  version: '1.0.0',
+  fileX64: '',
+  fileArm64: '',
+  size: '',
+  requires: 'Windows 10 or 11, on Intel, AMD, or ARM. Email Assistant and Screen Assistant use Microsoft Copilot, which is free on Windows 11.',
+};
+
 // TI-84 Evo calculator games (Python). They say "Coming soon" until their status is 'available'.
 // To release one: copy its .py file from calculator/games/ into website/downloads/, then change
 // status to 'available'. (Or ask Claude to release it.)
