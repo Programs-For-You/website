@@ -36,17 +36,17 @@
   ];
   const apps = [
     {
-      id: 'school-schedule', name: 'School Schedule', icon: '/assets/img/school-schedule.svg', plat: 'Mac', page: '/school-schedule',
+      id: 'school-schedule', name: 'School Schedule', icon: '/assets/img/school-schedule.svg', plat: 'Mac · Windows', page: '/school-schedule',
       blurb: 'Always know what period it is, how many minutes are left, and what homework is due.',
       points: ['Live countdown at the top of your screen', 'Rotating days, short days, and lunches', 'Homework list with reminders']
     },
     {
-      id: 'email-assistant', name: 'Email Assistant', icon: '/assets/img/email-assistant.svg', plat: 'Mac · Windows soon', page: '/email-assistant',
+      id: 'email-assistant', name: 'Email Assistant', icon: '/assets/img/email-assistant.svg', plat: 'Mac · Windows', page: '/email-assistant',
       blurb: 'Once a day, a little card sums up your email and lets you reply with one click.',
       points: ['Daily summary card in the corner of your screen', 'Pick a ready-made reply or type your own', 'On screen: replies for any email you have open']
     },
     {
-      id: 'screen-assistant', name: 'Screen Assistant', icon: '/assets/img/screen-assistant.svg', plat: 'Mac · Windows soon', page: '/screen-assistant',
+      id: 'screen-assistant', name: 'Screen Assistant', icon: '/assets/img/screen-assistant.svg', plat: 'Mac · Windows', page: '/screen-assistant',
       blurb: 'Press ⌥ Space and your personal assistant looks at what you’re working on and helps.',
       points: ['Summarize, explain, or quiz you on any page', 'Turns assignments into to-dos with reminders', 'Only looks when you ask']
     }
@@ -58,7 +58,7 @@
   description="Free Mac apps for students: a school schedule with a live class countdown, an email assistant that writes replies, and a helper that sees your screen." jsonLd={[faqPage(HOME_FAQ), softwareApp('email-assistant'), softwareApp('screen-assistant')]} />
 
 <HeroXL title="Simple apps that make your day easier." text="Your school schedule, your email, and a helper that can see your screen, all one click away. Free, simple, and private.">
-  {#snippet note()}Free · No email needed · For Mac{/snippet}
+  {#snippet note()}Free · No email needed · For Mac and Windows{/snippet}
   {#snippet actions()}
     <Button variant="notch" href="#download">Get the apps</Button>
     <Button variant="outline" href="#how" class="border-white/40 text-white hover-fine:bg-white/10">How it works</Button>
@@ -142,12 +142,12 @@
 <Section soft narrow id="faq">
   <SectionHead eyebrow="FAQ" title="Questions people ask" />
   <div class="grid gap-2.5">
-    <FaqItem q="Is there a Windows version?"><p>Not yet. Windows versions are coming soon.</p></FaqItem>
+    <FaqItem q="Is there a Windows version?"><p>Yes. <a href="/programs-for-you#windows">Programs For You for Windows</a> works on Windows 10 and 11. It has School Schedule, and its Email Assistant and Screen Assistant use Microsoft Copilot, which is free on Windows 11.</p></FaqItem>
     <FaqItem q="I need help. Who do I contact?"><p>Email <a href={`mailto:${SITE.contactEmail}`}>{SITE.contactEmail}</a>. The <a href="/install">install guide</a> also answers the most common questions.</p></FaqItem>
     <FaqItem q="How do I get updates?"><p>Only when you ask. Open the app and click <b>Check for Updates</b>. If there’s a newer version, the app downloads it from us and installs it, and your settings stay. Nothing updates in the background without you. <a href="/install">More help</a>.</p></FaqItem>
     <FaqItem q="Is it really free?"><p>Yes. The apps are free to download and use, and you don’t need an email or an account.</p></FaqItem>
     <FaqItem q="Why does my Mac say it can’t check the app?"><p>Our apps aren’t registered with Apple’s paid developer program yet, so macOS asks you to approve them once. The <a href="/install">install guide</a> shows exactly what to click.</p></FaqItem>
-    <FaqItem q="What computers do they work on?"><p>School Schedule works on macOS 14 Sonoma or newer, on any Mac with Apple silicon or Intel. Email Assistant and Screen Assistant need macOS 26 Tahoe or newer on a Mac with Apple silicon (M1 or later). Windows versions are coming soon.</p></FaqItem>
+    <FaqItem q="What computers do they work on?"><p>School Schedule works on macOS 14 Sonoma or newer, on any Mac with Apple silicon or Intel. Email Assistant and Screen Assistant need macOS 26 Tahoe or newer on a Mac with Apple silicon (M1 or later). On Windows, <a href="/programs-for-you#windows">Programs For You for Windows</a> needs Windows 10 or 11.</p></FaqItem>
     <FaqItem q="Does the Email Assistant send my emails to a server?"><p>No. It connects straight from your Mac to your email and uses the AI built into your Mac. If you choose to add your own Claude API key, the emails being summarized go to Anthropic instead.</p></FaqItem>
     <FaqItem q="Does Screen Assistant watch everything I do?"><p>No. It only looks at your screen when you open it, it never records video, and it doesn’t save pictures. With Apple Intelligence, what it sees stays on your Mac.</p></FaqItem>
     <FaqItem q="Will it ever send an email without asking me?"><p>Never. Every reply waits for you to press <b>Preview &amp; Send</b>.</p></FaqItem>

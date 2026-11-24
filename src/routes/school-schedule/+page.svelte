@@ -30,11 +30,11 @@
 
 <Seo title="School Schedule · Programs For You" description="A free Mac app: always know what period it is, how many minutes are left, and what homework is due. Part of Programs For You." jsonLd={[softwareApp('school-schedule')]} />
 
-<AppHero icon="/assets/img/school-schedule.svg" title="School Schedule" statusId="school-schedule" howHref="#how-to-use" req="Requires macOS 14 Sonoma or newer, on a Mac with Apple silicon or Intel · Windows version coming soon · Free">
+<AppHero icon="/assets/img/school-schedule.svg" title="School Schedule" statusId="school-schedule" howHref="#how-to-use" req="Requires macOS 14 Sonoma or newer, on a Mac with Apple silicon or Intel · On Windows 10 or 11 too · Free">
   Always know what period it is, how many minutes are left, and what homework is due. It comes in the Programs For You app, together with Email Assistant and Screen Assistant.
   {#snippet actions()}
     <Button href="/programs-for-you"><Icon name="download" class="size-[18px]" /> Get the Programs For You App</Button>
-    <Button tag="span" variant="ghost" aria-disabled="true">Windows: coming soon</Button>
+    <Button variant="ghost" href="/programs-for-you#windows">Get it for Windows</Button>
   {/snippet}
   {#snippet visual()}
     <SchedPanel full fluid />

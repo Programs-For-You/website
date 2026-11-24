@@ -34,11 +34,11 @@
 
 <Seo title="Screen Assistant · Programs For You" description="A free Mac app: press Option-Space and an assistant looks at your screen to summarize, explain, make to-dos, or quiz you, using the AI built into your Mac." jsonLd={[softwareApp('screen-assistant')]} />
 
-<AppHero icon="/assets/img/screen-assistant.svg" title="Screen Assistant" statusId="screen-assistant" howHref="#how-to-use" req="Requires macOS 26 Tahoe or newer on a Mac with Apple silicon (M1 or later) · Windows version coming soon · Free">
+<AppHero icon="/assets/img/screen-assistant.svg" title="Screen Assistant" statusId="screen-assistant" howHref="#how-to-use" req="Requires macOS 26 Tahoe or newer on a Mac with Apple silicon (M1 or later) · On Windows 10 or 11 too · Free">
   Press <kbd>⌥</kbd> <kbd>Space</kbd> and your personal assistant looks at what you’re working on. Ask it to sum it up, explain it, make a to-do list, write a reply, or quiz you.
   {#snippet actions()}
     <Button href="/programs-for-you"><Icon name="download" class="size-[18px]" /> Get the Programs For You App</Button>
-    <Button tag="span" variant="ghost" aria-disabled="true">Windows: coming soon</Button>
+    <Button variant="ghost" href="/programs-for-you#windows">Get it for Windows</Button>
   {/snippet}
   {#snippet visual()}
     <img class="mx-auto block h-auto w-full max-w-[560px]" src="/assets/img/screen-assistant-panel.webp" width="680" height="636" decoding="async" alt="Screen Assistant reading a biology assignment and turning it into a to-do list">

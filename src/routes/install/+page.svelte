@@ -74,7 +74,7 @@
       <FaqItem q="Screen Assistant says it can’t see my screen."><p>Open <Path>System Settings → Privacy &amp; Security → Screen &amp; System Audio Recording</Path> and turn on <b>Screen Assistant</b>, then quit it and open it again. If it’s already on but still doesn’t work, select Screen Assistant in that list, click <b>−</b> to remove it, then open Screen Assistant and allow it again.</p></FaqItem>
       <FaqItem q="How do I update an app?"><p>Open the app and click <b>Check for Updates</b>. If there’s a newer version, the app downloads it and installs it, and all your settings stay. Nothing updates in the background without you. If you have an older version that doesn’t have this button, download the app again from the <a href="/programs-for-you">Programs For You App</a> page, drag it into Applications, and choose <b>Replace</b>. Keep the app in your Applications folder.</p></FaqItem>
       <FaqItem q="How do I uninstall an app?"><p>Click the app’s button at the top of your screen and choose <b>Quit</b>. Then drag the app from Applications to the Trash.</p></FaqItem>
-      <FaqItem q="Does it work on Windows, iPhone, iPad, or Chromebook?"><p>Not yet. Windows versions are coming soon. iPhone, iPad, and Chromebook aren’t supported right now.</p></FaqItem>
+      <FaqItem q="Does it work on Windows, iPhone, iPad, or Chromebook?"><p>Windows, yes: get <a href="/programs-for-you#windows">Programs For You for Windows</a>, which has its own install steps on that page. iPhone, iPad, and Chromebook aren’t supported right now.</p></FaqItem>
     </div>
   </div>
 
