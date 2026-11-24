@@ -1,0 +1,14 @@
+/* Programs For You brand colors */
+:root {
+  --pfy-bg: #0b1110;        /* page background */
+  --pfy-bg-soft: #101918;   /* alternate sections */
+  --pfy-surface: #151f1e;   /* cards */
+  --pfy-surface-2: #1d2b29; /* raised surfaces */
+  --pfy-text: #f1f1ec;      /* cream text */
+  --pfy-muted: #a3bab6;     /* secondary text */
+  --pfy-lime: #a7e26e;      /* the one accent */
+  --pfy-green: #34d27b;     /* logo, dark green */
+  --pfy-green-deep: #139a52;
+  --pfy-green-light: #c4f08a;
+  --pfy-green-mid: #7fd35a;
+}

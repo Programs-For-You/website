@@ -60,7 +60,7 @@
       <div class="max-w-[90ch] text-white/70 text-pretty">
         <p class="mb-0">© 2026 Programs For You. All rights reserved.</p>
       </div>
-      <div class="flex flex-wrap gap-x-10 gap-y-3 desktop:justify-end min-[1281px]:pr-[88px]"><a class="link-draw" href="/terms">Terms of Service</a><a class="link-draw" href="/privacy">Privacy Policy</a><a class="link-draw" href="/licenses">Licenses</a></div>
+      <div class="flex flex-wrap gap-x-10 gap-y-3 desktop:justify-end min-[1281px]:pr-[88px]"><a class="link-draw" href="/terms">Terms of Service</a><a class="link-draw" href="/privacy">Privacy Policy</a><a class="link-draw" href="/licenses">Licenses</a><a class="link-draw" href="/brand">Brand kit</a></div>
     </div>
   </Container>
 </footer>
