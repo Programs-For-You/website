@@ -14,8 +14,6 @@
   import Icon from '#lib/components/apphero/Icon.svelte';
   import WhatsNew from '#lib/components/apphero/WhatsNew.svelte';
   import DownloadCta from '#lib/components/apphero/DownloadCta.svelte';
-  import AgreeBox from '#lib/components/AgreeBox.svelte';
-  import { gate } from '#lib/agree.svelte.js';
   import { APPS } from '#lib/config.js';
 
   const app = APPS.find((a) => a.id === 'email-assistant');
@@ -39,9 +37,8 @@
 <AppHero icon="/assets/img/email-assistant.svg" title="Email Assistant" statusId="email-assistant" howHref="#how-to-use" req="Requires macOS 26 Tahoe or newer on a Mac with Apple silicon (M1 or later) · Windows version coming soon · Free">
   Once a day, a little card sums up your personal email and helps you reply with one click. For school email, <b>On screen</b> reads the email you have open and writes replies for you.
   {#snippet actions()}
-    <Button href={app.file} download onclick={gate}><Icon name="download" class="size-[18px]" /> Mac Download</Button>
+    <Button href="/programs-for-you"><Icon name="download" class="size-[18px]" /> Get the Programs For You App</Button>
     <Button tag="span" variant="ghost" aria-disabled="true">Windows: coming soon</Button>
-    <AgreeBox />
   {/snippet}
   {#snippet visual()}
     <AskCard demo size="lg" />
@@ -116,4 +113,4 @@
 
 <WhatsNew id="email-assistant" />
 
-<DownloadCta title="Get Email Assistant" text="Free for Mac. Download it, then follow the install guide." buttons={[{ href: app.file, label: 'Mac Download', download: true }]} note="Requires macOS 26 Tahoe or newer on a Mac with Apple silicon (M1 or later)." />
+<DownloadCta title="Get Email Assistant" text="It comes inside the free Programs For You app for Mac, along with our other apps." buttons={[{ href: '/programs-for-you', label: 'Get the Programs For You App' }]} note="Requires macOS 26 Tahoe or newer on a Mac with Apple silicon (M1 or later)." />

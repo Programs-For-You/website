@@ -25,7 +25,7 @@
   const scale = $derived(macWidth ? Math.min(1, macWidth / 980) : 1);
 
   const how = [
-    { title: '1. Pick an app', paths: '<rect x="4" y="4" width="16" height="16" rx="3"/><path d="M8.5 12.5l2.5 2.5 4.5-5"/>', body: 'No email, no password, and no account. Open an app’s page and click its download button.' },
+    { title: '1. One app for everything', paths: '<rect x="4" y="4" width="16" height="16" rx="3"/><path d="M8.5 12.5l2.5 2.5 4.5-5"/>', body: 'No email, no password, and no account. Programs For You has School Schedule, Email Assistant, and Screen Assistant inside.' },
     { title: '2. Download and open', paths: '<path d="M12 3v12M7 10l5 5 5-5"/><path d="M5 21h14"/>', body: 'Download the app and follow the <a href="/install">install guide</a>. The first time, your Mac asks you to allow it.' },
     { title: '3. Click the button up top', paths: '<rect x="3" y="4" width="18" height="16" rx="2.5"/><path d="M3 8.5h18"/><path d="M15 6.25h3"/>', body: 'The app lives in the bar at the top of your screen. Click its button anytime.' }
   ];

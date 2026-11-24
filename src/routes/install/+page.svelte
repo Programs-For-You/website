@@ -47,7 +47,7 @@
     </Callout>
 
     <Steps class="mt-10">
-      <Step n={1} title="Agree and download"><p>Go to the app’s page (<a href="/email-assistant">Email Assistant</a> or <a href="/screen-assistant">Screen Assistant</a>) and click <b>Mac Download</b>. By downloading, you agree to the <a href="/terms">Terms</a> (you need to be 13 or older). No email needed.</p></Step>
+      <Step n={1} title="Agree and download"><p>Go to the <a href="/programs-for-you">Programs For You App</a> page and click <b>Download for Mac</b>. It has School Schedule, Email Assistant, and Screen Assistant inside. By downloading, you agree to the <a href="/terms">Terms</a> (you need to be 13 or older). No email needed.</p></Step>
       <Step n={2} title="Open the download"><p>Open your <b>Downloads</b> folder (in Finder, or click the download arrow in your browser). Double-click the <b>.zip</b> file and it turns into the app.</p></Step>
       <Step n={3} title="Move it to Applications"><p>Drag the app into the <b>Applications</b> folder in Finder’s sidebar. Keeping it there means it works properly and updates cleanly.</p></Step>
       <Step n={4} title="Open it, then click Done" id="open-anyway">
@@ -72,7 +72,7 @@
         <p><code>xattr -dr com.apple.quarantine "/Applications/Screen Assistant.app"</code></p></FaqItem>
       <FaqItem q="My Mac asks for my password to use the “keychain.”"><p>That’s Email Assistant opening the app password it saved in your Mac’s Keychain. Type your Mac password and click <b>Always Allow</b>. You may see this once after each update.</p></FaqItem>
       <FaqItem q="Screen Assistant says it can’t see my screen."><p>Open <Path>System Settings → Privacy &amp; Security → Screen &amp; System Audio Recording</Path> and turn on <b>Screen Assistant</b>, then quit it and open it again. If it’s already on but still doesn’t work, select Screen Assistant in that list, click <b>−</b> to remove it, then open Screen Assistant and allow it again.</p></FaqItem>
-      <FaqItem q="How do I update an app?"><p>Open the app and click <b>Check for Updates</b>. If there’s a newer version, the app downloads it and installs it, and all your settings stay. Nothing updates in the background without you. If you have an older version that doesn’t have this button, download the app again from its app page, drag it into Applications, and choose <b>Replace</b>. Keep the app in your Applications folder.</p></FaqItem>
+      <FaqItem q="How do I update an app?"><p>Open the app and click <b>Check for Updates</b>. If there’s a newer version, the app downloads it and installs it, and all your settings stay. Nothing updates in the background without you. If you have an older version that doesn’t have this button, download the app again from the <a href="/programs-for-you">Programs For You App</a> page, drag it into Applications, and choose <b>Replace</b>. Keep the app in your Applications folder.</p></FaqItem>
       <FaqItem q="How do I uninstall an app?"><p>Click the app’s button at the top of your screen and choose <b>Quit</b>. Then drag the app from Applications to the Trash.</p></FaqItem>
       <FaqItem q="Does it work on Windows, iPhone, iPad, or Chromebook?"><p>Not yet. Windows versions are coming soon. iPhone, iPad, and Chromebook aren’t supported right now.</p></FaqItem>
     </div>

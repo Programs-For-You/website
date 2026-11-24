@@ -2,6 +2,7 @@
 // priority/changefreq are hints for search engines. `index: false` pages stay out of the sitemap.
 export const PAGES = [
   { path: '/', name: 'Home', desc: 'Free Mac apps that make a student’s day easier.', priority: 1.0, changefreq: 'weekly' },
+  { path: '/programs-for-you', name: 'Programs For You App', desc: 'One free Mac app with School Schedule, Email Assistant, and Screen Assistant inside.', priority: 0.95, changefreq: 'weekly' },
   { path: '/school-schedule', name: 'School Schedule', desc: 'Always know what period it is, how many minutes are left, and what homework is due.', priority: 0.9, changefreq: 'weekly' },
   { path: '/email-assistant', name: 'Email Assistant', desc: 'Once a day, a card sums up your email and helps you reply with one click.', priority: 0.9, changefreq: 'weekly' },
   { path: '/screen-assistant', name: 'Screen Assistant', desc: 'Press Option-Space and an assistant looks at your screen to summarize, explain, make to-dos or quiz you.', priority: 0.9, changefreq: 'weekly' },
