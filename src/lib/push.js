@@ -2,7 +2,7 @@
 // Standard Web Push (RFC 8030 + VAPID RFC 8292 + aes128gcm encryption RFC 8291), done with WebCrypto so it runs in a Worker.
 // Needs the VAPID_PUBLIC_KEY and VAPID_PRIVATE_KEY secrets (make them with `node scripts/vapid.mjs`). Without them nothing is sent.
 import { env } from 'cloudflare:workers';
-import { records } from '#lib/pb.js';
+import { getDb } from '#lib/server.js';
 
 const enc = new TextEncoder();
 const b64u = (bytes) => btoa(String.fromCharCode(...new Uint8Array(bytes))).replace(/\+/g, '-').replace(/\//g, '_').replace(/=+$/, '');
@@ -60,7 +60,7 @@ export async function encrypt(sub, text) {
 export async function pushAdmins(message) {
   if (!pushReady()) return;
   try {
-    const results = await records.list('push_subscriptions', { fields: 'id,endpoint,p256dh,auth' });
+    const { results } = await getDb().prepare('SELECT endpoint, p256dh, auth FROM push_subscriptions').all();
     const payload = JSON.stringify(message);
     await Promise.all(results.map(async (sub) => {
       try {
@@ -76,7 +76,7 @@ export async function pushAdmins(message) {
           body: await encrypt(sub, payload)
         });
         // 404/410: the device uninstalled the app or turned notifications off. Forget it.
-        if (res.status === 404 || res.status === 410) await records.remove('push_subscriptions', sub.id);
+        if (res.status === 404 || res.status === 410) await getDb().prepare('DELETE FROM push_subscriptions WHERE endpoint = ?').bind(sub.endpoint).run();
         else if (!res.ok) console.error('push failed', res.status, (await res.text()).slice(0, 200));
       } catch (e) {
         console.error('push failed', e);

@@ -1,8 +1,31 @@
 {
-  "name": "pfy-dev",
-  "compatibility_date": "2026-11-01"
-  // Secrets (set with `npx wrangler secret put NAME`, or in .dev.vars for local dev):
-  //   PB_URL, PB_EMAIL, PB_PASSWORD   the PocketBase server (see pocketbase/README.md)
+  // Production: the worker "programsforyou", served at programsforyou.com (deploy with `npm run deploy`).
+  "name": "programsforyou",
+  "compatibility_date": "2026-11-01",
+
+  // The database: Cloudflare D1 "programsforyou". Schema changes live in migrations/ (npm run db:migrate, or db:migrate:local for local dev).
+  "d1_databases": [
+    { "binding": "DB", "database_name": "programsforyou", "database_id": "4a6344e1-bff9-4dec-b95b-094bacdbc1cc", "migrations_dir": "migrations" }
+  ],
+
+  "routes": [
+    { "pattern": "programsforyou.com", "custom_domain": true },
+    { "pattern": "www.programsforyou.com", "custom_domain": true }
+  ],
+
+  // Preview: a separate worker "programsforyou-dev" at dev.programsforyou.com (deploy with `npm run deploy:dev`).
+  // It has its own secrets, so use a test email setup, not the real one. Bindings are not inherited, so the D1 database is repeated here:
+  // it is the SAME database as production. To give the preview its own data: `npx wrangler d1 create programsforyou-dev`, put the new id below, then `npx wrangler d1 migrations apply DB --remote --env dev`.
+  "env": {
+    "dev": {
+      "name": "programsforyou-dev",
+      "d1_databases": [
+        { "binding": "DB", "database_name": "programsforyou", "database_id": "4a6344e1-bff9-4dec-b95b-094bacdbc1cc", "migrations_dir": "migrations" }
+      ],
+      "routes": [{ "pattern": "dev.programsforyou.com", "custom_domain": true }]
+    }
+  }
+  // Secrets (set with `npx wrangler secret put NAME`, add `--env dev` for the preview worker, or use .dev.vars locally):
   //   RESEND_API_KEY                  sends every email (domain programsforyou.com must be verified in Resend)
   //   ADMIN_PASSWORD                  first-login bootstrap for the first Admin 1
   //   NOTIFY_TO (optional)            extra comma-separated addresses that get contact/application alerts

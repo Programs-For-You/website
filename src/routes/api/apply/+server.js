@@ -1,6 +1,5 @@
 import { json } from '@sveltejs/kit';
-import { bad, str, notify, confirmToSender, mayConfirm, EMAIL_OK } from '#lib/server.js';
-import { records } from '#lib/pb.js';
+import { bad, str, notify, confirmToSender, mayConfirm, getDb, EMAIL_OK } from '#lib/server.js';
 import { pushAdmins } from '#lib/push.js';
 import { SITE } from '#lib/config.js';
 
@@ -16,8 +15,10 @@ export async function POST({ request }) {
   };
   if (!a.name || !EMAIL_OK.test(a.email) || !a.grade || !a.role || !a.department || a.why.length < 20 || f.get('guardian-ok') !== 'yes') return bad('Invalid application.');
   const confirm = await mayConfirm(a.email);
-  const row = await records.create('applications', { ...a });
-  const [sent] = await Promise.all([
+  const { meta } = await getDb().prepare('INSERT INTO applications (name, email, grade, role, department, why, skills) VALUES (?, ?, ?, ?, ?, ?, ?)')
+    .bind(a.name, a.email, a.grade, a.role, a.department, a.why, a.skills || null).run();
+  const row = { id: meta.last_row_id };
+  await Promise.all([
     confirm && confirmToSender({
       name: a.name, email: a.email, key: `apply-confirm-${row.id}`,
       subject: `We got your application, ${a.name.split(/\s+/)[0]}`,
@@ -27,6 +28,5 @@ export async function POST({ request }) {
     notify(`New application from ${a.name}`, [['Applicant', `${a.name} <${a.email}>`], ['Grade', a.grade], ['Role', `${a.role} · ${a.department}`], ['Why', a.why], ...(a.skills ? [['Skills', a.skills]] : [])], { replyTo: a.email, key: `apply-notify-${row.id}` }),
     pushAdmins({ title: `New application from ${a.name}`, body: `${a.role} · ${a.department}`, url: '/admin?tab=applications' })
   ]);
-  if (sent) await records.update('applications', row.id, { confirmation_sent: true }).catch(() => {});
   return json({ ok: true });
 }
