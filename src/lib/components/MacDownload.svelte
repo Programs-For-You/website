@@ -29,7 +29,7 @@
     <p class="m-0 text-lead text-muted">All three apps in one download. Install it once and everything lives in the bar at the top of your screen.</p>
     <div class="flex flex-wrap items-center gap-3">
       {#if ready}
-        <Button variant="notch" href={app.file} download onclick={gate}>Download for Mac</Button>
+        <Button variant="notch" href={app.file.replace("/downloads/", "/get/")} download onclick={gate}>Download for Mac</Button>
         <Button variant="ghost" size="sm" href="/install">How to install</Button>
         <AgreeBox class="mt-1" />
       {:else}

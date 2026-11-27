@@ -1,6 +1,6 @@
 // © 2026 Programs For You. All rights reserved.
 // The Contact and Apply forms remember the email you typed, in your browser only, so you don't have to type it again.
-// (There's no email list: downloads don't ask for an email.)
+// (Downloads don't ask for an email. The optional update signup is /api/subscribe.)
 
 const KEY = 'pfy-email';
 

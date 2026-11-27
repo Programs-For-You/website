@@ -3,14 +3,13 @@
   import { card, when } from '#lib/admin.js';
   import { enhance } from '$app/forms';
   import Button from '#lib/components/Button.svelte';
-  import DeleteButton from './DeleteButton.svelte';
 
   let { application: a, canAdd = false } = $props();
 </script>
 
 <article class={cn(card, 'mb-4')}>
   <div class="mb-2 flex flex-wrap items-baseline justify-between gap-x-4">
-    <h2 class="m-0 text-[1.05rem]">{a.name}</h2>
+    <h2 class="m-0 text-[1.05rem]">{a.name}{#if a.read_at}<span class="ml-2 text-[.78rem] font-normal text-faint">Read</span>{/if}</h2>
     <span class="text-[.82rem] text-faint">{when(a.created_at)}</span>
   </div>
   <p class="mb-3 text-[.9rem] text-muted"><a href={`mailto:${a.email}`}>{a.email}</a> · {a.grade} grade · {a.role} · {a.department}</p>
@@ -24,6 +23,10 @@
     {#if canAdd}
       <form method="POST" action="?/addFromApplication" use:enhance><input type="hidden" name="id" value={a.id}><Button type="submit" size="sm">Add as volunteer</Button></form>
     {/if}
-    <DeleteButton action="?/removeApplication" id={a.id} label={`the application from ${a.name}`} />
+    <form method="POST" action="?/markApplicationRead" use:enhance>
+      <input type="hidden" name="id" value={a.id}>
+      <input type="hidden" name="read" value={a.read_at ? '0' : '1'}>
+      <Button type="submit" variant="outline" size="sm">{a.read_at ? 'Mark as unread' : 'Mark as read'}</Button>
+    </form>
   </div>
 </article>

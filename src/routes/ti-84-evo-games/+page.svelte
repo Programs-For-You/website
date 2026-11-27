@@ -65,7 +65,7 @@
             {/each}
           </ul>
           <p class="text-[.8rem] text-faint">File: {gm.file}</p>
-          <Button href={`/downloads/${gm.file}`} download onclick={gate} variant="ghost" size="sm"><Icon name="download" class="size-[18px]" /> Download {gm.name}</Button>
+          <Button href={`/get/${gm.file}`} download onclick={gate} variant="ghost" size="sm"><Icon name="download" class="size-[18px]" /> Download {gm.name}</Button>
         </div>
       </article>
     {/each}
@@ -108,4 +108,4 @@
   <Callout class="mt-11"><Icon name="info" /><p>Programs For You isn’t affiliated with Texas Instruments. TI-84 Evo is a trademark of Texas Instruments. Our games are © 2026 Programs For You. All rights reserved.</p></Callout>
 </Section>
 
-<DownloadCta title="Get the games" text="Free for your TI-84 Evo. Download any game below. No email needed." buttons={games.map((x) => ({ href: `/downloads/${x.file}`, label: x.name, download: true }))} note="Requires a TI-84 Evo" />
+<DownloadCta title="Get the games" text="Free for your TI-84 Evo. Download any game below. No email needed." buttons={games.map((x) => ({ href: `/get/${x.file}`, label: x.name, download: true }))} note="Requires a TI-84 Evo" />

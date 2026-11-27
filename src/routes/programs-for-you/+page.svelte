@@ -56,7 +56,7 @@
   One free Mac app with School Schedule, Email Assistant, and Screen Assistant inside. Install it once and it lives in one icon at the top of your screen.
   {#snippet actions()}
     {#if ready}
-      <Button href={app.file} download onclick={gate}><Icon name="download" class="size-[18px]" /> Download for Mac</Button>
+      <Button href={app.file.replace("/downloads/", "/get/")} download onclick={gate}><Icon name="download" class="size-[18px]" /> Download for Mac</Button>
       <Button variant="ghost" href="/install">How to install</Button>
       <AgreeBox />
     {:else}
@@ -102,5 +102,5 @@
 </Section>
 
 {#if ready}
-  <DownloadCta title="Get Programs For You" text="Free for Mac. One download with all three apps inside." buttons={[{ href: app.file, label: 'Download for Mac', download: true }]} note={app.requires} />
+  <DownloadCta title="Get Programs For You" text="Free for Mac. One download with all three apps inside." buttons={[{ href: app.file.replace("/downloads/", "/get/"), label: 'Download for Mac', download: true }]} note={app.requires} />
 {/if}

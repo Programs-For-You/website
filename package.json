@@ -7,10 +7,9 @@
     "dev": "vite dev",
     "build": "vite build",
     "preview": "vite preview",
-    "db:migrate:local": "wrangler d1 migrations apply DB --local",
-    "db:migrate": "wrangler d1 migrations apply DB --remote",
     "deploy": "vite build && wrangler deploy",
-    "check": "svelte-kit sync && svelte-check --tsconfig ./jsconfig.json"
+    "check": "svelte-kit sync && svelte-check --tsconfig ./jsconfig.json",
+    "pb:import": "node pocketbase/import-d1.mjs"
   },
   "devDependencies": {
     "@sveltejs/adapter-cloudflare": "^9.0.0",

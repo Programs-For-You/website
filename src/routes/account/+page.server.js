@@ -1,6 +1,5 @@
 import { fail, redirect } from '@sveltejs/kit';
-import { getDb } from '#lib/server.js';
-import { getUser, endSession, login, changePassword, passwordProblem } from '#lib/auth.js';
+import { getUser, endSession, startSession, login, changePassword, passwordProblem } from '#lib/auth.js';
 
 export const prerender = false;
 
@@ -11,7 +10,7 @@ export async function load({ cookies }) {
 }
 
 export const actions = {
-  password: async ({ request, cookies }) => {
+  password: async ({ request, cookies, url }) => {
     const user = await getUser(cookies);
     if (!user) redirect(303, '/login?next=/account');
     const f = await request.formData();
@@ -20,18 +19,14 @@ export const actions = {
     const problem = passwordProblem(next) || (next !== String(f.get('again') ?? '') ? 'The two new passwords don’t match.' : '');
     if (problem) return fail(400, { error: problem });
     await changePassword(user.id, next);
-    // Log out every other browser, keeping this one.
-    const keep = cookies.get('pfy-session');
-    await getDb().prepare('DELETE FROM sessions WHERE user_id = ? AND token_hash != ?').bind(user.id, await sha256(keep)).run();
+    // PocketBase logs out every browser when the password changes, so give this one a fresh login.
+    const again = await login(user.email, next);
+    if (again.token) startSession(cookies, url, again.token);
     return { ok: true, message: 'Password changed.' };
   },
 
   logout: async ({ cookies }) => {
-    await endSession(cookies);
+    endSession(cookies);
     redirect(303, '/login');
   }
 };
-
-async function sha256(t) {
-  return Array.from(new Uint8Array(await crypto.subtle.digest('SHA-256', new TextEncoder().encode(t))), (b) => b.toString(16).padStart(2, '0')).join('');
-}

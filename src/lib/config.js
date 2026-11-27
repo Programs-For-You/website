@@ -84,6 +84,13 @@ export const APPS = [
 // Shown near the top of the home page (#download). For a new version: build it with apps/build.sh hub on the Mac
 // that has the Programs For You signing certificate, put the .zip in static/downloads/, then change version,
 // file, and size here. Only ever link a build signed with the certificate (never a test build).
+// Countdown on the School Schedule page. Change `at` (with a timezone offset) to move the launch time.
+export const SCHEDULE_LAUNCH = {
+  version: '1.0.0',
+  at: '2026-11-29T18:00:00-05:00',
+  label: 'Sunday, November 29 at 6:00 PM Eastern',
+};
+
 export const MAC_APP = {
   id: 'programs-for-you',
   name: 'Programs For You for Mac',

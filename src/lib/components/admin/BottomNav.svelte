@@ -9,7 +9,12 @@
 <script>
   import { cn } from '#lib/cn.js';
 
-  let { items = [], active = '', onselect = () => {}, class: cls = '' } = $props();
+  let { items = [], more = [], active = '', onselect = () => {}, class: cls = '' } = $props();
+
+  // "+" opens a small menu with the sections that don't fit in the bar.
+  let open = $state(false);
+  const moreActive = $derived(more.some((m) => m.id === active));
+  const choose = (id) => { open = false; onselect(id); };
 
   // Heroicons (solid), the same icons as the original.
   const ICONS = {
@@ -45,5 +50,26 @@
         <span class="mt-1 text-[.8rem] leading-none font-semibold">{it.label}</span>
       </button>
     {/each}
+    {#if more.length}
+      <button
+        type="button"
+        class={cn(link, (open || moreActive) && 'bg-[rgb(237,237,237,.6)] text-[rgba(0,122,255,.9)]')}
+        aria-label="More sections"
+        aria-expanded={open}
+        onclick={() => (open = !open)}
+      >
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class={cn('size-[1.4rem] transition-transform', open && 'rotate-45')} aria-hidden="true">
+          <path fill-rule="evenodd" clip-rule="evenodd" d="M12 3.75a.75.75 0 0 1 .75.75v6.75h6.75a.75.75 0 0 1 0 1.5h-6.75v6.75a.75.75 0 0 1-1.5 0v-6.75H4.5a.75.75 0 0 1 0-1.5h6.75V4.5a.75.75 0 0 1 .75-.75Z" />
+        </svg>
+        <span class="mt-1 text-[.8rem] leading-none font-semibold">More</span>
+      </button>
+      {#if open}
+        <div class="absolute right-0 bottom-[calc(100%+10px)] flex min-w-[180px] flex-col gap-1 rounded-[22px] bg-[rgba(0,122,255,.404)] p-2 shadow-[0_10px_30px_rgba(0,0,0,.12)] backdrop-blur-[12px] backdrop-saturate-[180%]" role="menu">
+          {#each more as m (m.id)}
+            <button type="button" role="menuitem" class={cn('cursor-pointer rounded-[16px] border-0 bg-transparent px-4 py-3 text-left font-[inherit] text-[.95rem] font-semibold text-white/90', m.id === active && 'bg-[rgb(237,237,237,.6)] text-[rgba(0,122,255,.9)]')} onclick={() => choose(m.id)}>{m.label}</button>
+          {/each}
+        </div>
+      {/if}
+    {/if}
   </div>
 </nav>

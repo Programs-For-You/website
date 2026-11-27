@@ -15,7 +15,7 @@ export const actions = {
     const email = cleanEmail(f.get('email'));
     const res = await login(email, String(f.get('password') ?? '').slice(0, 200));
     if (res.error) return fail(401, { error: res.error, email });
-    await startSession(cookies, url, res.user.id);
+    startSession(cookies, url, res.token);
     redirect(303, landing(res.user, url.searchParams.get('next')));
   }
 };

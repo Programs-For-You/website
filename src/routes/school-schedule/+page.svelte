@@ -11,6 +11,7 @@
   import AppHero from '#lib/components/apphero/AppHero.svelte';
   import FeatureGrid from '#lib/components/apphero/FeatureGrid.svelte';
   import Icon from '#lib/components/apphero/Icon.svelte';
+  import LaunchCountdown from '#lib/components/LaunchCountdown.svelte';
   import { APPS } from '#lib/config.js';
 
   const app = APPS.find((a) => a.id === 'school-schedule');
@@ -30,16 +31,17 @@
 
 <Seo title="School Schedule · Programs For You" description="A free Mac app: always know what period it is, how many minutes are left, and what homework is due. Part of Programs For You." jsonLd={[softwareApp('school-schedule')]} />
 
-<AppHero icon="/assets/img/school-schedule.svg" title="School Schedule" statusId="school-schedule" howHref="#how-to-use" req="Requires macOS 14 Sonoma or newer, on a Mac with Apple silicon or Intel · Windows version coming soon · Free">
+<AppHero icon="/assets/img/school-schedule.svg" title="School Schedule" statusId="school-schedule" howHref="#how-to-use" req="Requires macOS 14 Sonoma or newer, on a Mac with Apple silicon or Intel · Windows version launching with 1.0.0 · Free">
   Always know what period it is, how many minutes are left, and what homework is due. It comes in the Programs For You app, together with Email Assistant and Screen Assistant.
   {#snippet actions()}
-    <Button href="/programs-for-you"><Icon name="download" class="size-[18px]" /> Get the Programs For You App</Button>
-    <Button tag="span" variant="ghost" aria-disabled="true">Windows: coming soon</Button>
+    <Button tag="span" variant="ghost" aria-disabled="true">Download opens at launch</Button>
   {/snippet}
   {#snippet visual()}
     <SchedPanel full fluid />
   {/snippet}
 </AppHero>
+
+<LaunchCountdown />
 
 <Section soft>
   <SectionHead eyebrow="Features" title="Your school day, one click away" />
@@ -49,7 +51,7 @@
 <Section narrow id="how-to-use">
   <SectionHead center={false} eyebrow="Instructions" title="How to use School Schedule" />
   <Steps>
-    <Step n={1} title="Download and install"><p>Click <b>Get the Programs For You App</b> above, download it, and follow the <a href="/install">install guide</a>. The first time, your Mac asks you to allow it.</p></Step>
+    <Step n={1} title="Download and install"><p>Once it launches, download the app and follow the <a href="/install">install guide</a>. The first time, your Mac asks you to allow it.</p></Step>
     <Step n={2} title="Open School Calendar"><p>Open Programs For You and click <b>School Calendar</b> in the sidebar. Its countdown shows up in the bar at the top of your screen.</p></Step>
     <Step n={3} title="Set up your school"><p>Open <b>Setup</b> and type your bell times, your rotation days, and your days off. A classmate already set it up? Paste their setup code instead.</p></Step>
     <Step n={4} title="Type your classes"><p>Type the class you have in each period. Leave a box empty for a free period.</p></Step>

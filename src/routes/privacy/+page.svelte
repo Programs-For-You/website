@@ -13,7 +13,7 @@
 <section class="pt-16 pb-7"><Container><Eyebrow>Legal</Eyebrow><h1>Privacy Policy</h1><Lead class="m-0">Effective November 20, 2026</Lead></Container></section>
 <section class="pt-2 pb-18"><Container>
 <Prose>
-  <SummaryBox><p><b>The short version:</b> you don’t need an email, password, or account to download our apps. If you contact us or apply to join the team, we use what you send only for that. Your emails and screen stay on your Mac. We don’t sell your information, and we don’t use ads or tracking cookies. Our Services are for people 13 and older.</p></SummaryBox>
+  <SummaryBox><p><b>The short version:</b> you don’t need an email, password, or account to download our apps. You can optionally sign up for update emails. If you contact us or apply to join the team, we use what you send only for that. Your emails and screen stay on your Mac. We don’t sell your information, and we don’t use ads or tracking cookies. Our Services are for people 13 and older.</p></SummaryBox>
 
   <h2>Who we are</h2>
   <p>Programs For You (programsforyou.com) is an independent developer that makes free Mac apps. If you have questions about this policy, email <a href={`mailto:${SITE.contactEmail}`}>{SITE.contactEmail}</a>.</p>
@@ -22,6 +22,7 @@
   <ul>
     <li><strong>Downloads.</strong> You don’t give us any information to download our apps.</li>
     <li><strong>Support tickets.</strong> When you send a ticket on our Contact page, we save your name, your email address, what it’s about, and your summary, so we can help you and write back. Tickets are stored by our host, Cloudflare, and only we can see them.</li>
+    <li><strong>Email updates.</strong> If you sign up for updates, we save your email address and use it only to email you about our apps. Every email has an Unsubscribe link, and you can also ask us to delete your address.</li>
     <li><strong>How long we keep it.</strong> We keep support tickets and applications only as long as we need them to help you or review your application, and delete them when you ask.</li>
     <li><strong>Website logs.</strong> Like most websites, our hosting provider may keep standard logs, such as your IP address, browser type, and pages visited, for security and reliability.</li>
   </ul>
