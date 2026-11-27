@@ -60,6 +60,7 @@
     if (f.name.value.trim().length < 1) { f.name.focus(); return say('Please type your name.'); }
     if (f.summary.value.trim().length < 5) { f.summary.focus(); return say('Please write a short summary of the problem or question.'); }
     if (!f.app.value) return say('Please choose what your ticket is about.');
+    if (f.app.value === 'Joining') { location.href = '/apply'; return; }
     if (!EMAIL_OK.test(email)) { f.email.focus(); return say('Please type your email address so we can reply to you.'); }
 
     const id = newTicketNumber();
@@ -115,7 +116,7 @@
         <div class={field}><label class={fieldLabel} for="t-summary">Summary</label>
           <textarea class={cn(input, textarea)} id="t-summary" name="summary" rows="5" maxlength="2000" placeholder="What’s wrong, or what’s your question?" required></textarea></div>
         <div class={field}><label class={fieldLabel} for="t-app">What’s it about?</label>
-          <select class={cn(input, select)} id="t-app" name="app" required><option value="">Choose one…</option><option>School Schedule</option><option>Email Assistant</option><option>Screen Assistant</option><option>TI-84 Evo games</option><option>The website</option><option>Something else</option></select></div>
+          <select class={cn(input, select)} id="t-app" name="app" required onchange={(e) => { if (e.currentTarget.value === 'Joining') location.href = '/apply'; }}><option value="">Choose one…</option><option>School Schedule</option><option>Email Assistant</option><option>Screen Assistant</option><option>TI-84 Evo games</option><option>The website</option><option>Something else</option><option value="Joining">Joining the team</option></select></div>
         <div class={field}><label class={fieldLabel} for="t-email">Email</label>
           <input class={input} id="t-email" name="email" type="email" autocomplete="email" inputmode="email" placeholder="you@example.com" required>
           <span class={fieldHint}>We’ll reply to this address. We never share it.</span></div>

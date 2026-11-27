@@ -11,7 +11,7 @@ export async function POST({ request }) {
   if (f.get('company')) return json({ ok: true }); // honeypot: pretend it worked
   const a = {
     name: str(f.get('name'), 200), email: str(f.get('email'), 320).toLowerCase(), grade: str(f.get('grade'), 20),
-    role: str(f.get('role'), 50), department: str(f.get('department'), 50),
+    role: 'Volunteer', department: str(f.get('department'), 50),
     why: str(f.get('why'), 2000), skills: str(f.get('skills'), 1500)
   };
   if (!a.name || !EMAIL_OK.test(a.email) || !a.grade || !a.role || !a.department || a.why.length < 20 || f.get('guardian-ok') !== 'yes') return bad('Invalid application.');

@@ -8,7 +8,7 @@ export const SITE = {
   domain: 'programsforyou.com',
   url: 'https://programsforyou.com',
   // The email people use to contact you. Change it to a real inbox you check.
-  contactEmail: 'bradykrupa@programsforyou.com',
+  contactEmail: 'contact@programsforyou.com',
   // Turn on after you get the $99/year Apple Developer account.
   appleSignIn: false,
 };

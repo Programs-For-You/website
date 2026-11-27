@@ -46,7 +46,6 @@
     if (!f.name.value.trim()) { f.name.focus(); return say('Please type your name.'); }
     if (!EMAIL_OK.test(email)) { f.email.focus(); return say('Please type your email so we can get back to you.'); }
     if (!f.grade.value) { f.grade.focus(); return say('Please choose your grade.'); }
-    if (!f.role.value) { f.role.focus(); return say('Please choose the role you want.'); }
     if (!f.department.value) { f.department.focus(); return say('Please choose a department (or “Not sure yet”).'); }
     if (!f['guardian-ok'].checked) { f['guardian-ok'].focus(); return say('Please check the box about your age and parent or guardian.'); }
     if (f.why.value.trim().length < 20) { f.why.focus(); return say('Please tell us a little more about why you want to join (a sentence or two).'); }
@@ -86,11 +85,9 @@
           <div class={field}><label class={fieldLabel} for="a-email">Email</label>
             <input class={input} id="a-email" name="email" type="email" autocomplete="email" inputmode="email" placeholder="you@example.com" required></div>
         </div>
-        <div class={cn(row, 'grid-cols-[repeat(3,minmax(0,1fr))]')}>
+        <div class={cn(row, 'grid-cols-[repeat(2,minmax(0,1fr))]')}>
           <div class={field}><label class={fieldLabel} for="a-grade">Grade</label>
             <select class={cn(input, select)} id="a-grade" name="grade" required><option value="">Choose…</option><option>9th</option><option>10th</option><option>11th</option><option>12th</option><option>Other</option></select></div>
-          <div class={field}><label class={fieldLabel} for="a-role">Role</label>
-            <select class={cn(input, select)} id="a-role" name="role" required><option value="">Choose…</option><option>Volunteer</option></select></div>
           <div class={field}><label class={fieldLabel} for="a-dept">Department</label>
             <select class={cn(input, select)} id="a-dept" name="department" required><option value="">Choose…</option><option>Development</option><option>Social Media</option><option>Advertising</option><option>Hospitality</option><option>Not sure yet</option></select></div>
         </div>

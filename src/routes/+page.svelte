@@ -15,7 +15,7 @@
   import SchedPanel from '#lib/components/SchedPanel.svelte';
   import AskCard from '#lib/components/AskCard.svelte';
   import HeroXL from '#lib/components/HeroXL.svelte';
-  import MacDownload from '#lib/components/MacDownload.svelte';
+  import LaunchCountdown from '#lib/components/LaunchCountdown.svelte';
   import { SITE } from '#lib/config.js';
 
   const grid3 = 'grid grid-cols-3 gap-[18px] max-[900px]:grid-cols-2 max-[600px]:grid-cols-1';
@@ -58,16 +58,14 @@
   description="Free Mac apps for students: a school schedule with a live class countdown, an email assistant that writes replies, and a helper that sees your screen." jsonLd={[faqPage(HOME_FAQ), softwareApp('email-assistant'), softwareApp('screen-assistant')]} />
 
 <HeroXL title="Simple apps that make your day easier." text="Your school schedule, your email, and a helper that can see your screen, all one click away. Free, simple, and private.">
-  {#snippet note()}Free · No email needed · For Mac{/snippet}
+  {#snippet note()}Free{/snippet}
   {#snippet actions()}
-    <Button variant="notch" href="#download">Get the apps</Button>
+    <Button variant="notch" href="/programs-for-you">Download</Button>
     <Button variant="outline" href="#how" class="border-white/40 text-white hover-fine:bg-white/10">How it works</Button>
   {/snippet}
 </HeroXL>
 
-<Section id="download" tight sectionClass="pt-[max(60px,min(calc(60px+.05*(100vw-440px)),110px))]">
-  <MacDownload />
-</Section>
+<div class="pt-[max(40px,min(calc(40px+.05*(100vw-440px)),80px))]"><LaunchCountdown /></div>
 
 <Section tight>
   <div data-reveal>
@@ -159,6 +157,6 @@
   <h2>Ready to make your day easier?</h2>
   <Lead center class="mb-0">Grab the apps. No email or password needed.</Lead>
   <div class="mt-[26px] flex flex-wrap items-center justify-center gap-3">
-    <Button variant="primary" href="#download"><svg class="size-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12M7 10l5 5 5-5"/><path d="M5 21h14"/></svg> Get the apps</Button>
+    <Button variant="primary" href="/programs-for-you"><svg class="size-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12M7 10l5 5 5-5"/><path d="M5 21h14"/></svg> Download</Button>
   </div>
 </Section>
