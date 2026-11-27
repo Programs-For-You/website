@@ -19,14 +19,13 @@ export const actions = {
     const problem = passwordProblem(next) || (next !== String(f.get('again') ?? '') ? 'The two new passwords don’t match.' : '');
     if (problem) return fail(400, { error: problem });
     await changePassword(user.id, next);
-    // PocketBase logs out every browser when the password changes, so give this one a fresh login.
-    const again = await login(user.email, next);
-    if (again.token) startSession(cookies, url, again.token);
+    // Changing the password logs out every browser, so give this one a fresh login.
+    await startSession(cookies, url, user.id);
     return { ok: true, message: 'Password changed.' };
   },
 
   logout: async ({ cookies }) => {
-    endSession(cookies);
+    await endSession(cookies);
     redirect(303, '/login');
   }
 };

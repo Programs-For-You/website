@@ -2,7 +2,6 @@
 import { json } from '@sveltejs/kit';
 import { env } from 'cloudflare:workers';
 import { SITE } from '#lib/config.js';
-import { records, f } from '#lib/pb.js';
 
 export const EMAIL_OK = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
 
@@ -11,7 +10,13 @@ export const str = (v, max) => String(v ?? '').trim().slice(0, max);
 
 export const bad = (message) => json({ ok: false, message }, { status: 400 });
 
-// Login and accounts live in #lib/auth.js. The database client is #lib/pb.js.
+// The D1 binding "DB" from wrangler.jsonc. Under `vite dev` it is a local database (run `npm run db:migrate:local` first).
+export function getDb() {
+  if (!env.DB) throw new Error('D1 binding "DB" is missing. Check wrangler.jsonc.');
+  return env.DB;
+}
+
+// Login and accounts live in #lib/auth.js.
 
 const oneLine = (v) => String(v ?? '').replace(/[\r\n]+/g, ' ').trim();
 const esc = (v) => String(v ?? '').replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' })[c]);
@@ -68,7 +73,7 @@ export const accountMail = ({ to, subject, heading, paragraphs, button, key }) =
 
 /** Every active admin (level 1 and 2), plus anyone listed in the optional NOTIFY_TO secret (comma-separated). */
 async function adminEmails() {
-  const admins = await records.list('users', { filter: "disabled = false && email != ''", fields: 'email,role' }).catch(() => []);
+  const { results: admins } = await getDb().prepare("SELECT email FROM users WHERE role IN ('admin1', 'admin2') AND disabled = 0 AND pw_hash IS NOT NULL").all().catch(() => ({ results: [] }));
   const extra = (env.NOTIFY_TO ?? '').split(',').map((a) => a.trim().toLowerCase());
   return [...new Set([...admins.map((a) => a.email.toLowerCase()), ...extra].filter((a) => EMAIL_OK.test(a)))];
 }
@@ -98,8 +103,10 @@ export async function notify(subject, rows, { replyTo, intro, key } = {}) {
  */
 export async function mayConfirm(email) {
   try {
-    const since = new Date(Date.now() - 3600_000).toISOString().replace('T', ' ');
-    const n = (await Promise.all(['tickets', 'applications'].map((c) => records.count(c, f('email = {:e} && created_at >= {:t}', { e: email, t: since }))))).reduce((a, b) => a + b, 0);
+    const since = new Date(Date.now() - 3600_000).toISOString().slice(0, 19).replace('T', ' '); // same format as D1's datetime('now')
+    const { n } = await getDb().prepare(
+      'SELECT (SELECT COUNT(*) FROM tickets WHERE email = ?1 AND created_at >= ?2) + (SELECT COUNT(*) FROM applications WHERE email = ?1 AND created_at >= ?2) AS n'
+    ).bind(email, since).first();
     return n <= 3;
   } catch { return true; }
 }

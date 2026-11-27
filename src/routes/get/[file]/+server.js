@@ -1,5 +1,5 @@
 import { redirect, error } from '@sveltejs/kit';
-import { records, f } from '#lib/pb.js';
+import { getDb } from '#lib/server.js';
 import { APPS, MAC_APP } from '#lib/config.js';
 
 export const prerender = false;
@@ -13,10 +13,7 @@ export async function GET({ params, request }) {
   // Browsers ask for the file in pieces or preview it; only count a normal fresh request.
   if (!request.headers.get('range')) {
     try {
-      const row = await records.first('downloads', f('file = {:f}', { f: params.file }));
-      const last_at = new Date().toISOString().replace('T', ' ');
-      if (row) await records.update('downloads', row.id, { 'count+': 1, last_at });
-      else await records.create('downloads', { file: params.file, count: 1, last_at });
+      await getDb().prepare("INSERT INTO downloads (file, count, last_at) VALUES (?, 1, datetime('now')) ON CONFLICT(file) DO UPDATE SET count = count + 1, last_at = datetime('now')").bind(params.file).run();
     } catch (e) {
       console.error('download count failed', e?.message ?? e);
     }
