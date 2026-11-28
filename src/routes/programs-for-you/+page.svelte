@@ -117,10 +117,10 @@
     <div class="mt-10">
       <h3 class="mb-4 text-[1.25rem]">Install it on Windows</h3>
       <Steps>
-        <Step n={1} title="Unzip it"><p>Open your Downloads folder, right-click the .zip, and choose <b>Extract All…</b>, then <b>Extract</b>. Move the folder somewhere you’ll keep it, like Documents.</p></Step>
-        <Step n={2} title="Open Programs For You"><p>In the folder, double-click <b>Programs For You</b> (Programs For You.exe).</p></Step>
-        <Step n={3} title="If Windows warns you"><p>Windows may say <b>“Windows protected your PC.”</b> Click <b>More info</b>, then <b>Run anyway</b>. It shows up because the app isn’t registered with Microsoft yet, not because something is wrong with it. Only do this for apps you downloaded from programsforyou.com.</p></Step>
-        <Step n={4} title="Find the icon by the clock"><p>The Programs For You icon is in the bottom-right corner, next to the clock. If you can’t see it, click the <b>^</b> arrow there. Click the icon for School Schedule and Email Assistant; right-click it for Settings and Check for Updates. It starts with Windows from now on.</p></Step>
+        <Step n={1} title="Open the file you downloaded"><p>Click <b>Download for Windows</b>, then open <b>ProgramsForYou-Windows-…-Setup.exe</b> from your Downloads folder (or from the bar at the bottom or top of your browser). That’s the only file: no unzipping and nothing else to run.</p></Step>
+        <Step n={2} title="If Windows warns you"><p>Windows may say <b>“Windows protected your PC.”</b> Click <b>More info</b>, then <b>Run anyway</b>. It shows up because the app isn’t registered with Microsoft yet, not because something is wrong with it. Only do this for apps you downloaded from programsforyou.com.</p></Step>
+        <Step n={3} title="It installs and opens"><p>In a few seconds Programs For You installs itself (no password needed) and opens. It adds a shortcut to the Start menu and your desktop, and it starts with Windows from now on.</p></Step>
+        <Step n={4} title="Find the icon by the clock"><p>The Programs For You icon is in the bottom-right corner, next to the clock. If you can’t see it, click the <b>^</b> arrow there. Click the icon for School Schedule and Email Assistant; right-click it for Settings and Check for Updates. To remove the app, go to <b>Settings → Apps</b>.</p></Step>
       </Steps>
     </div>
   {/if}

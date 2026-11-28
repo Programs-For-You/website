@@ -98,20 +98,21 @@ export const MAC_APP = {
 };
 
 // The Windows app: School Schedule, plus Email Assistant and Screen Assistant through Microsoft Copilot (free on
-// Windows 11, no API key). Built from apps/Windows with `npm run dist`. The zips are about 110 MB each, too big for
-// static/downloads (Cloudflare allows 25 MB a file), so they're attached to a GitHub release on the public website
-// repo (tag windows-<version>). For a new version: build it, make a new release with both zips, then change version,
-// the two file links, and the sizes here. It isn't code-signed yet, so Windows shows a SmartScreen warning.
+// Windows 11, no API key). Built from apps/Windows with `npm run dist`: one installer per kind of PC (open it and it
+// installs and opens the app). They're about 85 MB each, too big for static/downloads (Cloudflare allows 25 MB a
+// file), so they're attached to a GitHub release on the public website repo (tag windows-<version>). For a new
+// version: build it, make a new release with both installers, then change version, the two file links, and the sizes
+// here. It isn't code-signed, so Windows shows a SmartScreen warning.
 const WIN_RELEASE = 'https://github.com/Programs-For-You/website/releases/download/windows-1.0.0';
 export const WINDOWS_APP = {
   id: 'programs-for-you-windows',
   name: 'Programs For You for Windows',
   status: 'available',   // 'available' or 'coming-soon'
   version: '1.0.0',
-  fileX64: `${WIN_RELEASE}/ProgramsForYou-Windows-1.0.0-x64.zip`,
-  fileArm64: `${WIN_RELEASE}/ProgramsForYou-Windows-1.0.0-arm64.zip`,
-  size: '106 MB',
-  sizeArm64: '111 MB',
+  fileX64: `${WIN_RELEASE}/ProgramsForYou-Windows-1.0.0-x64-Setup.exe`,
+  fileArm64: `${WIN_RELEASE}/ProgramsForYou-Windows-1.0.0-arm64-Setup.exe`,
+  size: '83 MB',
+  sizeArm64: '84 MB',
   requires: 'Windows 10 or 11, on Intel, AMD, or ARM. Email Assistant and Screen Assistant use Microsoft Copilot, which is free on Windows 11.',
 };
 
